@@ -10,7 +10,7 @@ readonly REPOSITORY=b.gcr.io/images-tryinggce
 #  $1, the name of the runtime, mono or coreclr.
 get_docker_tag () {
     # Echo it so it can be read from the caller.
-    echo "${REPOSITORY}/aspnet_runtime:${RUNTIME_VERSION}-$1"
+    echo "${REPOSITORY}/aspnet:${RUNTIME_VERSION}-$1"
 }
 
 # Builds the docker image given the directory where the various runtime are
