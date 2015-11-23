@@ -36,6 +36,7 @@ ENV DNVM_SOURCE="https://raw.githubusercontent.com/aspnet/Home/${DNVM_COMMIT_ID}
 ENV DNVM_INSTALL_URL="https://raw.githubusercontent.com/aspnet/Home/${DNVM_COMMIT_ID}/dnvminstall.sh"
 ENV DNX_BRANCH=dev
 ENV DNX_RUNTIME_VERSION=1.0.0-rc1-final
+ENV DNX_RUNTIME_ENV=mono
 
 # Install Asp.NET vNext
 RUN curl -sSL "${DNVM_INSTALL_URL}" | bash
