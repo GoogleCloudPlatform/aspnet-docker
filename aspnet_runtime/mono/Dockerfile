@@ -31,11 +31,11 @@ RUN ln -s /usr/local/lib/libuv.so.1.0.0 /usr/local/lib/libuv.so.1
 ENV LD_LIBRARY_PATH=/usr/local/lib
 
 # Configure the precise version and branch that is going to be used.
-ENV DNVM_COMMIT_ID="e9bc588e963f23e6a53551447f8b238f0c9e7184"
+ENV DNVM_COMMIT_ID="55692574b4dad17326b46e0b09f954b2a99e1cab"
 ENV DNVM_SOURCE="https://raw.githubusercontent.com/aspnet/Home/${DNVM_COMMIT_ID}/dnvm.sh"
 ENV DNVM_INSTALL_URL="https://raw.githubusercontent.com/aspnet/Home/${DNVM_COMMIT_ID}/dnvminstall.sh"
 ENV DNX_BRANCH=dev
-ENV DNX_RUNTIME_VERSION=1.0.0-beta8
+ENV DNX_RUNTIME_VERSION=1.0.0-rc1-final
 
 # Install Asp.NET vNext
 RUN curl -sSL "${DNVM_INSTALL_URL}" | bash
@@ -49,4 +49,4 @@ RUN /app/scripts/install_runtime.sh
 
 # Run the app.
 EXPOSE 8080
-ENTRYPOINT ["/app/gae_start"]
+ENTRYPOINT ["/app/app_engine_start"]
