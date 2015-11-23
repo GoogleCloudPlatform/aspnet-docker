@@ -24,7 +24,7 @@ ADD ./grpc_runtime.tar.gz /usr/local/lib/
 # This library was built from the latest sources, if it needs to be rebuilt just
 # follow the instructions at https://github.com/libuv/libuv.
 ADD ./libuv.so.1.0.0 /usr/local/lib/
-RUN ln -s /usr/local/lib/libuv.so.1.0.0 /usr/local/lib/libuv.so.1
+RUN ln -s /usr/local/lib/libuv.so.1.0.0 /usr/local/lib/libuv.so
 
 # Add the path where the .so file are added to the loader path so it can be
 # found by Kestrel.
