@@ -2,7 +2,7 @@
 # runtime containers.
 
 # The current version of the runtime.
-readonly RUNTIME_VERSION=1.0.0-beta8
+readonly RUNTIME_VERSION=1.0.0-rc1-final
 readonly REPOSITORY=b.gcr.io/images-tryinggce
 
 # Prints out the tag to use to build the container for the given runtime.
