@@ -5,16 +5,22 @@
 # The app should contain an entry point called kestrel, to launch the kestrel
 # server on port 8080, which this container exposes.
 
-# Using the Mono runtime to execute the app.
-FROM mono:4.0.1
+# This is an AppEngine image.
+FROM gcr.io/google_appengine/base
 
-# Install the dependencies
-RUN apt-get update; apt-get install \
-    curl \
-    libc6-dev \
-    openssl \
-    unzip \
-    -y --no-install-recommends
+# Install all of the dependencies.
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF; \
+    echo "deb http://download.mono-project.com/repo/debian wheezy main" | tee -a /etc/apt/sources.list.d/mono-xamarin.list; \
+    echo "deb http://download.mono-project.com/repo/debian wheezy-apache24-compat main" | tee -a /etc/apt/sources.list.d/mono-xamarin.list; \
+    echo "deb http://download.mono-project.com/repo/debian wheezy-libjpeg62-compat main" | tee -a /etc/apt/sources.list.d/mono-xamarin.list; \
+    apt-get update; \
+    apt-get install \
+      curl \
+      libc6-dev \
+      mono-complete \
+      openssl \
+      unzip \
+      -y --force-yes --no-install-recommends
 
 # Add the grpc runtime, built from the latest sources and clean up.
 RUN mkdir -p /app/dependencies

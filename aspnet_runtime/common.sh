@@ -33,3 +33,11 @@ build_docker_image () {
 push_docker_image () {
     gcloud docker push "$(get_docker_tag $1)"
 }
+
+# Run the image with the given name.
+# Args:
+#   $1, the name of the runtime to use, mono or coreclr.
+run_docker_image () {
+    # TODO: Maybe build the image as well?
+    docker run -it --entrypoint bash "$(get_docker_tag $1)"
+}

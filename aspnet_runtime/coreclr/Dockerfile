@@ -5,8 +5,8 @@
 # The app should contain an entry point called kestrel, to launch the kestrel
 # server on port 8080, which this container exposes.
 
-# Use ubuntu as the base image so we can get libunwin8 installed.
-FROM ubuntu:14.04
+# This is an official app engine image.
+FROM gcr.io/google_appengine/base
 
 # In order to run .Net Core we need libunwin8 and libssl.
 

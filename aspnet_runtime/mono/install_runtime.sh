@@ -10,5 +10,5 @@ set -o errexit
 echo "Installing version: ${DNX_RUNTIME_VERSION} for runtime: ${DNX_RUNTIME_ENV}"
 
 # Install the runtime and tag it as default.
-dnvm install "${DNX_RUNTIME_VERSION}" -r "${DNX_RUNTIME_ENV}"
-dnvm alias default "${DNX_RUNTIME_VERSION}" -r "${DNX_RUNTIME_ENV}"
+dnvm install "${DNX_RUNTIME_VERSION}" -r "${DNX_RUNTIME_ENV}" ${DNX_USE_UNSTABLE_FEED:+"-u"} -alias default
+
