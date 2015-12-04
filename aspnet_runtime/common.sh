@@ -2,7 +2,7 @@
 # runtime containers.
 
 # The current version of the runtime.
-readonly RUNTIME_VERSION=1.0.0-beta8
+readonly RUNTIME_VERSION=1.0.0-rc1-update1
 readonly REPOSITORY=b.gcr.io/images-tryinggce
 
 # Prints out the tag to use to build the container for the given runtime.
@@ -10,7 +10,7 @@ readonly REPOSITORY=b.gcr.io/images-tryinggce
 #  $1, the name of the runtime, mono or coreclr.
 get_docker_tag () {
     # Echo it so it can be read from the caller.
-    echo "${REPOSITORY}/aspnet_runtime:${RUNTIME_VERSION}-$1"
+    echo "${REPOSITORY}/aspnet:${RUNTIME_VERSION}-$1"
 }
 
 # Builds the docker image given the directory where the various runtime are
@@ -32,4 +32,12 @@ build_docker_image () {
 #   $1, the runtime to push, mono or coreclr.
 push_docker_image () {
     gcloud docker push "$(get_docker_tag $1)"
+}
+
+# Run the image with the given name.
+# Args:
+#   $1, the name of the runtime to use, mono or coreclr.
+run_docker_image () {
+    # TODO: Maybe build the image as well?
+    docker run -it --entrypoint bash "$(get_docker_tag $1)"
 }
