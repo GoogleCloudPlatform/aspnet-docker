@@ -26,15 +26,20 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E03280
 RUN mkdir -p /app/dependencies
 ADD ./grpc_runtime.tar.gz /usr/local/lib/
 
-# Add the libuv library to be able to run the Kestrel webserver which depends on it.
-# This library was built from the latest sources, if it needs to be rebuilt just
-# follow the instructions at https://github.com/libuv/libuv.
-ADD ./libuv.so.1.0.0 /usr/local/lib/
-RUN ln -s /usr/local/lib/libuv.so.1.0.0 /usr/local/lib/libuv.so
-
-# Add the path where the .so file are added to the loader path so it can be
-# found by Kestrel.
-ENV LD_LIBRARY_PATH=/usr/local/lib
+# Build and install libuv from source.
+RUN LIBUV_VERSION=1.4.2 \
+    && apt-get -y install autoconf automake build-essential libtool \
+    && mkdir -p $HOME/libuv/ \
+    && curl -sSL https://github.com/libuv/libuv/archive/v${LIBUV_VERSION}.tar.gz | tar zxfv - -C $HOME/libuv/ \
+    && cd $HOME/libuv/libuv-$LIBUV_VERSION \
+    && ./autogen.sh && ./configure && make && make install \
+    && cd - \
+    && rm -rf $HOME/libuv/ \
+    && ldconfig \
+    && apt-get -y purge autoconf automake build-essential libtool \
+    && apt-get -y autoremove \
+    && apt-get -y clean \
+    && rm -rf /var/lib/apt/lists/*
 
 # Configure the precise version and branch that is going to be used.
 ENV DNVM_COMMIT_ID="87e970d8122494e8b88b3bbc13dd665834ec4e81"
