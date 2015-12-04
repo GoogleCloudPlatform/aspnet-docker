@@ -31,11 +31,20 @@ RUN apt-get update; apt-get install \
 RUN mkdir -p /app/dependencies
 ADD ./grpc_runtime.tar.gz /usr/local/lib/
 
-# Add the libuv library to be able to run the Kestrel webserver which depends on it.
-# This library was built from the latest sources, if it needs to be rebuilt just
-# follow the instructions at https://github.com/libuv/libuv.
-ADD ./libuv.so.1.0.0 /usr/local/lib/
-RUN ln -s /usr/local/lib/libuv.so.1.0.0 /usr/local/lib/libuv.so
+# Build and install libuv from source.
+RUN LIBUV_VERSION=1.4.2 \
+    && apt-get -y install autoconf automake build-essential libtool \
+    && mkdir -p $HOME/libuv/ \
+    && curl -sSL https://github.com/libuv/libuv/archive/v${LIBUV_VERSION}.tar.gz | tar zxfv - -C $HOME/libuv/ \
+    && cd $HOME/libuv/libuv-$LIBUV_VERSION \
+    && ./autogen.sh && ./configure && make && make install \
+    && cd - \
+    && rm -rf $HOME/libuv/ \
+    && ldconfig \
+    && apt-get -y purge autoconf automake build-essential libtool \
+    && apt-get -y autoremove \
+    && apt-get -y clean \
+    && rm -rf /var/lib/apt/lists/*
 
 # Add the path where the .so file are added to the loader path so it can be
 # found by Kestrel.
