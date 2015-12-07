@@ -31,11 +31,20 @@ build_docker_image () {
     docker tag -f ${runtime_tag} ${latest_tag}
 }
 
-# Pushes the container to the repository indicated by the tag.
+# Pushes the container to the repository indicated by the tag. This function
+# will also push the "latest" tag.
 # Args:
 #   $1, the runtime to push, mono or coreclr.
 push_docker_image () {
-    gcloud docker push "$(get_docker_tag $1)"
+    # Pushing the versioned tag.
+    local versioned_tag="$(get_docker_tag $1 ${RUNTIME_VERSION})"
+    echo Pushing ${versioned_tag}
+    gcloud docker push ${versioned_tag}
+
+    # Pushing the latest tag as well.
+    local latest_tag="$(get_docker_tag $1 latest)"
+    echo Pushing ${latest_tag}
+    gcloud docker push ${latest_tag}
 }
 
 # Run the image with the given name.
