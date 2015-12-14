@@ -1,0 +1,16 @@
+#! /usr/bin/env bash
+# This script builds and pushes the container for the given .Net runtime with
+# the right tag.
+
+# Exit on error
+set -o errexit
+
+# Load the common settings
+readonly workspace="$(dirname $0)/.."
+source "${workspace}/tools/common.sh"
+
+build_docker_image "${workspace}/aspnet_runtime"
+
+push_docker_image
+
+echo Done.

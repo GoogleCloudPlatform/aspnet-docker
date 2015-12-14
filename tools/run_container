@@ -1,0 +1,11 @@
+#! /usr/bin/env bash
+# This script will run the ocntainer for the given .NET runtime.
+
+# Exit on error
+set -o errexit
+
+# Load the common settings
+readonly workspace="$(dirname $0)/.."
+source "${workspace}/tools/common.sh"
+
+run_docker_image
