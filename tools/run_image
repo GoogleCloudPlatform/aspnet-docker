@@ -1,5 +1,5 @@
 #! /usr/bin/env bash
-# This script will run the ocntainer for the given .NET runtime.
+# This script will run the image for the .NET runtime.
 
 # Exit on error
 set -o errexit

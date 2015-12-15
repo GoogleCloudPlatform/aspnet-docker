@@ -1,5 +1,5 @@
 #! /usr/bin/env bash
-# This script builds the container for the given .NET runtime with the right tag
+# This script builds the container for the .NET runtime with the right tag.
 
 # Exit on error
 set -o errexit
