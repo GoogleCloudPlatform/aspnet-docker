@@ -9,7 +9,7 @@ readonly REPOSITORY=b.gcr.io/aspnet-docker
 # Args:
 #  $1, the version name to use.
 get_docker_tag () {
-    echo "${REPOSITORY}/aspnet:$1"
+    echo "${REPOSITORY}/dotnet:$1"
 }
 
 # Builds the docker image given the directory where the various runtime are
