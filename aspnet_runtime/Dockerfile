@@ -69,7 +69,6 @@ ENV LD_LIBRARY_PATH=/usr/local/lib
 
 # Configure the precise version and branch that is going to be used.
 ENV DNVM_COMMIT_ID="87e970d8122494e8b88b3bbc13dd665834ec4e81"
-ENV DNVM_SOURCE="https://raw.githubusercontent.com/aspnet/Home/${DNVM_COMMIT_ID}/dnvm.sh"
 ENV DNVM_INSTALL_URL="https://raw.githubusercontent.com/aspnet/Home/${DNVM_COMMIT_ID}/dnvminstall.sh"
 ENV DNX_BRANCH=dev
 ENV DNX_RUNTIME_VERSION=1.0.0-rc1-update1
