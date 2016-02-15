@@ -25,7 +25,7 @@ build_docker_image () {
     # Tag the runtime version as the latest version.
     local latest_tag="$(get_docker_tag latest)"
     echo Tagging ${runtime_tag} as ${latest_tag}
-    docker tag -f ${runtime_tag} ${latest_tag}
+    docker tag ${runtime_tag} ${latest_tag}
 }
 
 # Pushes the container to the repository indicated by the tag. This function

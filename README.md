@@ -10,6 +10,8 @@ the images for both `mono` and `coreclr`, it will take care of using the right t
 images produced. To be able to push to the repository you will need write access to the `b.gcr.io/aspnet-docker`
 repository.
 
+The build of the image has been tested with Docker 1.10.
+
 ## Support
 To get help on using the aspnet runtime, please log an issue with this
 project. While we will eventually be able to offer support on Stack Overflow or
