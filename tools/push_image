@@ -1,6 +1,5 @@
 #! /usr/bin/env bash
-# This script builds and pushes the container for the given .Net runtime with
-# the right tag.
+# This script builds and pushes the image runtime with the right tag.
 
 # Exit on error
 set -eu
