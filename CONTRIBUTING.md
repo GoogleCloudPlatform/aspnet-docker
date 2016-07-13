@@ -34,7 +34,6 @@ pull request.
 
 It is expected that pull requests meet the following:
 
-- Adhere to the coding style guide - We use the [DotNet Foundation's Coding Style Guide](https://github.com/dotnet/corefx/blob/master/Documentation/coding-guidelines/coding-style.md). Fortunately you can run the [codeformatter](https://github.com/dotnet/codeformatter) tool to clean up syntax as needed.
 - Adds an appropriate amount of test coverage - See the `README.md` files in the various projects for detailed information on how to run tests locally.
 - And finally, that you have signed the CLA as mentioned above.
 
