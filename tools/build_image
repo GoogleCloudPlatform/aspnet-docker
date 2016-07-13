@@ -5,9 +5,10 @@
 set -eu
 
 # Load the common settings
-workspace="$(dirname $0)"
-source "${workspace}/common.sh"
+readonly tools="$(dirname $0)"
+readonly repo="${tools}/.."
+source "${tools}/common.sh"
 
-build_docker_image "${workspace}"
+build_docker_image "${repo}/dotnet_runtime"
 
 echo Done.

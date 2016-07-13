@@ -21,7 +21,7 @@ build_docker_image () {
     # Build the container, tagged with the runtime version.
     local runtime_tag="$(get_docker_tag ${RUNTIME_VERSION})"
     echo Building the tag ${runtime_tag}
-    docker build -t "${runtime_tag}" "$1/docker"
+    docker build -t "${runtime_tag}" "$1"
 
     # Tag the runtime version as the latest version.
     local latest_tag="$(get_docker_tag latest)"
