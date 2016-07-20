@@ -1,11 +1,12 @@
 #! /usr/bin/env bash
-# This script will run the image for the .NET runtime.
+# This script will run the image.
 
 # Exit on error
-set -o errexit
+set -eu
 
 # Load the common settings
-readonly workspace="$(dirname $0)/.."
-source "${workspace}/tools/common.sh"
+readonly tools="$(dirname $0)"
+readonly repo="${tools}/.."
+source "${tools}/common.sh"
 
 run_docker_image
