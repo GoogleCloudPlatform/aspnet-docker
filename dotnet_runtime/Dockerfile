@@ -31,6 +31,5 @@ RUN curl -SL https://dotnetcli.blob.core.windows.net/dotnet/preview/Binaries/${D
     && rm dotnet.tar.gz \
     && ln -s /usr/share/dotnet/dotnet /usr/bin/dotnet
 
-# Run the app.
-EXPOSE 8080
-ENTRYPOINT ["/app/app_engine_start"]
+# Expose the port for the app.
+EXPOSE $PORT
