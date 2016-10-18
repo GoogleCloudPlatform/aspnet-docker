@@ -3,7 +3,7 @@
 # properties furing the Docker build process.
 
 # This is an official app engine image.
-FROM gcr.io/google_appengine/debian
+FROM gcr.io/google_appengine/debian8
 
 # Install .NET Core dependencies
 RUN apt-get update \
@@ -25,7 +25,6 @@ RUN apt-get update \
 
 # Install the .NET package.
 ENV DOTNET_CORE_VERSION 1.0.0
-ENV PORT 8080
 RUN curl -SL https://dotnetcli.blob.core.windows.net/dotnet/preview/Binaries/${DOTNET_CORE_VERSION}/dotnet-debian-x64.${DOTNET_CORE_VERSION}.tar.gz --output dotnet.tar.gz \
     && mkdir -p /usr/share/dotnet \
     && tar -zxf dotnet.tar.gz -C /usr/share/dotnet \
