@@ -3,7 +3,7 @@
 
 # The current version of the runtime.
 readonly REPOSITORY=b.gcr.io/aspnet-docker
-readonly RUNTIME_VERSION=1.0.0
+readonly RUNTIME_VERSION=1.0.1
 
 # Prints out the tag to use to build the container for the given runtime.
 # Args:
