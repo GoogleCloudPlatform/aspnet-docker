@@ -35,12 +35,12 @@ push_docker_image () {
     # Pushing the versioned tag.
     local versioned_tag="$(get_docker_tag ${RUNTIME_VERSION})"
     echo Pushing ${versioned_tag}
-    gcloud docker push ${versioned_tag}
+    gcloud docker -- push ${versioned_tag}
 
     # Pushing the latest tag as well.
     local latest_tag="$(get_docker_tag latest)"
     echo Pushing ${latest_tag}
-    gcloud docker push ${latest_tag}
+    gcloud docker -- push ${latest_tag}
 }
 
 # Run the image with the given name.
