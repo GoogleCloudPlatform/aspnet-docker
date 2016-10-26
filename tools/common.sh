@@ -3,7 +3,7 @@
 
 # The current version of the runtime.
 readonly REPOSITORY=b.gcr.io/aspnet-docker
-readonly RUNTIME_VERSION=1.0.0
+readonly RUNTIME_VERSION=1.0.1
 
 # Prints out the tag to use to build the container for the given runtime.
 # Args:
@@ -35,12 +35,12 @@ push_docker_image () {
     # Pushing the versioned tag.
     local versioned_tag="$(get_docker_tag ${RUNTIME_VERSION})"
     echo Pushing ${versioned_tag}
-    gcloud docker push ${versioned_tag}
+    gcloud docker -- push ${versioned_tag}
 
     # Pushing the latest tag as well.
     local latest_tag="$(get_docker_tag latest)"
     echo Pushing ${latest_tag}
-    gcloud docker push ${latest_tag}
+    gcloud docker -- push ${latest_tag}
 }
 
 # Run the image with the given name.
