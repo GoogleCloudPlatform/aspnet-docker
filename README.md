@@ -2,13 +2,7 @@
 This repo containes the definition of the Docker images for the .NET runtime to be able to run ASP.NET Core apps on App Engine Flex. The repo contains the Dockerfile that describes the image as well as scripts to help build it.
 
 ## Building and pushing
-To help building and pushing the image, there are a set of scripts under the [tools](tools) directory in the repo.
-
-### The build_image script
-The `build_image` script builds the Docker image using the right tags.
-
-### The push_image script
-The `push_image` script pushes the Docker image to the `b.gcr.io/aspnet-docker` repository.
+The image is being built and deployed using the Google Container Builder service, a cloudbuild.yaml file is provided to do so. To build and test the image locally you will need to have Docker installed.
 
 The build of the image has been tested with Docker 1.10.
 
