@@ -1,0 +1,5 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: [ 'build', '-t', 'b.gcr.io/aspnet-docker:1.0.1', '.' ]
+images:
+- 'b.gcr.io/aspnet-docker:1.0.1'
