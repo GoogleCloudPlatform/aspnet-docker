@@ -3,9 +3,16 @@
 #   $1, the image to build.
 #   $2, repository for the resulting image.
 
+# Exit on error or undefined variable
+set -eu
+
 if [ -z "$1" ]; then
     echo "Must specify the directory of the image to build."
     echo 1
+fi
+if [ ! -f "$1/cloudbuild.yaml.inc" ]; then
+    echo "The file $1/cloudbuild.yaml.inc does not exist."
+    exit 1
 fi
 
 export REPO=$2
