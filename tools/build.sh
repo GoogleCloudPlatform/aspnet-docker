@@ -14,8 +14,8 @@ cleanup() {
 	rm -rf "$STAGE_DIR"
 }
 
-IMAGE_NAME="aspnet"
-TAG="1.0.1"
+readonly image_name="aspnet"
+readonly tag="1.0.1"
 
 export IMAGE_DIR="$1"
 
@@ -28,17 +28,17 @@ if [ ! -f "$IMAGE_DIR/cloudbuild.yaml.in" ]; then
     exit 1
 fi
 
-REPO=$2
-if [ -z "$REPO" ]; then
+readonly repo=$2
+if [ -z "$repo" ]; then
     echo "Must specify the name of the repository."
     exit 1
 fi
 
-export IMAGE="$REPO/$IMAGE_NAME:$TAG"
+export IMAGE="${repo}/${image_name}:${tag}"
 
 
 # Process the template.
-envsubst < "$IMAGE_DIR/cloudbuild.yaml.in" > "${STAGE_DIR}/cloudbuild.yaml"
+envsubst < "${IMAGE_DIR}/cloudbuild.yaml.in" > "${STAGE_DIR}/cloudbuild.yaml"
 
 # Start the build.
 # Use alpha build command since some jenkins machines are on old versions of gcloud.
