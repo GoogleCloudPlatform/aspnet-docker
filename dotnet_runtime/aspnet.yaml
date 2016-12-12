@@ -10,3 +10,7 @@ fileExistenceTests:
     path: '/usr/share/dotnet'
     isDirectory: true
     shouldExist: true
+
+licenseTests:
+  - debian: true
+    files: []
