@@ -15,7 +15,7 @@ cleanup() {
 }
 
 readonly image_name="aspnet"
-readonly tag="1.0.1"
+readonly tag="1.0.3"
 
 export IMAGE_DIR="$1"
 
