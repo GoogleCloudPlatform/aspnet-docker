@@ -11,7 +11,7 @@ RUN apt-get update \
 RUN npm install -g bower gulp
 
 RUN mkdir -p /builder
-ADD ./build_project.sh /builder
+ADD . /builder
 
 WORKDIR /workspace
 ENTRYPOINT [ "/builder/build_project.sh" ]
