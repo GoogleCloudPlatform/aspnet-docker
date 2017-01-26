@@ -2,6 +2,9 @@
 # Entry point for the builder step. Assume that the current directory
 # is the root of the project.
 
+# Clean the workspace to ensure succesfull build.
+rm -rf ./bin ./obj ./project.lock.json
+
 # Restore and package the app.
 dotnet restore
 dotnet publish -c release
