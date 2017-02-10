@@ -22,7 +22,7 @@ import sys
 import textwrap
 
 
-PROJECT_JSON_NAME='project.json'
+PROJECT_JSON_NAME = 'project.json'
 DOCKERFILE_NAME = "Dockerfile"
 DOCKERFILE_CONTENTS = textwrap.dedent(
     """\
@@ -32,6 +32,8 @@ DOCKERFILE_CONTENTS = textwrap.dedent(
     WORKDIR /app
     ENTRYPOINT [ "dotnet", "{0}.dll" ]
     """)
+PROGRAMFILES_ENV = 'ProgramFiles(x86)'
+DOTNET_TOOLS_PATH = r'Microsoft Visual Studio 14.0\Web\External'
 
 
 def _get_project_path(yaml):
@@ -52,8 +54,23 @@ def _get_project_name(path):
     return result
 
 
+def _get_tools_environment():
+    """Returns an environment suitable to invoke tools, will preturn None if the current
+    environment is good enough.
+    """
+    if PROGRAMFILES_ENV in os.environ:
+        new_env = os.environ.copy()
+        tools_path = os.path.join(os.environ[PROGRAMFILES_ENV], DOTNET_TOOLS_PATH)
+        print('Adding path to tools: %s' % tools_path)
+        new_env['PATH'] = os.environ['PATH'] + os.pathsep + tools_path
+        return new_env
+    else:
+        return None
+
+
 def _publish_project(project_root, staging):
     args = ['dotnet', 'publish', '-o', staging, '-c', 'Release']
+    env = _get_tools_environment()
     process = subprocess.Popen(args, cwd=project_root)
     result = process.wait()
     if result != 0:
