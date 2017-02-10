@@ -49,7 +49,7 @@ def _get_project_name(path):
     result = os.path.basename(base)
     if 'name' in content:
         result = content['name']
-        return result
+    return result
 
 
 def _publish_project(project_root, staging):
