@@ -58,20 +58,21 @@ def _get_tools_environment():
     """Returns an environment suitable to invoke tools, will preturn None if the current
     environment is good enough.
     """
+    new_env = None
     if PROGRAMFILES_ENV in os.environ:
-        new_env = os.environ.copy()
         tools_path = os.path.join(os.environ[PROGRAMFILES_ENV], DOTNET_TOOLS_PATH)
-        print('Adding path to tools: %s' % tools_path)
-        new_env['PATH'] = os.environ['PATH'] + os.pathsep + tools_path
-        return new_env
-    else:
-        return None
+        if os.path.isdir(tools_path):
+            print('Adding path to tools: %s' % tools_path)
+            new_env = os.environ.copy()
+            new_env['PATH'] = os.environ['PATH'] + os.pathsep + tools_path
+    return new_env
 
 
 def _publish_project(project_root, staging):
+    """Publishes the project to the staging directory."""
     args = ['dotnet', 'publish', '-o', staging, '-c', 'Release']
-    env = _get_tools_environment()
-    process = subprocess.Popen(args, cwd=project_root)
+    tools_env = _get_tools_environment()
+    process = subprocess.Popen(args, cwd=project_root, env=tools_env)
     result = process.wait()
     if result != 0:
         raise Exception('Failed to publish project')
