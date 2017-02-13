@@ -23,15 +23,6 @@ import textwrap
 
 
 PROJECT_JSON_NAME = 'project.json'
-DOCKERFILE_NAME = "Dockerfile"
-DOCKERFILE_CONTENTS = textwrap.dedent(
-    """\
-    FROM b.gcr.io/aspnet-docker/aspnet:1.0.3
-    ADD ./ /app
-    ENV ASPNETCORE_URLS=http://*:${{PORT}}
-    WORKDIR /app
-    ENTRYPOINT [ "dotnet", "{0}.dll" ]
-    """)
 PROGRAMFILES_ENV = 'ProgramFiles(x86)'
 DOTNET_TOOLS_PATH = r'Microsoft Visual Studio 14.0\Web\External'
 
@@ -78,22 +69,6 @@ def _publish_project(project_root, staging):
         raise Exception('Failed to publish project')
 
 
-def _copy_or_generate_dockerfile(project_root, name, staging):
-    src_dockerfile = os.path.join(project_root, DOCKERFILE_NAME)
-    dest_dockerfile = os.path.join(staging, DOCKERFILE_NAME)
-
-    # If the source project has a Dockerfile copy it.
-    if os.path.isfile(src_dockerfile):
-        print('Found source Dockerfile.')
-        shutil.copyfile(src_dockerfile, dest_dockerfile)
-        return
-
-    # No Dockerfile was found, create a new one.
-    contents = DOCKERFILE_CONTENTS.format(name)
-    with open(dest_dockerfile, 'wt') as out:
-        out.write(contents)
-
-
 class Project(object):
     def __init__(self, yaml):
         """Initializes the project from the yaml location."""
@@ -108,7 +83,6 @@ class Project(object):
         """Stages the project to the staging directory."""
         print('Staging to %s' % staging)
         _publish_project(self.project_root, staging)
-        _copy_or_generate_dockerfile(self.project_root, self.name, staging)
 
 
 def main(yaml, staging):
