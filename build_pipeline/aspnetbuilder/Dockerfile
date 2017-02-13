@@ -1,17 +1,10 @@
-# This Dockerfile defines the build step that restores and builds a
-# .NET Core project.
-FROM microsoft/dotnet:1.0.3-sdk-projectjson
-
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends \
-      node \
-      npm \
-    && apt-get clean
-
-RUN npm install -g bower gulp
+# This builder will ensure that the .NET Core project that was
+# published to the /workspace directory has a Dockerfile. If one
+# exists it will be used, otherwise a new one will be created.
+FROM 
 
 RUN mkdir -p /builder
 ADD . /builder
 
 WORKDIR /workspace
-ENTRYPOINT [ "/builder/build_project.sh" ]
+ENTRYPOINT [ "/builder/prepare_project.py" ]
