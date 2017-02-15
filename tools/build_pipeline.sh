@@ -15,7 +15,7 @@ readonly workspace=$(dirname $0)/..
 readonly stage_dir=$(mktemp -d .build.XXXXX)
 
 # Process the template.
-export readonly VERSION=v0.5
+export readonly VERSION=v0.6
 export readonly REPO=$1
 envsubst < "${workspace}/build_pipeline/cloudbuild.yaml.in" > "${stage_dir}/cloudbuild.yaml"
 

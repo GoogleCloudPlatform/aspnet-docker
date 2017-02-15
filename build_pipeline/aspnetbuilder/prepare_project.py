@@ -4,29 +4,20 @@
 This script will make any necessary transformation into the published
 directory for the project so it can be wrapped up into a Docker image.
 
+It is assumed that the current directory is the published directory.
+
 """
 
-from __future__ import print_function
-
-import argparse
-import json
+import glob
 import os
-import shutil
 import sys
 import textwrap
 
-# Parser for the arguments for the program.
-parser = argparse.ArgumentParser()
-parser.add_argument('-s', '--source',
-                    help='The source directory for the project.',
-                    required=True)
-parser.add_argument('-p', '--published',
-                    help='The directory where the project was published.',
-                    required=True)
 
-
-PROJECT_NAME = "project.json"
-DOCKERFILE_NAME = "Dockerfile"
+ASSEMBLY_NAME_TEMPLATE = '{0}.dll'
+DEPS_PATTERN = '*.deps.json'
+DEPS_EXTENSION = '.deps.json'
+DOCKERFILE_NAME = 'Dockerfile'
 DOCKERFILE_CONTENTS = textwrap.dedent(
     """\
     FROM b.gcr.io/aspnet-docker/aspnet:1.0.3
@@ -37,45 +28,65 @@ DOCKERFILE_CONTENTS = textwrap.dedent(
     """)
 
 
-def get_project_name(project_path):
-    with open(project_path, 'rt') as src:
-        content = json.load(src)
+def get_project_assembly_name(deps_path):
+    """Returns the name of the entrypoint assembly given the .deps.json
+    file name.
 
-    result = 'workspace'
-    if 'name' in content:
-        result = content['name']
-    return result
+    Args:
+        deps_path: The path to the .deps.json file for the project.
+
+    Returns:
+        The name of the entry point assembly.
+    """
+    return deps_path[:-len(DEPS_EXTENSION)]
 
 
-def copy_or_create_dockerfile(project_root, published_root):
-    project_path = os.path.join(project_root, PROJECT_NAME)
-    src_dockerfile_path = os.path.join(project_root, DOCKERFILE_NAME)
-    dest_dockerfile_path = os.path.join(published_root, DOCKERFILE_NAME)
+def get_deps_path():
+    """Finds the .deps.json file for the project.
 
-    # Validate that this is indeed a .NET Core app project directory.
-    if not os.path.isfile(project_path):
-        print('No project.json found')
-        sys.exit(1)
+    Looks for the .deps.json file for the project in the current
+    directory, there should be only one such file per published
+    project.
 
-    # If a Dockerfile already exists in the project, use it.
-    if os.path.isfile(src_dockerfile_path):
-        print('Found source Dockerfile.')
-        shutil.copyfile(src_dockerfile_path, dest_dockerfile_path)
+    Returns:
+        The path to the .deps.json file for the project.
+    """
+    files = glob.glob(DEPS_PATTERN)
+    if len(files) != 1:
         return None
-
-    # Need to create the Dockerfile, we need to get the name of the
-    # project to use.
-    name = get_project_name(project_path)
-    contents = DOCKERFILE_CONTENTS.format(name)
-    with open(dest_dockerfile_path, 'wt') as out:
-        out.write(contents)
+    return files[0]
 
 
 def main():
-    copy_or_create_dockerfile(params.source, params.published)
+    """Ensures that a Dockerfile exists in the current directory.
+
+    Assumest that the current directory is set to the root of the
+    project's published (staged) directory. This also assumes that a
+    .deps.json file exists in this directory with the same name as the
+    main assembly for the project.
+
+    """
+    if os.path.isfile(DOCKERFILE_NAME):
+        print 'Dockerfile already exists.'
+        return
+
+    deps_path = get_deps_path()
+    if deps_path is None:
+        print 'No .deps.json file found in this ASP.NET Core project.'
+        sys.exit(1)
+    project_name = get_project_assembly_name(deps_path)
+    assembly_name = ASSEMBLY_NAME_TEMPLATE.format(project_name)
+    if not os.path.isfile(assembly_name):
+        print 'Cannot find entry point assembly %s for ASP.NET Core project' % assembly_name
+        sys.exit(1)
+
+    # Need to create the Dockerfile, we need to get the name of the
+    # project to use.
+    contents = DOCKERFILE_CONTENTS.format(project_name)
+    with open(DOCKERFILE_NAME, 'wt') as out:
+        out.write(contents)
 
 
 # Start the script.
 if __name__ == '__main__':
-    params = parser.parse_args()
     main()
