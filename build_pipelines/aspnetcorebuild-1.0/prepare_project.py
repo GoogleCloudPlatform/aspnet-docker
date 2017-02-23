@@ -20,7 +20,7 @@ DEPS_EXTENSION = '.deps.json'
 DOCKERFILE_NAME = 'Dockerfile'
 DOCKERFILE_CONTENTS = textwrap.dedent(
     """\
-    FROM gcr.io/google-appengine/aspnetcore:1.0.3
+    FROM gcr.io/google-appengine/aspnetcore@sha256:a5cb3f4a9be727ed449771d8018f29696a53bf9116a94b81c3d7719cb97b99af
     ADD ./ /app
     ENV ASPNETCORE_URLS=http://*:${{PORT}}
     WORKDIR /app
