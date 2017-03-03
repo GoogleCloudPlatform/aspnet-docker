@@ -2,8 +2,8 @@
 This repo containes the definition of the Docker images for the .NET runtime to be able to run ASP.NET Core apps on App Engine Flex as well as the runtime builder which will generate the necessary `Dockerfile` to build ASP.NET Core apps pushed to App Engine Flex.
 
 The repo is divided in two sections:
-* The [runtimes]() section, which will contain the definition for all of the supported .NET Core runtimes. Currently only the 1.0.x (or LTS) is supported.
-* The [build_pipelines]() section which contains the definition for the runtime builders associated with the various runtimes. Currently onthe 1.0 version is supported.
+* The [runtimes](./runtimes) section, which will contain the definition for all of the supported .NET Core runtimes. Currently only the 1.0.x (or LTS) is supported.
+* The [build_pipelines](./build_pipeline) section which contains the definition for the runtime builders associated with the various runtimes. Currently onthe 1.0 version is supported.
 
 ## The runtimes
 As mentioned before only the .NET Core 1.0.x (LTS branch) is supported at the moment, so only that runtime is defined.
