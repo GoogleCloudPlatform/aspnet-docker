@@ -25,7 +25,7 @@ RUN apt-get update \
 
 # Install the package.
 RUN mkdir -p /usr/share/dotnet && \
-    curl -sL https://storage.googleapis.com/aspnet-docker-deps/dotnet-debian-x64.1.0.3.tar.gz | tar -xz -C /usr/share/dotnet/ && \
+    curl -sL https://storage.googleapis.com/aspnet-docker-deps/dotnet-debian-x64.1.0.4.tar.gz | tar -xz -C /usr/share/dotnet/ && \
     ln -s /usr/share/dotnet/dotnet /usr/bin/dotnet
 
 # Expose the port for the app.
