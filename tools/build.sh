@@ -53,4 +53,4 @@ export readonly REPO=$2
 envsubst < "${cloudbuild_template}" > "${cloudbuild_expanded}"
 
 # Start the build.
-gcloud alpha container builds create "$1" --config="${cloudbuild_expanded}"
+gcloud beta container builds submit "$1" --config="${cloudbuild_expanded}"
