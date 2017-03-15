@@ -23,10 +23,19 @@ It is assumed that the current directory is the published directory.
 
 """
 
+import argparse
 import glob
 import os
 import sys
 import textwrap
+
+
+# Arguments for the builder.
+PARSER = argparse.ArgumentParser()
+PARSER.add_argument('-r', '--runtime-image',
+                    dest='runtime_image',
+                    help='The runtime image to use for the Dockerfile.',
+                    required=True)
 
 
 ASSEMBLY_NAME_TEMPLATE = '{0}.dll'
@@ -35,11 +44,11 @@ DEPS_EXTENSION = '.deps.json'
 DOCKERFILE_NAME = 'Dockerfile'
 DOCKERFILE_CONTENTS = textwrap.dedent(
     """\
-    FROM gcr.io/google-appengine/aspnetcore@sha256:a5cb3f4a9be727ed449771d8018f29696a53bf9116a94b81c3d7719cb97b99af
+    FROM {0}
     ADD ./ /app
     ENV ASPNETCORE_URLS=http://*:${{PORT}}
     WORKDIR /app
-    ENTRYPOINT [ "dotnet", "{0}.dll" ]
+    ENTRYPOINT [ "dotnet", "{1}.dll" ]
     """)
 
 
@@ -72,7 +81,7 @@ def get_deps_path():
     return files[0]
 
 
-def main():
+def main(params):
     """Ensures that a Dockerfile exists in the current directory.
 
     Assumest that the current directory is set to the root of the
@@ -97,11 +106,11 @@ def main():
 
     # Need to create the Dockerfile, we need to get the name of the
     # project to use.
-    contents = DOCKERFILE_CONTENTS.format(project_name)
+    contents = DOCKERFILE_CONTENTS.format(params.runtime_image, project_name)
     with open(DOCKERFILE_NAME, 'wt') as out:
         out.write(contents)
 
 
 # Start the script.
 if __name__ == '__main__':
-    main()
+    main(PARSER.parse_args())
