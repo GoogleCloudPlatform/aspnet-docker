@@ -90,9 +90,15 @@ def main(params):
     main assembly for the project.
 
     """
+
+    # The app cannot specify it's own Dockerfile when building with
+    # the aspnetcore image, the builder is the one that has to build
+    # it. To avoid any confusion the builder will fail with this
+    # error.
     if os.path.isfile(DOCKERFILE_NAME):
-        print 'Dockerfile already exists.'
-        return
+        print ('A Dockerfile already exists in the workspace, this Dockerfile ' +
+               'cannot be used with the aspnetcore runtime.')
+        sys.exit(1)
 
     deps_path = get_deps_path()
     if deps_path is None:
