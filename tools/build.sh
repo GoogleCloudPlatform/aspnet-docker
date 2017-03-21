@@ -48,7 +48,11 @@ cleanup() {
 }
 
 # Process the template.
-export readonly VERSION=$(date +"%Y-%m-%d_%H_%M")
+if [ -z "${TAG}" ]; then
+  TAG=$(date +"%Y-%m-%d_%H_%M")
+fi
+
+export readonly VERSION="${TAG}"
 export readonly REPO=$2
 envsubst < "${cloudbuild_template}" > "${cloudbuild_expanded}"
 
