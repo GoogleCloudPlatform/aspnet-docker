@@ -30,25 +30,17 @@ import sys
 import textwrap
 
 
-# Arguments for the builder.
-PARSER = argparse.ArgumentParser()
-PARSER.add_argument('-r', '--runtime-image',
-                    dest='runtime_image',
-                    help='The runtime image to use for the Dockerfile.',
-                    required=True)
-
-
 ASSEMBLY_NAME_TEMPLATE = '{0}.dll'
 DEPS_PATTERN = '*.deps.json'
 DEPS_EXTENSION = '.deps.json'
 DOCKERFILE_NAME = 'Dockerfile'
 DOCKERFILE_CONTENTS = textwrap.dedent(
     """\
-    FROM {0}
+    FROM {runtime_image}
     ADD ./ /app
     ENV ASPNETCORE_URLS=http://*:${{PORT}}
     WORKDIR /app
-    ENTRYPOINT [ "dotnet", "{1}.dll" ]
+    ENTRYPOINT [ "dotnet", "{dll_name}.dll" ]
     """)
 
 
@@ -112,11 +104,16 @@ def main(params):
 
     # Need to create the Dockerfile, we need to get the name of the
     # project to use.
-    contents = DOCKERFILE_CONTENTS.format(params.runtime_image, project_name)
+    contents = DOCKERFILE_CONTENTS.format(runtime_image=params.runtime_image, dll_name=project_name)
     with open(DOCKERFILE_NAME, 'wt') as out:
         out.write(contents)
 
 
 # Start the script.
 if __name__ == '__main__':
+    PARSER = argparse.ArgumentParser()
+    PARSER.add_argument('-r', '--runtime-image',
+                        dest='runtime_image',
+                        help='The runtime image to use for the Dockerfile.',
+                        required=True)
     main(PARSER.parse_args())
