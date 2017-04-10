@@ -48,7 +48,7 @@ cleanup() {
 }
 
 # Process the template.
-if [ -z "${TAG}" ]; then
+if [ -z "${TAG:-}" ]; then
   TAG=$(date +"%Y-%m-%d_%H_%M")
 fi
 
