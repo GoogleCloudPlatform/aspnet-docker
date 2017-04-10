@@ -25,6 +25,44 @@ The image is being built and deployed using the Google Container Builder service
 
 The build of the image has been tested with Docker 1.10.
 
+## Using the image to deploy ASP.NET Core apps
+This image is initially designed and tested to run apps on App Engine Flex but it can also be used to run .NET Core apps on other Docker hosts such as Container Engine or just plain Docker.
+
+The image is designed to run self-contained .NET Core apps, which means that the app must be published before you can build the app's image. To publish the app run the following command at the root of your app's project:
+```bash
+dotnet publish -c Release
+```
+
+This will produce a directory, typically under `bin/release/netcoreapp1.0/publish/`. This is the directory where the `Dockerfile` for app's image should be placed.
+
+### Using the runtime image in App Engine Flex
+Typically you wont need to produce a `Dockerfile` when deploying ASP.NET Core apps to App Engine Flex, the deployment process will generate one for you when you specify the `aspnetcore` runtime in your `app.yaml` file. The minimal `app.yaml` file looks like this:
+```yaml
+runtime: aspnetcore
+env: flex
+```
+
+You should copy the `app.yaml` file to the publish directory for your app and then to deploy you run the comand:
+```bash
+gcloud beta app deploy <path to app.yaml>
+```
+
+During the publishing process a Dockerfile will be generated and your app will be correctly packaged.
+
+### Using the runtime image in other environments
+The runtime image can be used as the base image for an ASP.NET Core apps and run in other environments suck as Google Container Engine (GKE) and any other Docker host.
+
+To create a Docker image for your app create a `Dockerfile` that looks like this:
+```Dockerfile
+FROM gcr.io/google-appengine/aspnetcore:1.0
+ADD ./ /app
+ENV ASPNETCORE_URLS=http://*:${PORT}
+WORKDIR /app
+ENTRYPOINT [ "dotnet", "<dll_name>.dll" ]
+```
+
+Replace the `<dll_name>` with the name of your project, that should start your app listening on port 8080.
+
 ## Support
 To get help on using the aspnet runtime, please log an issue in this repo
 
