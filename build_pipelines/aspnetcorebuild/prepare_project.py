@@ -43,6 +43,7 @@ DOCKERFILE_CONTENTS = textwrap.dedent(
     WORKDIR /app
     ENTRYPOINT [ "dotnet", "{dll_name}.dll" ]
     """)
+NETCORE_APP_PREFIX = 'microsoft.netcore.app/'
 
 
 def get_project_assembly_name(deps_path):
@@ -74,27 +75,24 @@ def get_deps_path():
     return files[0]
 
 
-def parse_runtime_name(name):
-    """Parses a runtime name and extracts the version number.
+def parse_runtime_version(libraries):
+    """Looks for the runtime library and parses the version.
+
+    Looks for the special runtime pacakge and obtains the version
+    number from it.
 
     Returns:
-        The version number for the runtime.
+        The version number for the runtime used by the app.
     """
-    parts = name.split(',')
-    if len(parts) != 2:
-        return None
-    if parts[0] != '.NETCoreApp':
-        return None
-
-    version = parts[1].split('=')
-    if len(version) != 2:
-        return None
-    if version[0] != 'Version':
-        return None
-    return version[1]
+    keys = libraries.keys()
+    for key in keys:
+        if key.startswith(NETCORE_APP_PREFIX):
+            return key[len(NETCORE_APP_PREFIX):]
+    return None
 
 
 def get_runtime_version(deps_path):
+
     """Determines the target of the .NET Core runtime needed by the app.
 
     Reads the given .deps.json file and determines the version of the
@@ -106,8 +104,8 @@ def get_runtime_version(deps_path):
     with open(deps_path, 'r') as src:
         content = json.load(src)
         try:
-            name = content["runtimeTarget"]["name"]
-            return parse_runtime_name(name)
+            libraries = content['libraries']
+            return parse_runtime_version(libraries)
         except KeyError:
             return None
 
