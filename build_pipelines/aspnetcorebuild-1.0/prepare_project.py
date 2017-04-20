@@ -25,6 +25,7 @@ It is assumed that the current directory is the published directory.
 
 import argparse
 import glob
+import json
 import os
 import sys
 import textwrap
@@ -42,6 +43,7 @@ DOCKERFILE_CONTENTS = textwrap.dedent(
     WORKDIR /app
     ENTRYPOINT [ "dotnet", "{dll_name}.dll" ]
     """)
+DOTNETCORE_1_0 = 'v1.0'
 
 
 def get_project_assembly_name(deps_path):
@@ -73,6 +75,44 @@ def get_deps_path():
     return files[0]
 
 
+def parse_runtime_name(name):
+    """Parses a runtime name and extracts the version number.
+
+    Returns:
+        The version number for the runtime.
+    """
+    parts = name.split(',')
+    if len(parts) != 2:
+        return None
+    if parts[0] != '.NETCoreApp':
+        return None
+
+    version = parts[1].split('=')
+    if len(version) != 2:
+        return None
+    if version[0] != 'Version':
+        return None
+    return version[1]
+
+
+def get_runtime_version(deps_path):
+    """Determines the target of the .NET Core runtime needed by the app.
+
+    Reads the given .deps.json file and determines the version of the
+    runtime used by the app.
+
+    Returns:
+        The version of the runtime used by the app.
+    """
+    with open(deps_path, 'r') as src:
+        content = json.load(src)
+        try:
+            name = content["runtimeTarget"]["name"]
+            return parse_runtime_name(name)
+        except KeyError:
+            return None
+
+
 def main(params):
     """Ensures that a Dockerfile exists in the current directory.
 
@@ -96,6 +136,16 @@ def main(params):
     if deps_path is None:
         print 'No .deps.json file found in this ASP.NET Core project.'
         sys.exit(1)
+
+    version = get_runtime_version(deps_path)
+    if version is None:
+        print "No valid version found for the app or it is not a supported app."
+        sys.exit(1)
+    if version != DOTNETCORE_1_0:
+        print ('This runtime supports only .NET Core v1.0 apps, the app targets ' +
+               '.NET Core {0}.'.format(version))
+        sys.exit(1)
+
     project_name = get_project_assembly_name(deps_path)
     assembly_name = ASSEMBLY_NAME_TEMPLATE.format(project_name)
     if not os.path.isfile(assembly_name):
