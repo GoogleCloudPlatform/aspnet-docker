@@ -36,7 +36,7 @@ dotnet publish -c Release
 This will produce a directory, typically under `bin/release/netcoreapp1.0/publish/`. This is the directory where the `Dockerfile` for app's image should be placed.
 
 ### Using the runtime image in App Engine Flex
-Typically you wont need to produce a `Dockerfile` when deploying ASP.NET Core apps to App Engine Flex, the deployment process will generate one for you when you specify the `aspnetcore` runtime in your `app.yaml` file. The minimal `app.yaml` file looks like this:
+Typically you won't need to produce a `Dockerfile` when deploying ASP.NET Core apps to App Engine Flex, the deployment process will generate one for you when you specify the `aspnetcore` runtime in your `app.yaml` file. The minimal `app.yaml` file looks like this:
 ```yaml
 runtime: aspnetcore
 env: flex
@@ -50,7 +50,7 @@ gcloud beta app deploy <path to app.yaml>
 During the publishing process a Dockerfile will be generated and your app will be correctly packaged.
 
 ### Using the runtime image in other environments
-The runtime image can be used as the base image for an ASP.NET Core apps and run in other environments suck as Google Container Engine (GKE) and any other Docker host.
+The runtime image can be used as the base image for an ASP.NET Core apps and run in other environments such as Google Container Engine (GKE) and any other Docker host.
 
 To create a Docker image for your app create a `Dockerfile` that looks like this:
 ```Dockerfile
