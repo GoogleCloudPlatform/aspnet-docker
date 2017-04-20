@@ -162,7 +162,7 @@ def main(params):
         print 'No valid version found for the app or it is not a supported app.'
         sys.exit(1)
     if not version in version_map:
-        print 'Unsopported .NET Core runtime version {0}.'.format(version)
+        print '.NET Core runtime version {0} is not supported at this time.'.format(version)
         sys.exit(1)
     base_image = version_map[version]
 
