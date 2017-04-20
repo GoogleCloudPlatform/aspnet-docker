@@ -43,7 +43,6 @@ DOCKERFILE_CONTENTS = textwrap.dedent(
     WORKDIR /app
     ENTRYPOINT [ "dotnet", "{dll_name}.dll" ]
     """)
-DOTNETCORE_1_0 = 'v1.0'
 
 
 def get_project_assembly_name(deps_path):
@@ -113,7 +112,29 @@ def get_runtime_version(deps_path):
             return None
 
 
+def parse_version_map(version_map):
+    """Produces a dictionary of version to Docker tag from the map.
+
+    Parses the given version_map and produces a dictionary that maps
+    all of the supported versions to the Docker images for those
+    versions.
+
+    Returns:
+        The dictionary with the versions and Docker images.
+    """
+    result = {}
+    for entry in version_map:
+        try:
+            key, value = entry.split('=')
+            result[key] = value
+        except ValueError:
+            print 'Invalid version map entry {0}'.format(entry)
+            sys.exit(1)
+    return result
+
+
 def main(params):
+
     """Ensures that a Dockerfile exists in the current directory.
 
     Assumest that the current directory is set to the root of the
@@ -122,6 +143,7 @@ def main(params):
     main assembly for the project.
 
     """
+    version_map = parse_version_map(params.version_map)
 
     # The app cannot specify it's own Dockerfile when building with
     # the aspnetcore image, the builder is the one that has to build
@@ -139,12 +161,12 @@ def main(params):
 
     version = get_runtime_version(deps_path)
     if version is None:
-        print "No valid version found for the app or it is not a supported app."
+        print 'No valid version found for the app or it is not a supported app.'
         sys.exit(1)
-    if version != DOTNETCORE_1_0:
-        print ('This runtime supports only .NET Core v1.0 apps, the app targets ' +
-               '.NET Core {0}.'.format(version))
+    if not version in version_map:
+        print 'Unsopported .NET Core runtime version {0}.'.format(version)
         sys.exit(1)
+    base_image = version_map[version]
 
     project_name = get_project_assembly_name(deps_path)
     assembly_name = ASSEMBLY_NAME_TEMPLATE.format(project_name)
@@ -154,7 +176,7 @@ def main(params):
 
     # Need to create the Dockerfile, we need to get the name of the
     # project to use.
-    contents = DOCKERFILE_CONTENTS.format(runtime_image=params.runtime_image, dll_name=project_name)
+    contents = DOCKERFILE_CONTENTS.format(runtime_image=base_image, dll_name=project_name)
     with open(DOCKERFILE_NAME, 'wt') as out:
         out.write(contents)
 
@@ -162,8 +184,9 @@ def main(params):
 # Start the script.
 if __name__ == '__main__':
     PARSER = argparse.ArgumentParser()
-    PARSER.add_argument('-r', '--runtime-image',
-                        dest='runtime_image',
-                        help='The runtime image to use for the Dockerfile.',
+    PARSER.add_argument('-m', '--version-map',
+                        dest='version_map',
+                        help='The mapping of supported versions to images.',
+                        nargs='+',
                         required=True)
     main(PARSER.parse_args())
