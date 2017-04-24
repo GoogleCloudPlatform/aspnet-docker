@@ -29,6 +29,7 @@ import json
 import os
 import sys
 import textwrap
+from distutils.version import StrictVersion
 
 
 ASSEMBLY_NAME_TEMPLATE = '{0}.dll'
@@ -75,7 +76,7 @@ def get_deps_path():
     return files[0]
 
 
-def parse_runtime_version(libraries):
+def parse_runtime_minor_version(libraries):
     """Looks for the runtime library and parses the version.
 
     Looks for the special runtime pacakge and obtains the version
@@ -91,8 +92,7 @@ def parse_runtime_version(libraries):
     return None
 
 
-def get_runtime_version(deps_path):
-
+def get_runtime_minor_version(deps_path):
     """Determines the target of the .NET Core runtime needed by the app.
 
     Reads the given .deps.json file and determines the version of the
@@ -105,9 +105,58 @@ def get_runtime_version(deps_path):
         content = json.load(src)
         try:
             libraries = content['libraries']
-            return parse_runtime_version(libraries)
+            return parse_runtime_minor_version(libraries)
         except KeyError:
             return None
+
+
+def get_major_version(version):
+    """Returns the major version of a parsed version.
+
+    Args:
+        version: A string with a .NET Core version.
+
+    Returns:
+        A string with the major version.
+    """
+    parsed_version = version.split('.')
+    return '.'.join(parsed_version[0:2])
+
+
+class BaseImage(object):
+    """The information about the base image for a given .NET Core version."""
+
+    def __init__(self, version, image):
+        """Initializes the BaseImage object.
+
+        Args:
+            version: A string with the .NET Core version.
+            image: A Docker image name
+        """
+        self.version = version
+        self.major_version = get_major_version(self.version)
+        self.image = image
+
+    def supports(self, version):
+        """Determins if this image can run the requested version.
+
+        This method determines if this base image can run the
+        requested .NET Core version. It will do so by:
+        * Comparing version major verison numbers, major versions are
+          not backwards compatible.
+        * Within a major version an older minor version cannot run an
+          app built against a newer minor version.
+
+        Args:
+            version: A string with the requested version to compare.
+
+        Returns:
+            True if the base image can support the requested version,
+            False otherwise.
+        """
+        major_version = get_major_version(version)
+        return (self.major_version == major_version and
+                StrictVersion(self.version) >= StrictVersion(version))
 
 
 def parse_version_map(version_map):
@@ -120,19 +169,47 @@ def parse_version_map(version_map):
     Returns:
         The dictionary with the versions and Docker images.
     """
-    result = {}
+    result = []
     for entry in version_map:
         try:
             key, value = entry.split('=')
-            result[key] = value
+            result.append(BaseImage(key, value))
         except ValueError:
             print 'Invalid version map entry {0}'.format(entry)
             sys.exit(1)
+    # Returns the list sorted in descending order, this way the latest
+    # minor version is always available first.
+    result.sort(key=lambda x: x.version, reverse=True)
     return result
 
 
-def main(params):
+def get_base_image(version_map, version):
+    """Selects the appropriate base image from the version map.
 
+    This function takes into account the .NET Core versioning story to
+    determine the appropriate base image for the given version. It
+    will select from within the same major version and only if the
+    minor version is >= than the required image.
+
+    Note that this function assumes that the version_map is sorted
+    according to the priority order of the versions.
+
+    Args:p
+        version_map: The container of all supported minor versions.
+        version: The requested version string.
+
+    Returns:
+        The Docker image to use as the base image, None if no image
+        could be found.
+
+    """
+    for entry in version_map:
+        if entry.supports(version):
+            return entry
+    return None
+
+
+def main(params):
     """Ensures that a Dockerfile exists in the current directory.
 
     Assumest that the current directory is set to the root of the
@@ -154,27 +231,28 @@ def main(params):
 
     deps_path = get_deps_path()
     if deps_path is None:
-        print 'No .deps.json file found in this ASP.NET Core project.'
+        print 'No .deps.json file found for the app'
         sys.exit(1)
 
-    version = get_runtime_version(deps_path)
-    if version is None:
-        print 'No valid version found for the app or it is not a supported app.'
+    minor_version = get_runtime_minor_version(deps_path)
+    if minor_version is None:
+        print ('No valid .NET Core runtime version found for the app or it is not a ' +
+               'supported app.')
         sys.exit(1)
-    if not version in version_map:
-        print '.NET Core runtime version {0} is not supported at this time.'.format(version)
+
+    base_image = get_base_image(version_map, minor_version)
+    if base_image is None:
+        print ('The app requiers .NET Core runtime version {0} which is not supported at ' +
+               'this time.').format(minor_version)
         sys.exit(1)
-    base_image = version_map[version]
 
     project_name = get_project_assembly_name(deps_path)
     assembly_name = ASSEMBLY_NAME_TEMPLATE.format(project_name)
     if not os.path.isfile(assembly_name):
-        print 'Cannot find entry point assembly %s for ASP.NET Core project' % assembly_name
+        print 'Cannot find entry point assembly {0} for ASP.NET Core project'.format(assembly_name)
         sys.exit(1)
 
-    # Need to create the Dockerfile, we need to get the name of the
-    # project to use.
-    contents = DOCKERFILE_CONTENTS.format(runtime_image=base_image, dll_name=project_name)
+    contents = DOCKERFILE_CONTENTS.format(runtime_image=base_image.image, dll_name=project_name)
     with open(DOCKERFILE_NAME, 'wt') as out:
         out.write(contents)
 
