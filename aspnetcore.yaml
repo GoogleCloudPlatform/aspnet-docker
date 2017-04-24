@@ -1,6 +1,7 @@
 steps:
-- name: 'gcr.io/gcp-runtimes/aspnetcorebuild-1.0:latest'
-  args: [ '--runtime-image', 'gcr.io/google-appengine/aspnetcore:1.0' ]
+- name: 'gcr.io/gcp-runtimes/aspnetcorebuild:latest'
+  args: [ '--version-map',
+          '1.0.4=gcr.io/google-appengine/aspnetcore:1.0.4' ]
 - name: gcr.io/cloud-builders/docker:latest
   args: [ 'build', '-t', '$_OUTPUT_IMAGE', '--no-cache', '--pull', '.' ]
 images:
