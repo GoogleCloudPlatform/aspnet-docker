@@ -76,22 +76,6 @@ def get_deps_path():
     return files[0]
 
 
-def parse_runtime_minor_version(libraries):
-    """Looks for the runtime library and parses the version.
-
-    Looks for the special runtime pacakge and obtains the version
-    number from it.
-
-    Returns:
-        The version number for the runtime used by the app.
-    """
-    keys = libraries.keys()
-    for key in keys:
-        if key.startswith(NETCORE_APP_PREFIX):
-            return key[len(NETCORE_APP_PREFIX):]
-    return None
-
-
 def get_runtime_minor_version(deps_path):
     """Determines the target of the .NET Core runtime needed by the app.
 
@@ -105,7 +89,9 @@ def get_runtime_minor_version(deps_path):
         content = json.load(src)
         try:
             libraries = content['libraries']
-            return parse_runtime_minor_version(libraries)
+            for key in libraries:
+                if key.startswith(NETCORE_APP_PREFIX):
+                    return key[len(NETCORE_APP_PREFIX):]
         except KeyError:
             return None
 
@@ -138,7 +124,7 @@ class BaseImage(object):
         self.image = image
 
     def supports(self, version):
-        """Determins if this image can run the requested version.
+        """Determines if this image can run the requested version.
 
         This method determines if this base image can run the
         requested .NET Core version. It will do so by:
@@ -160,14 +146,15 @@ class BaseImage(object):
 
 
 def parse_version_map(version_map):
-    """Produces a dictionary of version to Docker tag from the map.
+    """Produces a list of version to Docker tag from the map.
 
-    Parses the given version_map and produces a dictionary that maps
-    all of the supported versions to the Docker images for those
-    versions.
+    Parses the given version_map and produces a list that contains all
+    of the supported .NET Core runtime versions and their
+    corresponding Docker images.
 
     Returns:
-        The dictionary with the versions and Docker images.
+        The list with the supported versions of .NET Core runtime.
+
     """
     result = []
     for entry in version_map:
