@@ -229,7 +229,7 @@ def main(params):
 
     base_image = get_base_image(version_map, minor_version)
     if base_image is None:
-        print ('The app requiers .NET Core runtime version {0} which is not supported at ' +
+        print ('The app requires .NET Core runtime version {0} which is not supported at ' +
                'this time.').format(minor_version)
         sys.exit(1)
 
