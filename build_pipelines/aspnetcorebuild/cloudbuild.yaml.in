@@ -1,0 +1,5 @@
+steps:
+- name: gcr.io/cloud-builders/docker
+  args: [ 'build', '-t', '${REPO}/aspnetcorebuild:${VERSION}', '--no-cache', '--pull', '.' ]
+images:
+  ['${REPO}/aspnetcorebuild:${VERSION}']
