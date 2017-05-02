@@ -1,7 +1,7 @@
 steps:
 - name: gcr.io/cloud-builders/docker
-  args: [ 'build', '-t', '${REPO}/aspnetcore:${VERSION}', '--no-cache', '--pull', '.' ]
+  args: [ 'build', '-t', '${REPO}/aspnetcore:1.0.3-${VERSION}', '--no-cache', '--pull', '.' ]
 - name: gcr.io/gcp-runtimes/structure_test
-  args: ['-i', '${REPO}/aspnetcore:${VERSION}', '--config', '/workspace/aspnet.yaml', '-v']
+  args: ['-i', '${REPO}/aspnetcore:1.0.3-${VERSION}', '--config', '/workspace/aspnet.yaml', '-v']
 images:
-  ['${REPO}/aspnetcore:${VERSION}']
+  ['${REPO}/aspnetcore:1.0.3-${VERSION}']
