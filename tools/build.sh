@@ -31,21 +31,33 @@ if [ -z "${2:-}" ]; then
     exit 1
 fi
 
-readonly cloudbuild_template="$1/cloudbuild.yaml"
-if [ ! -f "${cloudbuild_template}" ]; then
-    echo "The file ${cloudbuild_template} does not exist."
-    exit 1
-fi
+readonly workspace=$(dirname $0)/..
+readonly image=$(basename $1)
+readonly image_name=$(echo -n ${image} | cut -f 1 -d -)
 
 # Process the template.
 if [ -z "${TAG:-}" ]; then
   TAG=$(date +"%Y-%m-%d_%H_%M")
 fi
 
-export readonly VERSION="${TAG}"
-export readonly REPO=$2
+if [[ ${image} == *-* ]]; then
+    readonly image_version=$(echo -n ${image} | cut -f 2 -d -)-${TAG}
+else
+    readonly image_version=${TAG}
+fi
+
+readonly image_tag=$2/${image_name}:${image_version}
+echo "Building ${image_tag}"
+
+# If the directory specify a build file, use that instead.
+if [ -f $1/cloudbuild.yaml ]; then
+    echo "Using directory specific $1/cloudbuild.yaml"
+    readonly cloudbuild_path="$1/cloudbuild.yaml"
+else
+    readonly cloudbuild_path="${workspace}/tools/cloudbuild.yaml"
+fi
 
 # Start the build.
 gcloud beta container builds submit "$1" \
-    --config="${cloudbuild_template}" \
-    --substitutions _VERSION=${VERSION},_REPO=${REPO}
+    --config="${cloudbuild_path}" \
+    --substitutions _OUTPUT_IMAGE=${image_tag}
