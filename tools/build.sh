@@ -31,21 +31,11 @@ if [ -z "${2:-}" ]; then
     exit 1
 fi
 
-readonly cloudbuild_template="$1/cloudbuild.yaml.in"
+readonly cloudbuild_template="$1/cloudbuild.yaml"
 if [ ! -f "${cloudbuild_template}" ]; then
     echo "The file ${cloudbuild_template} does not exist."
     exit 1
 fi
-
-# Stage dir for the build.
-readonly stage_dir=$(mktemp -d .build.XXXXX)
-readonly cloudbuild_expanded="${stage_dir}/cloudbuild.yaml"
-
-# Ensure cleanup of the stage dir.
-trap cleanup 0 1 2 3 13 15 # EXIT HUP INT QUIT PIPE TERM
-cleanup() {
-	rm -rf "${stage_dir}"
-}
 
 # Process the template.
 if [ -z "${TAG:-}" ]; then
@@ -54,7 +44,8 @@ fi
 
 export readonly VERSION="${TAG}"
 export readonly REPO=$2
-envsubst < "${cloudbuild_template}" > "${cloudbuild_expanded}"
 
 # Start the build.
-gcloud beta container builds submit "$1" --config="${cloudbuild_expanded}"
+gcloud beta container builds submit "$1" \
+    --config="${cloudbuild_template}" \
+    --substitutions _VERSION=${VERSION},_REPO=${REPO}
