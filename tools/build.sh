@@ -51,11 +51,11 @@ echo "Building ${image_tag}"
 
 # If the directory specify a build file, use that instead.
 if [ -f $1/cloudbuild.yaml ]; then
-    echo "Using directory specific $1/cloudbuild.yaml"
     readonly cloudbuild_path="$1/cloudbuild.yaml"
 else
     readonly cloudbuild_path="${workspace}/tools/cloudbuild.yaml"
 fi
+echo "Building with ${cloudbuild_path}"
 
 # Start the build.
 gcloud beta container builds submit "$1" \
