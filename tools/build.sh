@@ -26,9 +26,13 @@ if [ -z "${1:-}" ]; then
     exit 1
 fi
 
+# If no repo is given get it from the ambient project.
 if [ -z "${2:-}" ]; then
-    echo "Must specify the name of the repo."
-    exit 1
+    readonly project_id=$(gcloud config list core/project --format="csv[no-heading](core)" | cut -f 2 -d '=')
+    readonly repo=gcr.io/${project_id}
+    echo "Warning: Using repo ${repo} from ambient project."
+else
+    readonly repo=$2
 fi
 
 readonly workspace=$(dirname $0)/..
@@ -45,11 +49,11 @@ fi
 # will extract the name, and optional version.
 readonly image_name=$(echo -n ${image} | cut -f 1 -d -)
 if [[ ${image} == *-* ]]; then
-    readonly image_version=$(echo -n ${image} | cut -f 2 -d -)-${TAG}
+    readonly image_version=$(echo -n ${image} | cut -f 2- -d -)-${TAG}
 else
     readonly image_version=${TAG}
 fi
-readonly image_tag=$2/${image_name}:${image_version}
+readonly image_tag=${repo}/${image_name}:${image_version}
 
 # The directory to be build can have a cloudbuild.yaml that overrides the common
 # one.
