@@ -8,9 +8,19 @@ FROM gcr.io/google_appengine/debian8
 # Install .NET Core dependencies
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
-        curl \
-        gettext \
+        libc6 \
+        libcurl3 \
+        libgcc1 \
+        libicu52 \
+        liblttng-ust0 \
+        libssl1.0.0 \
+        libstdc++6 \
+        libtinfo5 \
         libunwind8 \
+        libuuid1 \
+        zlib1g \
+        ca-certificates \
+        curl \
     && apt-get clean
 
 # Install the package.
