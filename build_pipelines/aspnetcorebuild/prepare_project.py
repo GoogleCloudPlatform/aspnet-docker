@@ -241,7 +241,7 @@ def main(params):
         sys.exit(1)
 
     contents = DOCKERFILE_CONTENTS.format(runtime_image=base_image.image, dll_name=project_name)
-    with open(DOCKERFILE_NAME, 'wt') as out:
+    with open(params.output, 'wt') as out:
         out.write(contents)
 
 
@@ -253,4 +253,8 @@ if __name__ == '__main__':
                         help='The mapping of supported versions to images.',
                         nargs='+',
                         required=True)
+    PARSER.add_argument('-o', '--output',
+                        help='The output for the Dockefile.',
+                        default=DOCKERFILE_NAME,
+                        required=False)
     main(PARSER.parse_args())
