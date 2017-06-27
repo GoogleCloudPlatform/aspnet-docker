@@ -1,0 +1,9 @@
+/Users/ivann/gcp/aspnet-docker/tests/apps/clean-1.0/bin/Debug/netcoreapp1.0/app.yaml
+/Users/ivann/gcp/aspnet-docker/tests/apps/clean-1.0/bin/Debug/netcoreapp1.0/clean-1.0.deps.json
+/Users/ivann/gcp/aspnet-docker/tests/apps/clean-1.0/bin/Debug/netcoreapp1.0/clean-1.0.runtimeconfig.json
+/Users/ivann/gcp/aspnet-docker/tests/apps/clean-1.0/bin/Debug/netcoreapp1.0/clean-1.0.runtimeconfig.dev.json
+/Users/ivann/gcp/aspnet-docker/tests/apps/clean-1.0/bin/Debug/netcoreapp1.0/clean-1.0.dll
+/Users/ivann/gcp/aspnet-docker/tests/apps/clean-1.0/bin/Debug/netcoreapp1.0/clean-1.0.pdb
+/Users/ivann/gcp/aspnet-docker/tests/apps/clean-1.0/obj/Debug/netcoreapp1.0/clean-1.0.AssemblyInfo.cs
+/Users/ivann/gcp/aspnet-docker/tests/apps/clean-1.0/obj/Debug/netcoreapp1.0/clean-1.0.dll
+/Users/ivann/gcp/aspnet-docker/tests/apps/clean-1.0/obj/Debug/netcoreapp1.0/clean-1.0.pdb

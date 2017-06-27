@@ -3,5 +3,5 @@
 .dockercfg
 **/project.lock.json
 .DS_Store
-
-
+test/apps/**/obj/*
+test/apps/**/bin/*

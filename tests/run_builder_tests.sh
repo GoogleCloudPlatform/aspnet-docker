@@ -21,7 +21,7 @@ set -eu
 
 readonly workspace=$(dirname $0)/..
 readonly pipeline_dir=${workspace}/build_pipelines/aspnetcorebuild/
-readonly tests_dir=${workspace}/tests/apps/
+readonly tests_dir=${workspace}/tests/bins/
 
 readonly supported_runtimes=(
     "1.0.5=version:1.0"
@@ -29,7 +29,7 @@ readonly supported_runtimes=(
     "2.0.0=version:2.0"
 )
 
-for deps_file in $(find ${tests_dir} -type f -name '*.deps.json'); do
+for deps_file in $(ls ${tests_dir}/*/*.deps.json); do
     app_dir=$(dirname ${deps_file})
     app_version=$(echo ${app_dir} | cut -d '-' -f 2-)
     from_line=$(${pipeline_dir}/prepare_project.py \
