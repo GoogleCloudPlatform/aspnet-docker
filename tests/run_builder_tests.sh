@@ -21,7 +21,7 @@ set -eu
 
 readonly workspace=$(dirname $0)/..
 readonly pipeline_dir=${workspace}/build_pipelines/aspnetcorebuild/
-readonly tests_dir=${workspace}/tests/
+readonly tests_dir=${workspace}/tests/builder_tests/
 
 readonly supported_runtimes=(
     "1.0.5=version:1.0"
