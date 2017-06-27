@@ -33,7 +33,6 @@ for deps_file in $(ls ${tests_dir}/*/*.deps.json); do
     app_dir=$(dirname ${deps_file})
     app_version=$(echo ${app_dir} | cut -d '-' -f 2-)
     app_name=$(basename ${app_dir})
-    dockerfile_contents=
     from_line=$(${pipeline_dir}/prepare_project.py \
         -r ${app_dir} \
         -m ${supported_runtimes[@]} \
