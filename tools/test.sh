@@ -36,6 +36,7 @@ for deps_file in $(find ${tests_dir} -type f -name '*.deps.json'); do
         -r ${app_dir} \
         -m ${supported_runtimes[@]} \
         -o /dev/stdout | head -n1)
+    echo "Verifying .NET Core ${app_version}"
     if [[ ${from_line} != "FROM version:${app_version}" ]]; then
         echo "Failed to produce right Dockerfile for ${app_dir}"
         exit 1
