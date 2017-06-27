@@ -215,7 +215,7 @@ def main(params):
 
     # The app cannot specify it's own Dockerfile when building with
     # the aspnetcore image, the builder is the one that has to build
-    # it. To avoid any confusion the builpder will fail with this
+    # it. To avoid any confusion the builder will fail with this
     # error.
     if os.path.isfile(DOCKERFILE_NAME):
         print ('A Dockerfile already exists in the workspace, this Dockerfile ' +
