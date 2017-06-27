@@ -32,13 +32,23 @@ readonly supported_runtimes=(
 for deps_file in $(ls ${tests_dir}/*/*.deps.json); do
     app_dir=$(dirname ${deps_file})
     app_version=$(echo ${app_dir} | cut -d '-' -f 2-)
+    app_name=$(basename ${app_dir})
+    dockerfile_contents=
     from_line=$(${pipeline_dir}/prepare_project.py \
         -r ${app_dir} \
         -m ${supported_runtimes[@]} \
         -o /dev/stdout | head -n1)
+    entrypoint_line=$(${pipeline_dir}/prepare_project.py \
+        -r ${app_dir} \
+        -m ${supported_runtimes[@]} \
+        -o /dev/stdout | tail -n1)
     echo "Verifying .NET Core ${app_version}"
     if [[ ${from_line} != "FROM version:${app_version}" ]]; then
         echo "Failed to produce right Dockerfile for ${app_dir}"
+        exit 1
+    fi
+    if [[ ${entrypoint_line} != "ENTRYPOINT [ \"dotnet\", \"${app_name}.dll\" ]" ]];then
+        echo "Failed to produce right entrypoint for ${app_dir}"
         exit 1
     fi
 done
