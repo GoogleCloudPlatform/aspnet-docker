@@ -57,20 +57,25 @@ def get_project_assembly_name(deps_path):
     Returns:
         The name of the entry point assembly.
     """
-    return deps_path[:-len(DEPS_EXTENSION)]
+    filename = os.path.basename(deps_path)
+    return filename[:-len(DEPS_EXTENSION)]
 
 
-def get_deps_path():
+def get_deps_path(root):
     """Finds the .deps.json file for the project.
 
     Looks for the .deps.json file for the project in the current
     directory, there should be only one such file per published
     project.
 
+    Args:
+        root: The path to the root of the app.
+
     Returns:
         The path to the .deps.json file for the project.
     """
-    files = glob.glob(DEPS_PATTERN)
+    app_root = os.path.join(root, DEPS_PATTERN)
+    files = glob.glob(app_root)
     if len(files) != 1:
         return None
     return files[0]
@@ -217,7 +222,7 @@ def main(params):
                'cannot be used with the aspnetcore runtime.')
         sys.exit(1)
 
-    deps_path = get_deps_path()
+    deps_path = get_deps_path(params.root)
     if deps_path is None:
         print 'No .deps.json file found for the app'
         sys.exit(1)
@@ -236,12 +241,12 @@ def main(params):
 
     project_name = get_project_assembly_name(deps_path)
     assembly_name = ASSEMBLY_NAME_TEMPLATE.format(project_name)
-    if not os.path.isfile(assembly_name):
+    if not os.path.isfile(os.path.join(params.root, assembly_name)):
         print 'Cannot find entry point assembly {0} for ASP.NET Core project'.format(assembly_name)
         sys.exit(1)
 
     contents = DOCKERFILE_CONTENTS.format(runtime_image=base_image.image, dll_name=project_name)
-    with open(DOCKERFILE_NAME, 'wt') as out:
+    with open(params.output, 'wt') as out:
         out.write(contents)
 
 
@@ -253,4 +258,12 @@ if __name__ == '__main__':
                         help='The mapping of supported versions to images.',
                         nargs='+',
                         required=True)
+    PARSER.add_argument('-o', '--output',
+                        help='The output for the Dockefile.',
+                        default=DOCKERFILE_NAME,
+                        required=False)
+    PARSER.add_argument('-r', '--root',
+                        help='The path to the root of the app.',
+                        default='.',
+                        required=False)
     main(PARSER.parse_args())

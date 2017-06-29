@@ -1,0 +1,6 @@
+runtime: aspnetcore
+env: flex
+service: clean-1-1
+
+manual_scaling:
+  instances: 1

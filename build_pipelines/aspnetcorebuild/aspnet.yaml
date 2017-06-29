@@ -1,0 +1,10 @@
+schemaVersion: "1.0.0"
+
+fileExistenceTests:
+  - name: 'script exists'
+    path: '/builder/prepare_project.py'
+    shouldExist: true
+
+licenseTests:
+  - debian: true
+    files: []

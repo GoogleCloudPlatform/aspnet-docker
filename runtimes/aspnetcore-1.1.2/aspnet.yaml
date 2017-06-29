@@ -4,6 +4,10 @@ commandTests:
   - name: 'dotnet installation'
     command: ['which', 'dotnet']
     expectedOutput: ['/usr/bin/dotnet\n']
+  - name: 'dotnet version'
+    command: ['dotnet', '--version']
+    expectedOutput: ['.*Version  : 1\.1\.0.*']
+    exitCode: 129
 
 fileExistenceTests:
   - name: 'dotnet directory'
