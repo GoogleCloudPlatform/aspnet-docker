@@ -3,7 +3,7 @@ steps:
   args: [ '--version-map',
           '1.1.2=gcr.io/google-appengine/aspnetcore:1.1.2',
           '1.0.5=gcr.io/google-appengine/aspnetcore:1.0.5',
-          '2.0.0=gcr.io/google-appengine/aspnetcore:2.0.0-preview1' ]
+          '2.0.0=gcr.io/google-appengine/aspnetcore:2.0.0-preview2' ]
 - name: gcr.io/cloud-builders/docker:latest
   args: [ 'build', '-t', '$_OUTPUT_IMAGE', '--no-cache', '--pull', '.' ]
 images:
