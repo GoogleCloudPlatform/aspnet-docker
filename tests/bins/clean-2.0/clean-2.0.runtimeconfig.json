@@ -3,7 +3,7 @@
     "tfm": "netcoreapp2.0",
     "framework": {
       "name": "Microsoft.NETCore.App",
-      "version": "2.0.0-preview1-002111-00"
+      "version": "2.0.0-preview2-25407-01"
     },
     "configProperties": {
       "System.GC.Server": true
