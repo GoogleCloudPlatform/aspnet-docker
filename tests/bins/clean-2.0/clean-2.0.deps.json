@@ -4292,40 +4292,35 @@
       "serviceable": true,
       "sha512": "sha512-OqJ0TAIFiuXBckJ03F02nTget/iW1d8hkqYbvf4lrcBBNpiQ5pHpb26n+nYd1pkDlxf4brgAlX+dzrKIXCWIEQ==",
       "path": "libuv/1.10.0-preview1-22040",
-      "hashPath": "libuv.1.10.0-preview1-22040.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-25794-linux-x64.xml;aspnetcore-store-2.0.0-preview2-25794-osx-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x86.xml;aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "libuv.1.10.0-preview1-22040.nupkg.sha512"
     },
     "Microsoft.ApplicationInsights/2.4.0-beta5": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-DL4GEtXgq0lvw2faZxFHgZyjUt8toMh8bmqek/4qF4Jat1tgYQZRU0KE0J72B8F2SQ9ET+5b8RH+lMNX6HEJVw==",
       "path": "microsoft.applicationinsights/2.4.0-beta5",
-      "hashPath": "microsoft.applicationinsights.2.4.0-beta5.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-25794-linux-x64.xml;aspnetcore-store-2.0.0-preview2-25794-osx-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x86.xml;aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.applicationinsights.2.4.0-beta5.nupkg.sha512"
     },
     "Microsoft.ApplicationInsights.AspNetCore/2.1.0-beta6": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-CosWPs7xvyHZQLK5iC7OyHQAveaZ3xjudhPRVb7jk1Q4QhuOTseUwGTEG9ob6uOyJ0XShEUexlmfz60bqg+rRQ==",
       "path": "microsoft.applicationinsights.aspnetcore/2.1.0-beta6",
-      "hashPath": "microsoft.applicationinsights.aspnetcore.2.1.0-beta6.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-25794-linux-x64.xml;aspnetcore-store-2.0.0-preview2-25794-osx-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x86.xml;aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.applicationinsights.aspnetcore.2.1.0-beta6.nupkg.sha512"
     },
     "Microsoft.ApplicationInsights.DependencyCollector/2.4.0-beta5": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-bqLiRv5BsxZu8nH1OX96p6viVx/USHrpUK3urltFg7ogeIC8EdbFG7KI86aLBTIp6VktyVjMpuJySXWMBJDUnQ==",
       "path": "microsoft.applicationinsights.dependencycollector/2.4.0-beta5",
-      "hashPath": "microsoft.applicationinsights.dependencycollector.2.4.0-beta5.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-25794-linux-x64.xml;aspnetcore-store-2.0.0-preview2-25794-osx-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x86.xml;aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.applicationinsights.dependencycollector.2.4.0-beta5.nupkg.sha512"
     },
     "Microsoft.AspNetCore/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-D6jy+Z1yb5WiUN113SdEoHmMhitbtJGs3wZS7tIybm/xarBhN3cysuTRGHIIMTCpf6WdskHFrM9An5b8C0kt6Q==",
       "path": "microsoft.aspnetcore/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.All/2.0.0-preview2-final": {
       "type": "package",
@@ -4339,432 +4334,378 @@
       "serviceable": true,
       "sha512": "sha512-rSS89rqpzozONeYGY3XzuL68vuYugh1lzg78641dKfc4Dj+0w84ZgdmjJQH5LJAYurDzbGlP84dIbG/l2HgQnA==",
       "path": "microsoft.aspnetcore.antiforgery/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.antiforgery.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.antiforgery.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.ApplicationInsights.HostingStartup/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-4XAbOoPF/dj5CBbBEI1nl7y+6OGvyL58aoOUlSGZs4H+xNVFJ3Xv4Aw4TXKDlJpFYOYc+TIpIS10d/II9HVq0A==",
       "path": "microsoft.aspnetcore.applicationinsights.hostingstartup/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.applicationinsights.hostingstartup.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.applicationinsights.hostingstartup.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-G/aVuobdiNfC/YO/l3E50zqeAbCIn1qqjbVNw/nnW6hoeEzvyZfcDmi1Nj4BJWNjlZLzF+3c+f5JObhpQfdgCg==",
       "path": "microsoft.aspnetcore.authentication/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.authentication.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.authentication.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication.Abstractions/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-hw13tggW1EJDFFoNdZmIfiY8VEDPN5ISZNc2N7GKTeVsXSsXpMNpD53vpQXJtop0m+GbzZ4snKCgY/8wB+5pjA==",
       "path": "microsoft.aspnetcore.authentication.abstractions/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.authentication.abstractions.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.authentication.abstractions.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication.Cookies/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-dIGqgSFwqTu5aSv5C0iN6MO/PCZO739FensMEdkFwYo7cxLW+Jbo9Pbc8Nwy62ucGRLSMe+Pa24aeSdC6OhNBQ==",
       "path": "microsoft.aspnetcore.authentication.cookies/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.authentication.cookies.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.authentication.cookies.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication.Core/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-AnPLl+cXXLDLiLYQEZYRSUMiGn6KjB2QDDhF0xiyBvbaeRST0t+trNOcUntcJPmPoW7n2f2yEWO06EN1PiEJhA==",
       "path": "microsoft.aspnetcore.authentication.core/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.authentication.core.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.authentication.core.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication.Facebook/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-6AXGP2PMOR3cLtr0gZWv1M7F+Ohvx6nOxcIz5fxw1vfsn74lAKiPlltihGRXM0y+ogACRzLw/ton4Hw0F7+sBA==",
       "path": "microsoft.aspnetcore.authentication.facebook/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.authentication.facebook.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.authentication.facebook.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication.Google/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-Ef9zU9czAUEI6j+UFGMypUS9+P9DdDzSFEfx6baoaUqbzck6jUwiNmsJKL9mDcp7yz7yBMThgYM6EztqsBNkEg==",
       "path": "microsoft.aspnetcore.authentication.google/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.authentication.google.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.authentication.google.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication.JwtBearer/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-6mBe/jlMeYoVEwpi9WF4xPJZq551SNYIYbBJHW85WkiViODQzKlt5svuNZLAjB1aJ9DumTSJieaXxNB2f1vIiw==",
       "path": "microsoft.aspnetcore.authentication.jwtbearer/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.authentication.jwtbearer.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.authentication.jwtbearer.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication.MicrosoftAccount/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-wItu2YuZDF99YORJtAHAlKxst93dDzd/759NY8XbKuclkZ8chqGu6GjU7BjUBTHk5tgH8ABQfD13n5UBM7f4bg==",
       "path": "microsoft.aspnetcore.authentication.microsoftaccount/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.authentication.microsoftaccount.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.authentication.microsoftaccount.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication.OAuth/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-i3HyGK3b3XRKgjYFqmeKCXmx/8XmPgNjlf/tDs3bRt3VRsD7PpD6kaudMUZys0vybv2czIvRmmrpq9zmvy2VXQ==",
       "path": "microsoft.aspnetcore.authentication.oauth/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.authentication.oauth.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.authentication.oauth.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication.OpenIdConnect/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-T7DWHaQDfUyzKMBzAlFzrFxKc39Gqom3STv5hmFtAC7XR0zhS0g6X1IKQm6GAX5xtXvcBM3lLzWRunWdvK9oFA==",
       "path": "microsoft.aspnetcore.authentication.openidconnect/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.authentication.openidconnect.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.authentication.openidconnect.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication.Twitter/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-jzqwxWYtnDBltCot8qH+5rErAb4ms43s+XXZARKt1/EIuBAJZ6iCzFDPKsbiPRzqBCEcDWzLfvxCP5oSJMwqrg==",
       "path": "microsoft.aspnetcore.authentication.twitter/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.authentication.twitter.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.authentication.twitter.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authorization/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-b91nRU5jJfPvo2thf4WnGF3zemvvayUgQCGmxvr1wDfLcpx0j3QzlP9dKJQwRxMhBwdL6ntF6LMZuYF/Vc+frw==",
       "path": "microsoft.aspnetcore.authorization/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.authorization.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.authorization.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authorization.Policy/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-XHIIz045I5ajGNBg4xLWRkfBKkCre4sWhoA+eBi8K1gTqJr52KokqPQjOxUfxVm8xnUkiznbR06aD7AN9BSDqw==",
       "path": "microsoft.aspnetcore.authorization.policy/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.authorization.policy.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.authorization.policy.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.AzureAppServices.HostingStartup/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-L4vQ6PMmNKacZQ6aOcVVJ0Cqw7Ngt9aY+56LNKdOe5zeaQRnmgr137rYfXk6Sq2OQ8HllbTYoI803fWzXLFVFw==",
       "path": "microsoft.aspnetcore.azureappservices.hostingstartup/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.azureappservices.hostingstartup.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.azureappservices.hostingstartup.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.AzureAppServicesIntegration/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-yxPIuyDc3yUq7RSYIkO+mCq85W9yaxloAjHHRtrLCIVydaJxc0FAJcLgSm3z7zTpCcdULa8uU/fxDVrGC2480A==",
       "path": "microsoft.aspnetcore.azureappservicesintegration/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.azureappservicesintegration.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.azureappservicesintegration.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.CookiePolicy/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-Oi4pq/tPQkiuM6EU1nVXruBEr80+4y4w3sHcf/lZ7iTOLf8GyoO6ykpMgjQfDRJF5A0iClEV7WFfPnr5uDloBA==",
       "path": "microsoft.aspnetcore.cookiepolicy/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.cookiepolicy.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.cookiepolicy.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Cors/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-n4IXOU9Q+efF7PcnAGeH9U79GGYQCKJdhm4XIgb1TpxZC0taH80E7vVjzptBz1IL/aKVnxjeiy4qHBTESwVPxw==",
       "path": "microsoft.aspnetcore.cors/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.cors.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.cors.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Cryptography.Internal/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-JC6qXEs+J2qDRCfPN3o0y5kAuzQ3lJzFMaY95H2dUFyZKnxKVbMv3Dka1eWZ/AIT/NY7XLbiB+8xfGzZkndnfg==",
       "path": "microsoft.aspnetcore.cryptography.internal/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.cryptography.internal.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.cryptography.internal.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Cryptography.KeyDerivation/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-HmW39s8S0Kb9hnbBcBzjF1YwuOV/57QOvDTwMceVt0SwGxrfWSHd7aYNN0WHbut/IvDAV1hPQyPhQr6bLNYDjA==",
       "path": "microsoft.aspnetcore.cryptography.keyderivation/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.cryptography.keyderivation.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.cryptography.keyderivation.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.DataProtection/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-/Zs1kkumhuM8kx4EA10Ge7ESCkJfuOx2MpBOQ/5qlgUWQ0k+GFWEvQ9621uUh/CISVEFzGUs6bFKfbTBqOTyHg==",
       "path": "microsoft.aspnetcore.dataprotection/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.dataprotection.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.dataprotection.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.DataProtection.Abstractions/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-OdsjzM8Z7UipulRqrBh8DBNcv0sgz9yaUvrN3zJRLArmZEuAaD5gjBmvcKDTHT6mCdP7CLlf2hnS0/+JeEGT2w==",
       "path": "microsoft.aspnetcore.dataprotection.abstractions/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.dataprotection.abstractions.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.dataprotection.abstractions.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.DataProtection.AzureStorage/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-y7+GLNVw5HERUPVoKaYVU+QGRLekWcAzhHKFO9BSdWn9iwNQEiCHVHbnha3sc3iBckgF15jxykHXMVS2yo+7OQ==",
       "path": "microsoft.aspnetcore.dataprotection.azurestorage/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.dataprotection.azurestorage.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.dataprotection.azurestorage.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.DataProtection.Extensions/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-N5bDWnHZSOdeSJhTHjGccTLfA8RcyAJgCatfXWagnOwgShwFI36r5HXSmPV+hF0miug0z1W9P6IfYrWXIMrRHQ==",
       "path": "microsoft.aspnetcore.dataprotection.extensions/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.dataprotection.extensions.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.dataprotection.extensions.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Diagnostics/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-tOl7tOHwAxamDzZt6+QVgqYhki/8vR1oD9L3pmo4NciBsjlLhWc2f09aCo82CUtr0dm7pJ5IKgnyotDDhZ+faQ==",
       "path": "microsoft.aspnetcore.diagnostics/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.diagnostics.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.diagnostics.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Diagnostics.Abstractions/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-o+K3FcN0lFPWuzClKiGXpSfrUx43o7AvvLm74tQ73lXsgLjTUtlcWJ9SWJn3K5+Rmg7jg3mMKhpX083LDL7euQ==",
       "path": "microsoft.aspnetcore.diagnostics.abstractions/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.diagnostics.abstractions.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.diagnostics.abstractions.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-1rp4AOKSwQqhh+g7m/RcwWI7DPtXW1+H4Nlb8qia+7Xc56q7bfDNyERY1xiETwez0apY0qL9oL2+lYIxxKMhHA==",
       "path": "microsoft.aspnetcore.diagnostics.entityframeworkcore/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.diagnostics.entityframeworkcore.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.diagnostics.entityframeworkcore.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Hosting/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-qobs88wXF/vkrKQhKTZicO8/UR4eW7KgYkwW1foowwQJ/2FUXplPAl3iI4XSxxqNworYEYF2Ctg0/k04AtRyBw==",
       "path": "microsoft.aspnetcore.hosting/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.hosting.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.hosting.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Hosting.Abstractions/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-6g3MJv0vbnwgvZk1Zmt/l5Nr/xjm7T5cJdXvtHfi3nm4Xzf77qT13h6JwrsmFfroAQZml0ZQkRFKqOFiT6MZ8Q==",
       "path": "microsoft.aspnetcore.hosting.abstractions/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.hosting.abstractions.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.hosting.abstractions.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Hosting.Server.Abstractions/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-H91cc0rz6Bq3jpH4Ojsz3Z+xmXe9n2Dvk62QREQlTKxDjSOrldjK2ogIilbhA3/WpNo3XAoqBeOfnT+scpIDuw==",
       "path": "microsoft.aspnetcore.hosting.server.abstractions/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.hosting.server.abstractions.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.hosting.server.abstractions.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Html.Abstractions/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-S37YNVDPVJWwD2oPFvOW7rgiUGsFr/uI+7NcKzcZpAf9tiam6xqR/0LLTO8frcItdISUI2/cwNPKee3jDsME5Q==",
       "path": "microsoft.aspnetcore.html.abstractions/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.html.abstractions.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.html.abstractions.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Http/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-otu0+sdoeRAfQNsUWaSP0iE5OEKerYA0qfXF/xpa5iBlCuvYrkCQvAlwgz74y6Clq3A1UiQl5XiwwL8EkjQf0g==",
       "path": "microsoft.aspnetcore.http/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.http.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.http.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Http.Abstractions/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-A+1a1ksxJoHFUn7lxQZbzJE2xAkYgIj+jZY4XRcprLKVn5Z3DnXLw1eTHZh7OfMl8aNhsbZ3MHkge7rKPWlE0g==",
       "path": "microsoft.aspnetcore.http.abstractions/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.http.abstractions.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.http.abstractions.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Http.Extensions/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-eFskAt1a61y7XVdHNlGCF9lMr8JK4UsGKe8kM0WahxjNlZ4z4EluOxqenZbPLf7kK5oTUXvGRnCliDtXTcwdgw==",
       "path": "microsoft.aspnetcore.http.extensions/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.http.extensions.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.http.extensions.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Http.Features/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-fgtzpDbSaYLvAM1hKITZHfY2dd3MbTd6F2OHIi41sEHxbBtfCaV/tdyRj11wzcu1X4FC+Of51V9T/iRcQGNqyw==",
       "path": "microsoft.aspnetcore.http.features/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.http.features.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.http.features.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.HttpOverrides/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-H3kA21yRvaWInU0GOvkFuBHtFR28bGUZfgt6U+OFKkUJnKHIOUn8w9BHdDROgUdU8/yZwOhQYVUnXUSNNVHEfg==",
       "path": "microsoft.aspnetcore.httpoverrides/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.httpoverrides.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.httpoverrides.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Identity/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-iFaEAa97vB5uKbj+yCxtqscPlkVTEucvghqlBG31OmXz+ZupvBnbaRyntiQenNfMJ8uvpkVEWER2nHrVB1PJRg==",
       "path": "microsoft.aspnetcore.identity/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.identity.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.identity.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Identity.EntityFrameworkCore/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-RU2B8MX0hi8ZG5sepLdiyQeDUfWx19lRBnmCDBAD8RLbtz2qA9bWqCya2yksVU9uo13A5UJx0s5dNcEJQvX9QA==",
       "path": "microsoft.aspnetcore.identity.entityframeworkcore/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.identity.entityframeworkcore.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.identity.entityframeworkcore.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.JsonPatch/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-kLsV6NWkOh4m2AJyg6PZTDutpm8BuE28wy5p9/Y6dY8vtUiiUxinz/RisnL6sY9PJ7agOlIZcT1+3Ui27+GfKQ==",
       "path": "microsoft.aspnetcore.jsonpatch/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.jsonpatch.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.jsonpatch.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Localization/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-39mepIMunhzR1idOmHExMvyoQlbPpzuxNoSRLUVXjbu7H/Y6mgkfBTWZwi9QoT1+Bker3g9myMEGTYt/6IrxGA==",
       "path": "microsoft.aspnetcore.localization/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.localization.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.localization.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Localization.Routing/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-Tixbe7Mt0bBjHPs+WXPtggFIxgWpUHMPHlYpguDhZIESSfZfGls0W7riW/Z4ba61SMg1cL4JII+iqRAbkaURLg==",
       "path": "microsoft.aspnetcore.localization.routing/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.localization.routing.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.localization.routing.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.MiddlewareAnalysis/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-dLhz36wCj2s6E4Ee9fzvwHiuJlH8tSzOnpZphnGfzWCRs/nrJi2cdvr98YuLD6motDXHErZgpYShWCi+t+Vp1g==",
       "path": "microsoft.aspnetcore.middlewareanalysis/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.middlewareanalysis.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.middlewareanalysis.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Mvc/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-2eHce1Kjkss9ljk47YZWSLcGfMvH/uoaNwQin9uz+zDBmZqulnVRLtMsEnD1BTaq46LkwDI9fJqaH1gomIk3+w==",
       "path": "microsoft.aspnetcore.mvc/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.mvc.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.mvc.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Mvc.Abstractions/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-JlWGxohGdCyn5nKVJFrXN0avoMsTjUhhY/JbUbjo2DA279o4VZkKU71UVAPvZXlaLu2ZDvHFmzYSRgIIYFcClQ==",
       "path": "microsoft.aspnetcore.mvc.abstractions/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.mvc.abstractions.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.mvc.abstractions.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Mvc.ApiExplorer/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-aYU6ELEBU4Y0SdvQQq+QglIRoK6zYU89hRTnZS3B8f40DJYrxLHPlJaqv2qRvFjGIad3TfIvQv+eRZ8B7Wp2Iw==",
       "path": "microsoft.aspnetcore.mvc.apiexplorer/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.mvc.apiexplorer.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.mvc.apiexplorer.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Mvc.Core/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-/ijz4ghlvu8TeComF2xa1Sh3yiXIwXdw1dXrWXRVdPaY/4ErqEWR6l3TRecWDhSTSsPZSrXlGPNXDgTjddkQYA==",
       "path": "microsoft.aspnetcore.mvc.core/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.mvc.core.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.mvc.core.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Mvc.Cors/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-P2mh3QwXxAJuqVtlIWVMxyuNA8GKo5px9wmrmSE7WyYB+JUsqlywTabIvwUsNQljGGQoekQTu2S7veZUXYZm9Q==",
       "path": "microsoft.aspnetcore.mvc.cors/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.mvc.cors.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.mvc.cors.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Mvc.DataAnnotations/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-Ga2d4l5XQVY2V1GJ7hA7dObtaLsZE+C1grHyDQPCHpbjHUkK9aIFKstTbt8DZWE9tWcFISpcAIzl/CnUQk02OQ==",
       "path": "microsoft.aspnetcore.mvc.dataannotations/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.mvc.dataannotations.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.mvc.dataannotations.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Mvc.Formatters.Json/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-QBr+e/l80S9ZuNBtZL+TMD/ul3BgyGN2DBsmq885vfprn5nSOro3snSt7pXxmzuIwVJK54O6TcPcfnHcU5VMVQ==",
       "path": "microsoft.aspnetcore.mvc.formatters.json/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.mvc.formatters.json.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.mvc.formatters.json.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Mvc.Formatters.Xml/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-eUvyzdiGrbdIzXl0+MkPj2SVpTNAwLtbko0BIuP/424fyLcAH6Pp8ThAD/5qkm2BjTdJunhLKMIJmPlHZ2U/1A==",
       "path": "microsoft.aspnetcore.mvc.formatters.xml/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.mvc.formatters.xml.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.mvc.formatters.xml.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Mvc.Localization/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-aPjZ5JWXIo303aMO8PnT9q+MofBmDVa7+/jcg0n0MWTBRq/gBTpsR6EZJNhg1Tp9iRz3qA307vCOj7TPDRrHxQ==",
       "path": "microsoft.aspnetcore.mvc.localization/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.mvc.localization.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.mvc.localization.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Mvc.Razor/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-7zaHvH9kv6mk3LdYcYoa5EmZY+gj1yxXSoD2E1IZA4wZpRFUF0+h7T3SjIfvutC1fe72BsKSD7MImzRZIVODYA==",
       "path": "microsoft.aspnetcore.mvc.razor/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.mvc.razor.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.mvc.razor.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Mvc.Razor.Extensions/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-2lVE87+1dhZ0pRva5pYOYrj2aHGbcw9Uk8l4eIrogbty06qI8KTZcSlJQATGfnHlu+0gFnPvQvdW0UhLoPP4AQ==",
       "path": "microsoft.aspnetcore.mvc.razor.extensions/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.mvc.razor.extensions.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.mvc.razor.extensions.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Mvc.Razor.ViewCompilation/2.0.0-preview2-final": {
       "type": "package",
@@ -4778,232 +4719,203 @@
       "serviceable": true,
       "sha512": "sha512-0hu7LuCpTHlti/3s0lNZBlyQKwbPwuOvgK9Iek+3Wnwu3NM0l2li/l3+pmkohshrQjsOeaPEH4ndUDvpl4xGGw==",
       "path": "microsoft.aspnetcore.mvc.razorpages/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.mvc.razorpages.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.mvc.razorpages.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Mvc.TagHelpers/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-lRZTv0WiM0oWCAeG16LMDCv+ncWvjXTkGDpKGepWS4D3+a64gShbF/ZGufpV7W6dHl+QHZ8PpcvX5rrhNFbPig==",
       "path": "microsoft.aspnetcore.mvc.taghelpers/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.mvc.taghelpers.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.mvc.taghelpers.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Mvc.ViewFeatures/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-AdnJQkxXw9nWu15QZcfOO9e+cRQL1G1NSbwae0cuMr6QJRAoLBlzhW2aoomT/o1RAi1P1Zd72eeG031Hd6I4Pg==",
       "path": "microsoft.aspnetcore.mvc.viewfeatures/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.mvc.viewfeatures.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.mvc.viewfeatures.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.NodeServices/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-HGn0JCY815+YjRKwMASWDi8pSan1GU3rCYm7sxSnvMxmuiznGFa4IL23MziAFN3MKcGepXzj8vckQTCZRDCMJQ==",
       "path": "microsoft.aspnetcore.nodeservices/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.nodeservices.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.nodeservices.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Owin/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-bApA8QgE9NAnz3D+8CTGLcw8cpnhketq42xwBCPRYpnAAtvlAb1jgfCFFZktrr8bmabtqyAwbpiK3KF0q7EZZA==",
       "path": "microsoft.aspnetcore.owin/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.owin.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.owin.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Razor/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-Lt2xBXPKR17oP4dsGS6DN5BvNHxJ5cmSOQcCn6clN6VsmgyYsoUny3zKXBVURjtrOehQFVWrOxX6KI0d2d2zVw==",
       "path": "microsoft.aspnetcore.razor/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.razor.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.razor.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Razor.Language/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-2L1qp5e/u/jDarcCIm+IeMjF7AcLBoF4FoAkQsVdmW2lwi+553PcHbZrA5VrPc23bNE4sBw9B9WSvwkMeD8fyA==",
       "path": "microsoft.aspnetcore.razor.language/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.razor.language.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.razor.language.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Razor.Runtime/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-cjQDwpdfx6YG47uQrkOGp5jyk7c0tfeMUsuQPE5B2Mdg/SKBMaaiGWrOkMW/g/RFZuYKIF9S1jakxQMgYfgW7Q==",
       "path": "microsoft.aspnetcore.razor.runtime/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.razor.runtime.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.razor.runtime.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.ResponseCaching/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-eEUq5fLiX2e5hq29QyysIeQtT0AgWg0gPQyvnDWtbb9PbRFvf5KWFGXcbNfZ4WOD48iFEwQOVgTyQZVDFQkU8A==",
       "path": "microsoft.aspnetcore.responsecaching/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.responsecaching.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.responsecaching.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.ResponseCaching.Abstractions/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-mf0JtdF2LZNl6eiQDqVQwqzFhV8ro5Sx6XEcXRTBgdTySEBSjygnprQlSV1ORHXBF/2oOTk8fQ+wIkctDx5u8w==",
       "path": "microsoft.aspnetcore.responsecaching.abstractions/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.responsecaching.abstractions.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.responsecaching.abstractions.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.ResponseCompression/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-A+ZAt6izijvIFeYMMEwcgb2EnBCTK0GlWq10osIvTEn/Yub4oyAlBgvGlpxXbaIlHuIfzyJbzmzLGCIo5yjw1Q==",
       "path": "microsoft.aspnetcore.responsecompression/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.responsecompression.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.responsecompression.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Rewrite/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-Z6GI//3dDQgwvEjonPYKk5ZNN1Gr803gJsr4FNR4gD0h7G6JwHNS3VPfrf+VY1YdYbgZk+eF0jmV5masLjgKFw==",
       "path": "microsoft.aspnetcore.rewrite/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.rewrite.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.rewrite.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Routing/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-oY1yYJVeh1LYwOdhJycGWl3FM/au14yUo9Mu8ZSl3jr9x6XdLHAkhtzT8y8W3CFJQGXfRPVG67PfoFjYhHtEKQ==",
       "path": "microsoft.aspnetcore.routing/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.routing.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.routing.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Routing.Abstractions/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-i8qa7wbhDpZD1O5F8bNz7kD0Y/bu561s98OPm0qYwGO4TMfu0yJkrFkHvJDJBi2TyAgICEnnFPB0O5EYgci8pw==",
       "path": "microsoft.aspnetcore.routing.abstractions/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.routing.abstractions.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.routing.abstractions.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Server.HttpSys/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-0RPwXAopGCTPLWssgUqU/P2y6TGX2SgxAHIDvZWvPZcHJIk3cF8oIR6Oiy2mB/k4FUvWGJY142oCZaDUR4Q71w==",
       "path": "microsoft.aspnetcore.server.httpsys/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.server.httpsys.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.server.httpsys.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Server.IISIntegration/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-OL5/u9zvtHFHZMn+Fhgn1i8w82LtnUlas5ddAzgccP7yBbZUqoO/suEc+ZOEjXAI3IrDflrT4q9liDst8d2K2Q==",
       "path": "microsoft.aspnetcore.server.iisintegration/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.server.iisintegration.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.server.iisintegration.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Server.Kestrel/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-QBi/mweXbq1MVZRrHdrW1Dq9h1iEiag9Q6gpSjoBqFlGKXZquxJzGC1SNnvJOVXDD5py9YL8JqMLzxTTNRS7/g==",
       "path": "microsoft.aspnetcore.server.kestrel/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.server.kestrel.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.server.kestrel.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Server.Kestrel.Core/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-ZNq2gwhn6eq6Axy5OLChMMp7Id9XO45vcULyfL6Ow77MhKODp0OiVfAonYkpubpaD5fA5FINXbsJdmcJotkimQ==",
       "path": "microsoft.aspnetcore.server.kestrel.core/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.server.kestrel.core.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.server.kestrel.core.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Server.Kestrel.Https/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-szCq3gbwDKnHG16iC2ST5Ma8+3raQp2wmFuUxGfoEhBl5hfnNZ8Y/ltXlist6kXrQp81o0fj6Rm+nobqeM/3qw==",
       "path": "microsoft.aspnetcore.server.kestrel.https/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.server.kestrel.https.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.server.kestrel.https.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-86ihHBdg8ZvN3XqsOxK6plXWm7K7iH86tzh5M9R3oC9TfICuJHx6MdZ5XSnErx7re0eK2bzllv3XlCInUQMXDQ==",
       "path": "microsoft.aspnetcore.server.kestrel.transport.abstractions/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.server.kestrel.transport.abstractions.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.server.kestrel.transport.abstractions.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Server.Kestrel.Transport.Libuv/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-3uILrn/u/JRQOmU9LA3nvtC0+MbXBT1yetXzRw8q5rAEFr//mFUW/KjoSLw3Ls26CJaYfCerBXg82LFOD3ddPw==",
       "path": "microsoft.aspnetcore.server.kestrel.transport.libuv/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.server.kestrel.transport.libuv.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.server.kestrel.transport.libuv.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-9dpEG2GCLC7zUIl/ZJs0K0M3FX8/ZApY2kV5zhD3Pg0D5u7EsV/HMfTmaBAtZlPk3eYwt9CU9X0J0qI//MAcFg==",
       "path": "microsoft.aspnetcore.server.kestrel.transport.sockets/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.server.kestrel.transport.sockets.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.server.kestrel.transport.sockets.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Session/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-F5+k1gSltgSGt6l3rvhCWqwWNtI//mM7TxnuMqOkAmrkUuz+sEbELmvduHWkgcRZuLho0XUo4sme7cMe1P0MmQ==",
       "path": "microsoft.aspnetcore.session/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.session.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.session.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.SpaServices/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-U7jtCU90ICexfob63r2i0RwlnAsABTqtDZHKv9s/mQMWBdmUGsE6oLsorZ+tZekzbQF1tGBpd5RSmCWoK2N1cA==",
       "path": "microsoft.aspnetcore.spaservices/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.spaservices.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.spaservices.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.StaticFiles/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-CxGVqhN1AX2447yZCN627te15zQhSL6BTAIKKeUkO1YJhqdLzcxgmGZ24yXqa97i/6Ptty+G4HeTbdA9dd0d1A==",
       "path": "microsoft.aspnetcore.staticfiles/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.staticfiles.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.staticfiles.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.WebSockets/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-u9CbsQzL7FDNobq5rgUhffl/b5GqkotTyETLJZGmEnFWQUv8feNNZYDA3owjVWuOpvZ2BrDXpcKdShgu6h8X5g==",
       "path": "microsoft.aspnetcore.websockets/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.websockets.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.websockets.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.AspNetCore.WebUtilities/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-R0ITYQxC1sgdSsSfTN4mqpH22Wi7X95cNAtc9vyg+UNg6GXACBhcN/zDP27QTBiP2lfoAIEbJiNSuqNIpZBp2w==",
       "path": "microsoft.aspnetcore.webutilities/2.0.0-preview2-final",
-      "hashPath": "microsoft.aspnetcore.webutilities.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.aspnetcore.webutilities.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.Azure.KeyVault/2.2.1-preview": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-5eACgw8ED+EljUlj2LixHnUmcRdKN6yuQFkFDAd+k4jwAeWc9arVmbM08GgiTxQJGgC45fn+aK5G17mCKpe97A==",
       "path": "microsoft.azure.keyvault/2.2.1-preview",
-      "hashPath": "microsoft.azure.keyvault.2.2.1-preview.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-25794-linux-x64.xml;aspnetcore-store-2.0.0-preview2-25794-osx-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x86.xml;aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.azure.keyvault.2.2.1-preview.nupkg.sha512"
     },
     "Microsoft.Azure.KeyVault.WebKey/2.0.5": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-RzkD6/724ARB4jr6Q//jU3C+oUE3u3W3Y1SBBU9ETz0aRfJKrzGULHFRUVVh9dYk1E7xb7RoByU/wIZEmzhEMw==",
       "path": "microsoft.azure.keyvault.webkey/2.0.5",
-      "hashPath": "microsoft.azure.keyvault.webkey.2.0.5.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-25794-linux-x64.xml;aspnetcore-store-2.0.0-preview2-25794-osx-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x86.xml;aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.azure.keyvault.webkey.2.0.5.nupkg.sha512"
     },
     "Microsoft.CodeAnalysis.Analyzers/1.1.0": {
       "type": "package",
@@ -5017,24 +4929,21 @@
       "serviceable": true,
       "sha512": "sha512-1Vn0szLzeDFP0u4Y5R4ztcwUSrGldOx1exA5k+nZIQy4rqK2BRCaKgICjZfxlzWe4qJ6xJP4ZX5rK4piUCHq+Q==",
       "path": "microsoft.codeanalysis.common/2.3.0-beta1",
-      "hashPath": "microsoft.codeanalysis.common.2.3.0-beta1.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-25794-linux-x64.xml;aspnetcore-store-2.0.0-preview2-25794-osx-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x86.xml;aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.codeanalysis.common.2.3.0-beta1.nupkg.sha512"
     },
     "Microsoft.CodeAnalysis.CSharp/2.3.0-beta1": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-OlDkjRdahu3CIH/GVTof2lhy8mIRW3aNvYDB2Q0uQOfw30SCBXf62o9Ul95Xq1vlJXp1MfA0EZy+NCmBjz75RQ==",
       "path": "microsoft.codeanalysis.csharp/2.3.0-beta1",
-      "hashPath": "microsoft.codeanalysis.csharp.2.3.0-beta1.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-25794-linux-x64.xml;aspnetcore-store-2.0.0-preview2-25794-osx-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x86.xml;aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.codeanalysis.csharp.2.3.0-beta1.nupkg.sha512"
     },
     "Microsoft.CodeAnalysis.Razor/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-QFjGCj4U6SmJNeBWnkvxMpFEM1205WLeAMPvNGIogGD8oBH5DMSRrihjOZIKAgLEYS7n3alBR/LRdEwJosTBsw==",
       "path": "microsoft.codeanalysis.razor/2.0.0-preview2-final",
-      "hashPath": "microsoft.codeanalysis.razor.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.codeanalysis.razor.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.CSharp/4.4.0-preview2-25405-01": {
       "type": "package",
@@ -5048,16 +4957,14 @@
       "serviceable": true,
       "sha512": "sha512-8cCe2GvT86HY9y86ud9NhksT0wdwJiytm1TAizqUYCA5eMbyto9A6vcnU0ppFVt/73WQqOBUKzHI27TmwIWQtg==",
       "path": "microsoft.data.edm/5.8.2",
-      "hashPath": "microsoft.data.edm.5.8.2.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-25794-linux-x64.xml;aspnetcore-store-2.0.0-preview2-25794-osx-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x86.xml;aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.data.edm.5.8.2.nupkg.sha512"
     },
     "Microsoft.Data.OData/5.8.2": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-LkdiqrH/wcNnAr3904gL9rlBTS7IuzlkYIiyW9R+dYnPu4fC0w6S/sbxEJ2DsdnlnmngiL0+v6TeW1M9l1OvPg==",
       "path": "microsoft.data.odata/5.8.2",
-      "hashPath": "microsoft.data.odata.5.8.2.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-25794-linux-x64.xml;aspnetcore-store-2.0.0-preview2-25794-osx-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x86.xml;aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.data.odata.5.8.2.nupkg.sha512"
     },
     "Microsoft.Data.Sqlite/2.0.0-preview2-final": {
       "type": "package",
@@ -5071,48 +4978,42 @@
       "serviceable": true,
       "sha512": "sha512-dK8aejneopX1milXnf/iUGnmmmNVVH0B13dVChg/g1EncpHsSvJtX0XA0vWS7IDBkX5GoKiCoA81zjLLJl/YKQ==",
       "path": "microsoft.data.sqlite.core/2.0.0-preview2-final",
-      "hashPath": "microsoft.data.sqlite.core.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.data.sqlite.core.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.DotNet.PlatformAbstractions/2.0.0-preview2-25407-01": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-xdsOcAKh1MV97XH6r7YiLPwp/F8A9krpfvHvkigQpyL8OaB4tkT/DDeKFNKJrj3HivY/y1X1Zr/AYrYLLa74ZA==",
       "path": "microsoft.dotnet.platformabstractions/2.0.0-preview2-25407-01",
-      "hashPath": "microsoft.dotnet.platformabstractions.2.0.0-preview2-25407-01.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-25794-linux-x64.xml;aspnetcore-store-2.0.0-preview2-25794-osx-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x86.xml;aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.dotnet.platformabstractions.2.0.0-preview2-25407-01.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-DNoc3d5bPeYNyoGupH7GY8Af4fbIBSfkDGPLSXBIAG4nwBhBQDHrnbJt+DHDHh35uyvTjLXUXGZXI6nFVbbFZw==",
       "path": "microsoft.entityframeworkcore/2.0.0-preview2-final",
-      "hashPath": "microsoft.entityframeworkcore.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.entityframeworkcore.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore.Design/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-x0SKohVvuPITEcCmM9YIt1j7cuN4zgQ3O3DUrRsThSErOALYyhmbaEAA0rRX7OoHBSCpt5x358NaZZ26lSkz+g==",
       "path": "microsoft.entityframeworkcore.design/2.0.0-preview2-final",
-      "hashPath": "microsoft.entityframeworkcore.design.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.entityframeworkcore.design.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore.InMemory/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-GWgu1FAkHUWjq4uD1MR55mvELyEhx+eeRuRbae+C29EBCy22xTjnWYzUOaz1nPGtAvipBpKVnAACFh/qv4cPfA==",
       "path": "microsoft.entityframeworkcore.inmemory/2.0.0-preview2-final",
-      "hashPath": "microsoft.entityframeworkcore.inmemory.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.entityframeworkcore.inmemory.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore.Relational/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-A8OGjM87ya7g/U9ZSY88KTFqghfMy7ReYHxs2GtANWd6e5PyPF/C/WF+QHki2PPTULNY9pT2yXMobogsfIDFfg==",
       "path": "microsoft.entityframeworkcore.relational/2.0.0-preview2-final",
-      "hashPath": "microsoft.entityframeworkcore.relational.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.entityframeworkcore.relational.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore.Sqlite/2.0.0-preview2-final": {
       "type": "package",
@@ -5126,16 +5027,14 @@
       "serviceable": true,
       "sha512": "sha512-HRv996ubWjAe4rpzZZzva9g/5Ob/dXbrzT2FchzPFpnKtHQkF6v+THwEkOiqv+Jlt1GORGxQzuOhH7jlXXsn9A==",
       "path": "microsoft.entityframeworkcore.sqlite.core/2.0.0-preview2-final",
-      "hashPath": "microsoft.entityframeworkcore.sqlite.core.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.entityframeworkcore.sqlite.core.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore.SqlServer/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-GWg5QxTeusXJVk2EIr5NrLzouqtftVXv+6cUaN35PQ5FMITheseU0qQZIrXgd6bQfoQNAFp4TEc2kfTe0EB9OQ==",
       "path": "microsoft.entityframeworkcore.sqlserver/2.0.0-preview2-final",
-      "hashPath": "microsoft.entityframeworkcore.sqlserver.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.entityframeworkcore.sqlserver.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore.Tools/2.0.0-preview2-final": {
       "type": "package",
@@ -5149,392 +5048,343 @@
       "serviceable": true,
       "sha512": "sha512-6t/thwoiqE+p5zNEYqeJC8/PMZquNuShmeUUQjb+lR+4ZtIYG3SacUwipHJGLC8u6av5z022tNSuBEFhRP2Hfg==",
       "path": "microsoft.extensions.caching.abstractions/2.0.0-preview2-final",
-      "hashPath": "microsoft.extensions.caching.abstractions.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.extensions.caching.abstractions.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.Extensions.Caching.Memory/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-hJL4BBiP7zToHlmfwWQF/jn2h3pOSYL3sQH53yIjJhJPf3nDCxK/iRCAUOHHvXuyoYaRk58oELRksH+47CNW/w==",
       "path": "microsoft.extensions.caching.memory/2.0.0-preview2-final",
-      "hashPath": "microsoft.extensions.caching.memory.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.extensions.caching.memory.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.Extensions.Caching.Redis/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-twLSce5IsGapL6EvCVGAob7O2UAX3d9GDqS4WKMdAkkhXsDkGn6LLTkK9HDcqTz6JJVmKQWoXj69QZ8yim3WqA==",
       "path": "microsoft.extensions.caching.redis/2.0.0-preview2-final",
-      "hashPath": "microsoft.extensions.caching.redis.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.extensions.caching.redis.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.Extensions.Caching.SqlServer/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-sSQB4/zFGSOvWBUgEePxxRFnJ38AUN3cKOZ5xs9pFLSqEqQVw24afLR3Mq89Bz4S119JlpSr7KuwBuH56KFLUA==",
       "path": "microsoft.extensions.caching.sqlserver/2.0.0-preview2-final",
-      "hashPath": "microsoft.extensions.caching.sqlserver.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.extensions.caching.sqlserver.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.Extensions.Configuration/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-JCsMEr8eBqR9G9ucFgds3/b7fJGTpg4UvXy9Ym3rsP1WALTz7gJoQuwaNBsOClEkUPuIFvviAcCL1UjrDuIJ4g==",
       "path": "microsoft.extensions.configuration/2.0.0-preview2-final",
-      "hashPath": "microsoft.extensions.configuration.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.extensions.configuration.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.Extensions.Configuration.Abstractions/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-Nxgr2aCt8QDIJBb+jo4WlP6xgxxkWa7X9T1bfr5j1kiBXfCJVjv9GNIWe7sCJ0JYxCxUxL+aINQotMKh6SAVjw==",
       "path": "microsoft.extensions.configuration.abstractions/2.0.0-preview2-final",
-      "hashPath": "microsoft.extensions.configuration.abstractions.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.extensions.configuration.abstractions.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.Extensions.Configuration.AzureKeyVault/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-WO3feuMdssHw6MfN0cUEb+EtPoLdyGisLez/eSVX0O0xWpK+dAZU8NjvyC0LHFAcwvEBZmPtREoj7r6gkX1ysg==",
       "path": "microsoft.extensions.configuration.azurekeyvault/2.0.0-preview2-final",
-      "hashPath": "microsoft.extensions.configuration.azurekeyvault.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.extensions.configuration.azurekeyvault.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.Extensions.Configuration.Binder/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-dNkToUEpM79qkS5xgCXmI/U/tI36fa5QSmS6N8syoW7d1NnnEwDkzKislYWuHK0wOM5X8gEwmSG/PwfRh1XteA==",
       "path": "microsoft.extensions.configuration.binder/2.0.0-preview2-final",
-      "hashPath": "microsoft.extensions.configuration.binder.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.extensions.configuration.binder.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.Extensions.Configuration.CommandLine/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-lotWOnuW0WXtGil3sdizdp+oiE8DfrZl6NYI5XBCV6fVubDa64OhwxQVNt2foz5m4Co3krYf2gLFKON4jp2YCA==",
       "path": "microsoft.extensions.configuration.commandline/2.0.0-preview2-final",
-      "hashPath": "microsoft.extensions.configuration.commandline.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.extensions.configuration.commandline.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.Extensions.Configuration.EnvironmentVariables/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-RimD7SeKgs0BkMTMoQHlj5R6vm9DbVipfgaFz6lUy7yNG3O6LO5cRVEe51fpPoe0V6sgpPgjmKLNjEc66pGGpQ==",
       "path": "microsoft.extensions.configuration.environmentvariables/2.0.0-preview2-final",
-      "hashPath": "microsoft.extensions.configuration.environmentvariables.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.extensions.configuration.environmentvariables.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.Extensions.Configuration.FileExtensions/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-p+Vuz9toCiBvSPMJw5/zIvT9NpTp610XNnDhHzOAdMLMC9CdU3YxAdxTVUQq9SJXArwXfXQUSjuBRGPkHSjWAw==",
       "path": "microsoft.extensions.configuration.fileextensions/2.0.0-preview2-final",
-      "hashPath": "microsoft.extensions.configuration.fileextensions.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.extensions.configuration.fileextensions.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.Extensions.Configuration.Ini/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-G79DiZT5GORnRNc4gxW4TSS9QIIrnGNZyv3OD/rjuyN4+mfcgpC/ua+qjvi2053ucCHkV2GiIyrCglzToJHxng==",
       "path": "microsoft.extensions.configuration.ini/2.0.0-preview2-final",
-      "hashPath": "microsoft.extensions.configuration.ini.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.extensions.configuration.ini.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.Extensions.Configuration.Json/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-4PhRXO0zcq6JRuo/R5ya4Iv8Euabpq7Cz5yUdfei4tbXhTQ+/Kh9tiHu12zffCKedVwioCWsQ4jXXie2LwTOUA==",
       "path": "microsoft.extensions.configuration.json/2.0.0-preview2-final",
-      "hashPath": "microsoft.extensions.configuration.json.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.extensions.configuration.json.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.Extensions.Configuration.UserSecrets/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-wyQjEthicfUQ4UL/DWhss+fKZSee2Kd7bN0UhMpxuPVga2KdttOgZxKgcE929s/JfA79R62bMQ2LQXecTM0+lw==",
       "path": "microsoft.extensions.configuration.usersecrets/2.0.0-preview2-final",
-      "hashPath": "microsoft.extensions.configuration.usersecrets.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.extensions.configuration.usersecrets.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.Extensions.Configuration.Xml/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-jUmO+oYxiwusb6DG6YG4lY3l/8kuMDqj0Y4zfdgyJ/1mF+g1Zx7HMznOy3ug6yt26eVeZMYXOtT6PFOZLaImFw==",
       "path": "microsoft.extensions.configuration.xml/2.0.0-preview2-final",
-      "hashPath": "microsoft.extensions.configuration.xml.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.extensions.configuration.xml.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.Extensions.DependencyInjection/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-TAXQ2YZnjsTWq0+hSdBLVcAVNMXc57V3YT8rUP5p7v3+Ypf7Xhrn/dRrOjv12XSV8mwvMu5q49WYfpcff/KS1A==",
       "path": "microsoft.extensions.dependencyinjection/2.0.0-preview2-final",
-      "hashPath": "microsoft.extensions.dependencyinjection.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.extensions.dependencyinjection.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.Extensions.DependencyInjection.Abstractions/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-XLQm7QgVeawBB8Osx0gP1yPtuSbu3LmBVkTQiF1tfpGPKYaccKKunZbUpvxp0mS8RiErPbfqlTiNsgv0f1PRTw==",
       "path": "microsoft.extensions.dependencyinjection.abstractions/2.0.0-preview2-final",
-      "hashPath": "microsoft.extensions.dependencyinjection.abstractions.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.extensions.dependencyinjection.abstractions.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.Extensions.DependencyModel/2.0.0-preview2-25407-01": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-s02DTuvJDMGfouVRMRnTHuZUSS7VnSnfFoi0JI6ZlrAui0wJgCX8/EhSg2t4UroJM7nektr5x+s7NDNdGYVI/w==",
       "path": "microsoft.extensions.dependencymodel/2.0.0-preview2-25407-01",
-      "hashPath": "microsoft.extensions.dependencymodel.2.0.0-preview2-25407-01.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-25794-linux-x64.xml;aspnetcore-store-2.0.0-preview2-25794-osx-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x86.xml;aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.extensions.dependencymodel.2.0.0-preview2-25407-01.nupkg.sha512"
     },
     "Microsoft.Extensions.DiagnosticAdapter/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-Q4VIhY4aYqbUjR/FcrjBYK55woyBrwqsxCo5VY0n160Bm06EERM15F3aMa3HvfZwhAidicTtZpwYrkeK72elKg==",
       "path": "microsoft.extensions.diagnosticadapter/2.0.0-preview2-final",
-      "hashPath": "microsoft.extensions.diagnosticadapter.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.extensions.diagnosticadapter.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.Extensions.FileProviders.Abstractions/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-zYg+8sp983FY1xkpfeTPGgQ6DGFg8XGam2o9cklokwuxTAOQQd8qIVWJGabb+PEAendhpltAAPs9dT39lmZC8A==",
       "path": "microsoft.extensions.fileproviders.abstractions/2.0.0-preview2-final",
-      "hashPath": "microsoft.extensions.fileproviders.abstractions.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.extensions.fileproviders.abstractions.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.Extensions.FileProviders.Composite/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-Ycey9Pw6jLeRbVYYRIJwHun0wHqOAAhqtT5SeBjdfCkeZB8ZL7WKNs0TTOt8GEsFP+ApVqp0HLSKfFlWXwW1gA==",
       "path": "microsoft.extensions.fileproviders.composite/2.0.0-preview2-final",
-      "hashPath": "microsoft.extensions.fileproviders.composite.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.extensions.fileproviders.composite.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.Extensions.FileProviders.Embedded/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-CkjBtBzpEpJpXO4hojHeV0jRbQm5LA3yEQnSiX/fOlNdFIoRfAuXrPaprdQBht82TMkk7rrSF59Vj5h+/vBdqg==",
       "path": "microsoft.extensions.fileproviders.embedded/2.0.0-preview2-final",
-      "hashPath": "microsoft.extensions.fileproviders.embedded.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.extensions.fileproviders.embedded.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.Extensions.FileProviders.Physical/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-vVvg1Q8hH/pmPEixQJ4rSEmN6JOvU+HqVbqdv0Vx26KRIrHi6SADfHWH5euTtRjUJjMJ1H2VQ3p/E12fYdA5Gg==",
       "path": "microsoft.extensions.fileproviders.physical/2.0.0-preview2-final",
-      "hashPath": "microsoft.extensions.fileproviders.physical.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.extensions.fileproviders.physical.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.Extensions.FileSystemGlobbing/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-aFVoSX0lVwVKsF/OlljH4WJLpfrR6HN7OneHLS8uAD8+YEz3dzlDGMkb8xHrvOnRJhSaCReF3oV5iJ0rr+LFwg==",
       "path": "microsoft.extensions.filesystemglobbing/2.0.0-preview2-final",
-      "hashPath": "microsoft.extensions.filesystemglobbing.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.extensions.filesystemglobbing.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.Extensions.Hosting.Abstractions/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-zRt1MlyNZanTOvhycCEic8mEZQ5iCwRyvf3uUrzp4kVNfSMk+X97uGjOmIRcbsl1APa238QRccFlLeURCFN/UQ==",
       "path": "microsoft.extensions.hosting.abstractions/2.0.0-preview2-final",
-      "hashPath": "microsoft.extensions.hosting.abstractions.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.extensions.hosting.abstractions.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.Extensions.Identity.Core/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-JObMw3RpiC4b9R0vprk8kmo8rml2TI6gcDx7SCbPhQu/Muz3bH0B7F/r4v3vwZJVkL3enPQkHy9VH0/4NamLqw==",
       "path": "microsoft.extensions.identity.core/2.0.0-preview2-final",
-      "hashPath": "microsoft.extensions.identity.core.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.extensions.identity.core.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.Extensions.Identity.Stores/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-HONRAGz5ONleUht65eKCr1ALZaKcxolQXklPfMCDY1rlrMmGuzQplS+kV3wQtlUqzgQtv2E2c7FB/AiRCnHq6g==",
       "path": "microsoft.extensions.identity.stores/2.0.0-preview2-final",
-      "hashPath": "microsoft.extensions.identity.stores.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.extensions.identity.stores.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.Extensions.Localization/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-cV9LyBgPbevXNo/dm42OHZj8gj3d1RrYa46M3US3fEr/JezLPxIZbGmH0NgAIe606wo3AzkSr97FK8YoJRlF1Q==",
       "path": "microsoft.extensions.localization/2.0.0-preview2-final",
-      "hashPath": "microsoft.extensions.localization.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.extensions.localization.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.Extensions.Localization.Abstractions/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-KYDT0j8bWosRHYsmJoqmTYVRUlCIV01YQ2UiAv6o5cR2AT2ZM6g9QEM83xhHCmekGIoms7iboZU0LJrRaXA+oQ==",
       "path": "microsoft.extensions.localization.abstractions/2.0.0-preview2-final",
-      "hashPath": "microsoft.extensions.localization.abstractions.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.extensions.localization.abstractions.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.Extensions.Logging/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-8E/+HtgAYyRfwptmSx5KYIjSJYzYbIjbu//8r1XsuICAf+gxPvzyzchHIWkX2N18cZkgNosVA4n1bcFuTEZgLA==",
       "path": "microsoft.extensions.logging/2.0.0-preview2-final",
-      "hashPath": "microsoft.extensions.logging.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.extensions.logging.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.Extensions.Logging.Abstractions/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-ZuqCWpCiSkWOgaMkM4AuEz9rngAT7QEgUKezq/b45mFxE8oSyGm/3SDotf8jovAGYH4uZDM4bANGExf5y2eh7Q==",
       "path": "microsoft.extensions.logging.abstractions/2.0.0-preview2-final",
-      "hashPath": "microsoft.extensions.logging.abstractions.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.extensions.logging.abstractions.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.Extensions.Logging.AzureAppServices/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-8Ka8yGIX5stLbh6OFw6Uxn1s1zbNqN4AzZUQdV2hVsczDzOdPqit4iytOxfPDDzm9VTdqNiss8YSsafC13qc6Q==",
       "path": "microsoft.extensions.logging.azureappservices/2.0.0-preview2-final",
-      "hashPath": "microsoft.extensions.logging.azureappservices.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.extensions.logging.azureappservices.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.Extensions.Logging.Configuration/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-3WyCTYZ7E+J8fWn7qgqTCr5Gckda6JC6qY5CknLiQrxCt0XCc+SfjzLIs3/2sv2wA8WRvRaAvu/Yqy2/pKkOsA==",
       "path": "microsoft.extensions.logging.configuration/2.0.0-preview2-final",
-      "hashPath": "microsoft.extensions.logging.configuration.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.extensions.logging.configuration.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.Extensions.Logging.Console/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-bP24LXVC/4yV94qG0+0pdC7E/KhEvSJwncyMjUnR5MyFgFoev0fgUn04YvsJNvYK0ChUgTn1Whta63Q+ycuUlg==",
       "path": "microsoft.extensions.logging.console/2.0.0-preview2-final",
-      "hashPath": "microsoft.extensions.logging.console.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.extensions.logging.console.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.Extensions.Logging.Debug/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-ScpygJh4YPqC6PZWWUEDH8FLj5zS/SUdpzezUadRWccux7axmLrP504O9vLMz4IzTKX2TKfoIShVChZ/tqkmkA==",
       "path": "microsoft.extensions.logging.debug/2.0.0-preview2-final",
-      "hashPath": "microsoft.extensions.logging.debug.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.extensions.logging.debug.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.Extensions.Logging.EventSource/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-V2y23Lu9m3j4g5WXly9A39utixJnvZusDYjEftpBSUy6VW3ws5QxrEo2VhcAz5YSWk9xzAiC6NN2TpcxF6e8Wg==",
       "path": "microsoft.extensions.logging.eventsource/2.0.0-preview2-final",
-      "hashPath": "microsoft.extensions.logging.eventsource.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.extensions.logging.eventsource.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.Extensions.Logging.TraceSource/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-zgI3DaOVorYZYuolYWICSRhyBclM3W3vgcjISJH52ay7lvFucRZV4ZcHuMbTarYrZOloHgQ3eqC8z8eqiNhTzg==",
       "path": "microsoft.extensions.logging.tracesource/2.0.0-preview2-final",
-      "hashPath": "microsoft.extensions.logging.tracesource.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.extensions.logging.tracesource.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.Extensions.ObjectPool/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-+H2IlgQfAutxpLA3w2vvyRibn+hnEYaviHGNLec0kZxxcfofQBXkcj0FxRIfmxTkgFSAi5j+u7fPzWrNr+cJEg==",
       "path": "microsoft.extensions.objectpool/2.0.0-preview2-final",
-      "hashPath": "microsoft.extensions.objectpool.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.extensions.objectpool.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.Extensions.Options/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-GxejJx/1LRqOu/VVrchqNn388l8UuCmjsHyf77hvDqTGMuuSGaxjVRYMvj+iYQ3Y6WvbwpJ+BEMYjuHD/zc6YA==",
       "path": "microsoft.extensions.options/2.0.0-preview2-final",
-      "hashPath": "microsoft.extensions.options.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.extensions.options.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.Extensions.Options.ConfigurationExtensions/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-q55i3jXHyxKyv/i6fAYCshAosmVa4lApqBE3umJm/aeJ4oxbySH7M9YJVHiss56gZFG0WERwcz2tEAMxMaKOgA==",
       "path": "microsoft.extensions.options.configurationextensions/2.0.0-preview2-final",
-      "hashPath": "microsoft.extensions.options.configurationextensions.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.extensions.options.configurationextensions.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.Extensions.PlatformAbstractions/1.1.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-V+l0PtWCgbijuv39U+MA65X75dPB/ZLYQ1ToqqUpcGJxJm8UMIorU+uj4A+Q3G3tO9mAcrDKzBPUAVadPpezvg==",
       "path": "microsoft.extensions.platformabstractions/1.1.0",
-      "hashPath": "microsoft.extensions.platformabstractions.1.1.0.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-25794-linux-x64.xml;aspnetcore-store-2.0.0-preview2-25794-osx-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x86.xml;aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.extensions.platformabstractions.1.1.0.nupkg.sha512"
     },
     "Microsoft.Extensions.Primitives/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-SgrOPo/kutpIZXA7i5hZWvK6pJjxeUCjdVhhmmeUv9kyyDkH1qLzINCY62gjmCHFCdRD1/o6XgTg0CpOM1Cf6g==",
       "path": "microsoft.extensions.primitives/2.0.0-preview2-final",
-      "hashPath": "microsoft.extensions.primitives.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.extensions.primitives.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.Extensions.WebEncoders/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-Y5dDECQqioCk7XiZvTlxxJOZqpZgGd7i067UuIUGeqfdYIkWA3RiQe1udsQfqrIfU8ClRfkYtgo4Ks92rxJ9Ng==",
       "path": "microsoft.extensions.webencoders/2.0.0-preview2-final",
-      "hashPath": "microsoft.extensions.webencoders.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.extensions.webencoders.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.IdentityModel.Clients.ActiveDirectory/3.13.9": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-MlxtIlzPd4/FuAUV6zYNcVv1fOOMob9Hu3vt+ip6apaa8smsai4+DH9iuWUBX7lTUT6G3wITDGnG2dZ9PLvR1g==",
       "path": "microsoft.identitymodel.clients.activedirectory/3.13.9",
-      "hashPath": "microsoft.identitymodel.clients.activedirectory.3.13.9.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-25794-linux-x64.xml;aspnetcore-store-2.0.0-preview2-25794-osx-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x86.xml;aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.identitymodel.clients.activedirectory.3.13.9.nupkg.sha512"
     },
     "Microsoft.IdentityModel.Logging/1.1.3": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-86wyLRJBGWnR3Fvc5JB7uFA3FDP4PEDJYNH4Mh0jSzfXBgYoUMt9pScT47Mr8FqLaYsjJER1JPTWG02rj4H7+w==",
       "path": "microsoft.identitymodel.logging/1.1.3",
-      "hashPath": "microsoft.identitymodel.logging.1.1.3.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-25794-linux-x64.xml;aspnetcore-store-2.0.0-preview2-25794-osx-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x86.xml;aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.identitymodel.logging.1.1.3.nupkg.sha512"
     },
     "Microsoft.IdentityModel.Protocols/2.1.3": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-LfEadsxgqeRygZ2ZVe1dX40o3zvXXiL6FS/snJYpewwjg9L7PA/kGyHx6HH0ygn+bypwXQ1ra+gijqX7U4Tk6Q==",
       "path": "microsoft.identitymodel.protocols/2.1.3",
-      "hashPath": "microsoft.identitymodel.protocols.2.1.3.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-25794-linux-x64.xml;aspnetcore-store-2.0.0-preview2-25794-osx-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x86.xml;aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.identitymodel.protocols.2.1.3.nupkg.sha512"
     },
     "Microsoft.IdentityModel.Protocols.OpenIdConnect/2.1.3": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-19R9klYi3fsJyoK2efKYwwRl6qIMUnKMXJervy3xT9UwjPfe58tBDlMFADr0v8TnsHqYbhwtB5UMFChnbLtEZg==",
       "path": "microsoft.identitymodel.protocols.openidconnect/2.1.3",
-      "hashPath": "microsoft.identitymodel.protocols.openidconnect.2.1.3.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-25794-linux-x64.xml;aspnetcore-store-2.0.0-preview2-25794-osx-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x86.xml;aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.identitymodel.protocols.openidconnect.2.1.3.nupkg.sha512"
     },
     "Microsoft.IdentityModel.Tokens/5.1.3": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-LoR34SYfJU5HBSf5frGXay+Jpc4vHkHxDstkZZ0UpOUARDzHR/je4m7OrRmnqlzVEip0dy/MjBEq/S+fIy06Jw==",
       "path": "microsoft.identitymodel.tokens/5.1.3",
-      "hashPath": "microsoft.identitymodel.tokens.5.1.3.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-25794-linux-x64.xml;aspnetcore-store-2.0.0-preview2-25794-osx-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x86.xml;aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.identitymodel.tokens.5.1.3.nupkg.sha512"
     },
     "Microsoft.Net.Http.Headers/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-NvQNuZi/m08Qe6Ej9UDrgz2UFjeRQw7mkEd3q7LzrnI0Q620DneJmIUR9DUIE58f9hAjmsRSL9rPQD2w09BzEQ==",
       "path": "microsoft.net.http.headers/2.0.0-preview2-final",
-      "hashPath": "microsoft.net.http.headers.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.net.http.headers.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.NETCore.Targets/1.1.0": {
       "type": "package",
@@ -5548,24 +5398,21 @@
       "serviceable": true,
       "sha512": "sha512-4+ox+6Xtl7/voIMQcL9TH3Ki+ER/d2xs5y+kr/VF5cqjJDcut47atfKiuxQTS80p7CikHxCEJboBvRsHcwgfbA==",
       "path": "microsoft.rest.clientruntime/2.3.7",
-      "hashPath": "microsoft.rest.clientruntime.2.3.7.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-25794-linux-x64.xml;aspnetcore-store-2.0.0-preview2-25794-osx-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x86.xml;aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.rest.clientruntime.2.3.7.nupkg.sha512"
     },
     "Microsoft.Rest.ClientRuntime.Azure/3.3.6": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-/pRkYRI1hfj9iaCzbMMuONotATrI0W7fXWftd6ICA9KJVF0LE36VUgCYIH+wMOzRB9ykzmCQR0zJ7cuRrRdq2A==",
       "path": "microsoft.rest.clientruntime.azure/3.3.6",
-      "hashPath": "microsoft.rest.clientruntime.azure.3.3.6.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-25794-linux-x64.xml;aspnetcore-store-2.0.0-preview2-25794-osx-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x86.xml;aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.rest.clientruntime.azure.3.3.6.nupkg.sha512"
     },
     "Microsoft.VisualStudio.Web.BrowserLink/2.0.0-preview2-final": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-wj2h4j3IeUGY7eYVM8utUlKezasBg4SwVPCvuFiCIA32MxrEEwVRHywZndDX2PvQ93FZS6X5iVQW+hV19Ef4BA==",
       "path": "microsoft.visualstudio.web.browserlink/2.0.0-preview2-final",
-      "hashPath": "microsoft.visualstudio.web.browserlink.2.0.0-preview2-final.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "microsoft.visualstudio.web.browserlink.2.0.0-preview2-final.nupkg.sha512"
     },
     "Microsoft.Win32.Primitives/4.3.0": {
       "type": "package",
@@ -5586,24 +5433,21 @@
       "serviceable": true,
       "sha512": "sha512-ebWzW9j2nwxQeBo59As2TYn7nYr9BHicqqCwHOD1Vdo+50HBtLPuqdiCYJcLdTRknpYis/DSEOQz5KmZxwrIAg==",
       "path": "newtonsoft.json/10.0.1",
-      "hashPath": "newtonsoft.json.10.0.1.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-25794-linux-x64.xml;aspnetcore-store-2.0.0-preview2-25794-osx-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x86.xml;aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "newtonsoft.json.10.0.1.nupkg.sha512"
     },
     "Newtonsoft.Json.Bson/1.0.1": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-Wtcc+bJ6tv9mhn97YYmDMZ/vFms1puuKvcn5IPfXCUlkqs9i1ntopAQyTDxYS7X7LK3fbiDAz61kEl3lfhcgsw==",
       "path": "newtonsoft.json.bson/1.0.1",
-      "hashPath": "newtonsoft.json.bson.1.0.1.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-25794-linux-x64.xml;aspnetcore-store-2.0.0-preview2-25794-osx-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x86.xml;aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "newtonsoft.json.bson.1.0.1.nupkg.sha512"
     },
     "Remotion.Linq/2.1.1": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-IJn0BqkvwEDpP+2qjvci7n4/a9f7DhKESLWb2/uG4xQh3rTkGTBUz69bI4IivCoKkTFAqjXxYDZw2K/npohjsw==",
       "path": "remotion.linq/2.1.1",
-      "hashPath": "remotion.linq.2.1.1.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-25794-linux-x64.xml;aspnetcore-store-2.0.0-preview2-25794-osx-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x86.xml;aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "remotion.linq.2.1.1.nupkg.sha512"
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
       "type": "package",
@@ -5743,112 +5587,98 @@
       "serviceable": true,
       "sha512": "sha512-dt4foc36XcVnO3NKJJEHpoym3LfMdVy1RMY4bXbd/8sfRGINw9YF04a3mJBWHvT/jSbpbfsspSHU295K7JIh8w==",
       "path": "runtime.win-x64.runtime.native.system.data.sqlclient.sni/4.4.0-preview2-25312-01",
-      "hashPath": "runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0-preview2-25312-01.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-25794-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml"
+      "hashPath": "runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0-preview2-25312-01.nupkg.sha512"
     },
     "runtime.win-x86.runtime.native.System.Data.SqlClient.sni/4.4.0-preview2-25312-01": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-nlleCLJGf04kgl/8yC9Cp048TVyBw0c2MJqcRSoKPIrR9LGt/cGjH3qRdGFoCk0xua2WlGATyP0ufKYG3uoiCg==",
       "path": "runtime.win-x86.runtime.native.system.data.sqlclient.sni/4.4.0-preview2-25312-01",
-      "hashPath": "runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0-preview2-25312-01.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-25794-win7-x86.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0-preview2-25312-01.nupkg.sha512"
     },
     "Serilog/2.3.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-ZD5lGfOTMrum6E9H6t3/j4h6RHw8D8v5FTLIewQP3kWsnWkT/qrGKsEkNe7UUqwqB2PmaSl8xBPyNtC1TS9Z2w==",
       "path": "serilog/2.3.0",
-      "hashPath": "serilog.2.3.0.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-25794-linux-x64.xml;aspnetcore-store-2.0.0-preview2-25794-osx-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x86.xml;aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "serilog.2.3.0.nupkg.sha512"
     },
     "Serilog.Extensions.Logging/1.4.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-qX+lJySJqkHGWF0XSG71CC8Ky3pytfaiGgB1e+tT/JroZMTxR1ToS2ZxR593K6k9yrBoFTSHigyvflcXhZcdEw==",
       "path": "serilog.extensions.logging/1.4.0",
-      "hashPath": "serilog.extensions.logging.1.4.0.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-25794-linux-x64.xml;aspnetcore-store-2.0.0-preview2-25794-osx-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x86.xml;aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "serilog.extensions.logging.1.4.0.nupkg.sha512"
     },
     "Serilog.Sinks.File/3.2.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-LudpLKdNPQzgRXmD+KGSmly0JQ/Lm0vslALpRCOXHRjCzh1AiG0/TcdOjaOO0iHj7XI22I38VDN7WjE4gLYIPw==",
       "path": "serilog.sinks.file/3.2.0",
-      "hashPath": "serilog.sinks.file.3.2.0.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-25794-linux-x64.xml;aspnetcore-store-2.0.0-preview2-25794-osx-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x86.xml;aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "serilog.sinks.file.3.2.0.nupkg.sha512"
     },
     "Serilog.Sinks.PeriodicBatching/2.1.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-3s8B1Psy81Tc7IwKvPh0CIWNppxnZDB2B82xe0qOK+Ok8hXiLnQWSgH1NXbM7DhwDdHJKySL9iBbIgzN6OrNcg==",
       "path": "serilog.sinks.periodicbatching/2.1.0",
-      "hashPath": "serilog.sinks.periodicbatching.2.1.0.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-25794-linux-x64.xml;aspnetcore-store-2.0.0-preview2-25794-osx-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x86.xml;aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "serilog.sinks.periodicbatching.2.1.0.nupkg.sha512"
     },
     "Serilog.Sinks.RollingFile/3.3.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-5JIGFb/5bgEEWWRosG1rzqRJSYxFqkliQi0Bv/qPLRiHZcIHFZ1uRJmD9ZPr/MmPvW8o1qLRiqJZ/HrqRHBXNA==",
       "path": "serilog.sinks.rollingfile/3.3.0",
-      "hashPath": "serilog.sinks.rollingfile.3.3.0.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-25794-linux-x64.xml;aspnetcore-store-2.0.0-preview2-25794-osx-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x86.xml;aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "serilog.sinks.rollingfile.3.3.0.nupkg.sha512"
     },
     "SQLitePCLRaw.bundle_green/1.1.3": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-EGYlarWnbYtJWrHUX/t6CaXIV7v/u+54dEfXEI2VDFL/xKP7232jgybLnqQMQR5Zmq5vW5bE6qxqEcucYycU2A==",
       "path": "sqlitepclraw.bundle_green/1.1.3",
-      "hashPath": "sqlitepclraw.bundle_green.1.1.3.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-25794-linux-x64.xml;aspnetcore-store-2.0.0-preview2-25794-osx-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x86.xml;aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "sqlitepclraw.bundle_green.1.1.3.nupkg.sha512"
     },
     "SQLitePCLRaw.core/1.1.3": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-MEe/Y50faC00RVi9kn/bIA4ra8U4gyahyGiuI2p3fTeZFV/yYkKJJtTc4LJ84A6ig92gLEO3/bZ9VKo7Ko/LDw==",
       "path": "sqlitepclraw.core/1.1.3",
-      "hashPath": "sqlitepclraw.core.1.1.3.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-25794-linux-x64.xml;aspnetcore-store-2.0.0-preview2-25794-osx-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x86.xml;aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "sqlitepclraw.core.1.1.3.nupkg.sha512"
     },
     "SQLitePCLRaw.lib.e_sqlite3.linux/1.1.3": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-Gd/+iwjq6K3E3IV4AmNSrr+zyMqbw5BLmeTJJiSBxTblYVpCi2IDYXbcTB5aNqN0zuMqXntM2LMqU4ip13NDUQ==",
       "path": "sqlitepclraw.lib.e_sqlite3.linux/1.1.3",
-      "hashPath": "sqlitepclraw.lib.e_sqlite3.linux.1.1.3.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-25794-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-linux-x64.xml"
+      "hashPath": "sqlitepclraw.lib.e_sqlite3.linux.1.1.3.nupkg.sha512"
     },
     "SQLitePCLRaw.lib.e_sqlite3.osx/1.1.3": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-xeYi+FIC7WB+ZIpQvxCm4IlZHjYhfwXkGjq/CRw+RufNcgP21Oyel1kZmygQMTs82QuEl/l9lxl2aZQnlbfu6A==",
       "path": "sqlitepclraw.lib.e_sqlite3.osx/1.1.3",
-      "hashPath": "sqlitepclraw.lib.e_sqlite3.osx.1.1.3.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-25794-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml"
+      "hashPath": "sqlitepclraw.lib.e_sqlite3.osx.1.1.3.nupkg.sha512"
     },
     "SQLitePCLRaw.lib.e_sqlite3.v110_xp/1.1.3": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-eRPadk/iWnEEBS5GMxYMx7QRvCOmRQy/XrjzfvX8vbcydeG8E+XEZ18BJorB1pReesx1/yKB7K9RP7PdA9F8Ew==",
       "path": "sqlitepclraw.lib.e_sqlite3.v110_xp/1.1.3",
-      "hashPath": "sqlitepclraw.lib.e_sqlite3.v110_xp.1.1.3.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-25794-win7-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x86.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "sqlitepclraw.lib.e_sqlite3.v110_xp.1.1.3.nupkg.sha512"
     },
     "SQLitePCLRaw.provider.e_sqlite3.netstandard11/1.1.3": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-OYfztKdPoYwFn3JfCV+c/iEXm2ZRpHv+M1PE2o/58apYRnG8nklTIlR99S0DLuy10uiN+P+pZ03cUmNSe1VF6A==",
       "path": "sqlitepclraw.provider.e_sqlite3.netstandard11/1.1.3",
-      "hashPath": "sqlitepclraw.provider.e_sqlite3.netstandard11.1.1.3.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-25794-linux-x64.xml;aspnetcore-store-2.0.0-preview2-25794-osx-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x86.xml;aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "sqlitepclraw.provider.e_sqlite3.netstandard11.1.1.3.nupkg.sha512"
     },
     "StackExchange.Redis.StrongName/1.2.3": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-FUyroDPf3UpYUQCmhL6MMjrhqmgtWXDitUEgmMlKFt1438bd78jojkVhOxL7I9D0Xy7w6YGknifyuf8LO2+J3w==",
       "path": "stackexchange.redis.strongname/1.2.3",
-      "hashPath": "stackexchange.redis.strongname.1.2.3.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-25794-linux-x64.xml;aspnetcore-store-2.0.0-preview2-25794-osx-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x86.xml;aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "stackexchange.redis.strongname.1.2.3.nupkg.sha512"
     },
     "System.AppContext/4.3.0": {
       "type": "package",
@@ -5939,8 +5769,7 @@
       "serviceable": true,
       "sha512": "sha512-b+53me2xU8uzL4ChegxYO2jMw9+ANG1KFsBVXm61PFIBP506bEBRsNNPTK12p9rC6KK7NffBTGVjovep+abByw==",
       "path": "system.data.sqlclient/4.4.0-preview2-25405-01",
-      "hashPath": "system.data.sqlclient.4.4.0-preview2-25405-01.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-25794-linux-x64.xml;aspnetcore-store-2.0.0-preview2-25794-osx-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x86.xml;aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "system.data.sqlclient.4.4.0-preview2-25405-01.nupkg.sha512"
     },
     "System.Diagnostics.Contracts/4.3.0": {
       "type": "package",
@@ -6031,16 +5860,14 @@
       "serviceable": true,
       "sha512": "sha512-16to7monvW3kN/WK29JTiGihDd2ZoMNIWhQ2R6SEI4GHL5WftI9EPSBqkRimiBPJiEzkG4ZJdTT6hXoaAlWEVw==",
       "path": "system.identitymodel.tokens.jwt/5.1.3",
-      "hashPath": "system.identitymodel.tokens.jwt.5.1.3.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-25794-linux-x64.xml;aspnetcore-store-2.0.0-preview2-25794-osx-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x86.xml;aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "system.identitymodel.tokens.jwt.5.1.3.nupkg.sha512"
     },
     "System.Interactive.Async/3.1.1": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-hZccYiIE5RS1/J9Tb/BNtosAGVggdlsJm4Ojdu+gDV0p4AIi+LUfUogMKkRacljQEJd2AG6vYzvcjhQFkqoZmw==",
       "path": "system.interactive.async/3.1.1",
-      "hashPath": "system.interactive.async.3.1.1.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-25794-linux-x64.xml;aspnetcore-store-2.0.0-preview2-25794-osx-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x86.xml;aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "system.interactive.async.3.1.1.nupkg.sha512"
     },
     "System.IO/4.3.0": {
       "type": "package",
@@ -6236,8 +6063,7 @@
       "serviceable": true,
       "sha512": "sha512-y5DQAPk7TlQEulzGAJi/S95h16S3uMbmF05ZCJtfFiaSR7vC2RqBdOOpiXqLhui/qt6WVstFAnOXXaaraM4Oqw==",
       "path": "system.runtime.compilerservices.unsafe/4.4.0-preview2-25405-01",
-      "hashPath": "system.runtime.compilerservices.unsafe.4.4.0-preview2-25405-01.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-25794-linux-x64.xml;aspnetcore-store-2.0.0-preview2-25794-osx-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x86.xml;aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "system.runtime.compilerservices.unsafe.4.4.0-preview2-25405-01.nupkg.sha512"
     },
     "System.Runtime.Extensions/4.3.0": {
       "type": "package",
@@ -6370,8 +6196,7 @@
       "serviceable": true,
       "sha512": "sha512-kWLMQ2f5p81ttUpFiGoVvZe57/gG6Fr3IBazp6/PMHvrTJ8Msq7tycmuCVOhXUrxZJ3wEsK5H4c/mDSQq8vHyQ==",
       "path": "system.security.cryptography.xml/4.4.0-preview2-25405-01",
-      "hashPath": "system.security.cryptography.xml.4.4.0-preview2-25405-01.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-25794-linux-x64.xml;aspnetcore-store-2.0.0-preview2-25794-osx-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x86.xml;aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "system.security.cryptography.xml.4.4.0-preview2-25405-01.nupkg.sha512"
     },
     "System.Security.Principal/4.3.0": {
       "type": "package",
@@ -6392,8 +6217,7 @@
       "serviceable": true,
       "sha512": "sha512-tzCsFCIvunT1PA4mQNLMDiayicHrMuxtzVYswl+717YmTO53dCrvWQq0aSj4acUyJ2yHHDkfZkpgi1p92NkWYQ==",
       "path": "system.spatial/5.8.2",
-      "hashPath": "system.spatial.5.8.2.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-25794-linux-x64.xml;aspnetcore-store-2.0.0-preview2-25794-osx-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x86.xml;aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "system.spatial.5.8.2.nupkg.sha512"
     },
     "System.Text.Encoding/4.3.0": {
       "type": "package",
@@ -6407,8 +6231,7 @@
       "serviceable": true,
       "sha512": "sha512-rfj9YTk12kMbXlsNKPqRqkhrwDIO28fXpL/hyqNcnYaPf+OwTISqyP3KPZx9iOe8ChaLPGwN9XG2Y9cBT1sETw==",
       "path": "system.text.encoding.codepages/4.4.0-preview2-25405-01",
-      "hashPath": "system.text.encoding.codepages.4.4.0-preview2-25405-01.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-25794-linux-x64.xml;aspnetcore-store-2.0.0-preview2-25794-osx-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x86.xml;aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "system.text.encoding.codepages.4.4.0-preview2-25405-01.nupkg.sha512"
     },
     "System.Text.Encoding.Extensions/4.3.0": {
       "type": "package",
@@ -6422,8 +6245,7 @@
       "serviceable": true,
       "sha512": "sha512-58+1w0AHvEQi9PEgl1lWIguVjjeys+3h6Dntc7NPd1VcjamkDbuZDPSy0A0JvMustyeUSJQMQnBfDEZaSED3uA==",
       "path": "system.text.encodings.web/4.4.0-preview2-25405-01",
-      "hashPath": "system.text.encodings.web.4.4.0-preview2-25405-01.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-25794-linux-x64.xml;aspnetcore-store-2.0.0-preview2-25794-osx-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x86.xml;aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "system.text.encodings.web.4.4.0-preview2-25405-01.nupkg.sha512"
     },
     "System.Text.RegularExpressions/4.3.0": {
       "type": "package",
@@ -6542,8 +6364,7 @@
       "serviceable": true,
       "sha512": "sha512-VbswEBLcpTnD62cPDguH8DANrzBtJRAiaTVJ+ly+x7Q6+urv5C8RmJ4BT0Pd0+FgBQ0PEitc+EMGDaVkH/utLQ==",
       "path": "windowsazure.storage/8.1.1",
-      "hashPath": "windowsazure.storage.8.1.1.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-preview2-25794-linux-x64.xml;aspnetcore-store-2.0.0-preview2-25794-osx-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x64.xml;aspnetcore-store-2.0.0-preview2-25794-win7-x86.xml;aspnetcore-store-2.0.0-preview2-final-linux-x64.xml;aspnetcore-store-2.0.0-preview2-final-osx-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x64.xml;aspnetcore-store-2.0.0-preview2-final-win7-x86.xml"
+      "hashPath": "windowsazure.storage.8.1.1.nupkg.sha512"
     },
     "Microsoft.NETCore.App/2.0.0-preview2-25407-01": {
       "type": "package",
