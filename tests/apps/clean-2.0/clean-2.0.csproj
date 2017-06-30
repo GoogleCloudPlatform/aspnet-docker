@@ -15,4 +15,17 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0-preview2-final" />
   </ItemGroup>
 
+  <!--   
+       This property is necessary because the generated manifest is incorrect, check GitHub issue
+       at: https://github.com/dotnet/cli/issues/6516
+  -->
+  <PropertyGroup>
+    <PublishWithAspNetCoreTargetManifest>false</PublishWithAspNetCoreTargetManifest>
+  </PropertyGroup>
+
+  <!-- Copy the app.yaml on publish -->
+  <ItemGroup>
+    <None Include="app.yaml" CopyToOutputDirectory="Always" />
+  </ItemGroup>
+
 </Project>
