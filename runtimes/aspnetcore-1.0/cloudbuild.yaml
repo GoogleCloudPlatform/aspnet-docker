@@ -1,0 +1,44 @@
+# This file defines how the ASP.NET Core 1.0 images are to be built and
+# published. The file expects the following substitutions:
+#   _DOCKER_NAMESPACE, the repository where to push the images.
+#   _TAG, the tag to use for the published images.
+steps:
+# Build the runtime images in parallel.
+- name: gcr.io/cloud-builders/docker
+  args: [ 'build', '-t', '${_DOCKER_NAMESPACE}/aspnetcore:1.0.3-${_TAG}',
+          '--no-cache', '--pull', './versions/1.0.3' ]
+  id: 'aspnetcore-1-0-3-build'
+  waitFor: ['-']
+- name: gcr.io/cloud-builders/docker
+  args: [ 'build', '-t', '${_DOCKER_NAMESPACE}/aspnetcore:1.0.4-${_TAG}',
+          '--no-cache', '--pull', './versions/1.0.4' ]
+  id: 'aspnetcore-1-0-4-build'
+  waitFor: ['-']
+- name: gcr.io/cloud-builders/docker
+  args: [ 'build', '-t', '${_DOCKER_NAMESPACE}/aspnetcore:1.0.5-${_TAG}',
+          '--no-cache', '--pull', './versions/1.0.5' ]
+  id: 'aspnetcore-1-0-5-build'
+  waitFor: ['-']
+
+# Test the images structure.
+- name: gcr.io/gcp-runtimes/structure_test
+  args: ['-i', '${_DOCKER_NAMESPACE}/aspnetcore:1.0.3-${_TAG}',
+         '--config', '/workspace/structural_tests/1.0.3/aspnet.yaml', '-v']
+  id: 'aspnetcore-1-0-3-test'
+  waitFor: [ 'aspnetcore-1-0-3-build' ]
+- name: gcr.io/gcp-runtimes/structure_test
+  args: ['-i', '${_DOCKER_NAMESPACE}/aspnetcore:1.0.4-${_TAG}',
+         '--config', '/workspace/structural_tests/1.0.4/aspnet.yaml', '-v']
+  id: 'aspnetcore-1-0-4-test'
+  waitFor: [ 'aspnetcore-1-0-4-build' ]
+- name: gcr.io/gcp-runtimes/structure_test
+  args: ['-i', '${_DOCKER_NAMESPACE}/aspnetcore:1.0.5-${_TAG}',
+         '--config', '/workspace/structural_tests/1.0.5/aspnet.yaml', '-v']
+  id: 'aspnetcore-1-0-5-test'
+  waitFor: [ 'aspnetcore-1-0-5-build' ]
+
+# Publish the images.
+images:
+  - '${_DOCKER_NAMESPACE}/aspnetcore:1.0.3-${_TAG}'
+  - '${_DOCKER_NAMESPACE}/aspnetcore:1.0.4-${_TAG}'
+  - '${_DOCKER_NAMESPACE}/aspnetcore:1.0.5-${_TAG}'
