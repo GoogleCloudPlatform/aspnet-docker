@@ -1,0 +1,6 @@
+# Dockerfile to be used to test the app.
+FROM ${STAGING_IMAGE}
+ADD . /app
+WORKDIR /app
+ENV ASPNETCORE_URLS=http://*:${PORT}
+ENTRYPOINT ["dotnet", "test-1.0.dll"]
