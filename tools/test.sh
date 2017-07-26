@@ -16,6 +16,7 @@
 
 # This script will run the integration tests for the given app.
 #   $1, the path to the root of the app.
+#   $2, the project to use.
 
 # Exit on error or undefined variable
 set -eu
@@ -25,3 +26,27 @@ if [ -z "${1:-}" ]; then
     exit 1
 fi
 
+# If no project is given get the ambient project.
+if [ -z "${2:-}" ]; then
+    readonly project_id=$(gcloud config list core/project --format="csv[no-heading](core)" | cut -f 2 -d '=')
+    echo "Warning: Using ambient project ${project_id}"
+else
+    readonly project_id=$2
+fi
+
+# Where to store the modified app definitions.
+readonly temp_builders_root=$(mktemp -d -t test_run)
+
+# Generate the builders root.
+cp $1/runtimes.yaml ${temp_builders_root}
+export readonly STAGING_BUILDER_IMAGE=gcr.io/aspnetcore-staging/aspnetcorebuild:latest
+envsubst '$STAGING_BUILDER_IMAGE' < $1/test.yaml.in > ${temp_builders_root}/test.yaml
+
+# Configure gcloud to use the specified runtime builders.
+export readonly CLOUDSDK_APP_USE_RUNTIME_BUILDERS=true
+export readonly CLOUDSDK_APP_RUNTIME_BUILDERS_ROOT=file://${temp_builders_root}
+export readonly CLOUDSDK_CORE_PROJECT=${project_id}
+
+# Deploy and run the tests.
+gcloud beta app deploy $1/app.yaml --quiet --verbosity=info
+gcloud container builds submit --config=$1/run_tests.yaml --quiet --verbosity=info --no-source

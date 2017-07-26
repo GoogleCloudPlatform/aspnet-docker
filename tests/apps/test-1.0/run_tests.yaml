@@ -9,3 +9,5 @@ steps:
     - '--skip-monitoring-tests'
     - '--skip-standard-logging-tests'
     - '--skip-custom-logging-tests'
+    - '--skip-exception-tests'
+    - '--skip-custom-tests'
