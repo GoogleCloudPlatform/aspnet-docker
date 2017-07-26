@@ -15,8 +15,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Dockerfile.in" CopyToOutputDirectory="Always" />
     <None Include="app.yaml" CopyToOutputDirectory="Always" />
+    <None Include="runtimes.yaml" CopyToOutputDirectory="Always" />    
+    <None Include="test.yaml.in" CopyToOutputDirectory="Always" />
+    <None Include="run_tests.yaml" CopyToOutputDirectory="Always" />    
   </ItemGroup>
 
 </Project>

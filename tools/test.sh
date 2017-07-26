@@ -47,6 +47,9 @@ export readonly CLOUDSDK_APP_USE_RUNTIME_BUILDERS=true
 export readonly CLOUDSDK_APP_RUNTIME_BUILDERS_ROOT=file://${temp_builders_root}
 export readonly CLOUDSDK_CORE_PROJECT=${project_id}
 
+readonly app_name=$(basename $1)
+readonly version_id=$(echo ${app_name} | tr "." "-")
+
 # Deploy and run the tests.
-gcloud beta app deploy $1/app.yaml --quiet --verbosity=info
+gcloud beta app deploy $1/app.yaml --quiet --verbosity=info --version=${version_id}
 gcloud container builds submit --config=$1/run_tests.yaml --quiet --verbosity=info --no-source

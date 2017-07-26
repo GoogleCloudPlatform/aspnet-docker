@@ -5,7 +5,7 @@ steps:
   args:
     - '--no-deploy'
     - '--url'
-    - 'https://${PROJECT_ID}.appspot.com'
+    - 'https://test-1-0-dot-${PROJECT_ID}.appspot.com'
     - '--skip-monitoring-tests'
     - '--skip-standard-logging-tests'
     - '--skip-custom-logging-tests'
