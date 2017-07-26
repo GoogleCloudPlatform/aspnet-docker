@@ -1,0 +1,11 @@
+# This build script will run the tests against an app deployed in the
+# current project.
+steps:
+- name: gcr.io/gcp-runtimes/integration_test
+  args:
+    - '--no-deploy'
+    - '--url'
+    - 'https://${PROJECT_ID}.appspot.com'
+    - '--skip-monitoring-tests'
+    - '--skip-standard-logging-tests'
+    - '--skip-custom-logging-tests'
