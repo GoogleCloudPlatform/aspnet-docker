@@ -7,3 +7,14 @@ The structure of the directory is as follows:
 * The [`functional_tests_validator`](./functional_tests_validator) directory contains the definition of a small Docker image that is to be used during the build process to validate the result of running the functional tests. The script [`validator.sh`](./functional_tests_validator/validator.sh) ensures that the produced `Dockerfile` files have the expected `FROM` and `ENTRYPOINT` commands.
 * The [`src`](./src) directory contains the source for the runtime image, including the [`prepare_project.py`](./src/prepare_project.py) which implements the logic for the runtime builder.
 * The [`structural_tests`](./structural_tests) directory contains the structural tests for the runtime image, which verify that the contents of the image match what we expect.
+
+To use the image you add a step to the `cloudbuild.yaml` that looks like this:
+```yaml
+- name: 'gcr.io/gcp-runtimes/aspnetcorebuild:latest'
+  args: [ '--version-map',
+          '1.1.2=gcr.io/google-appengine/aspnetcore:1.1.2',
+          '1.0.5=gcr.io/google-appengine/aspnetcore:1.0.5',
+          '2.0.0=gcr.io/google-appengine/aspnetcore:2.0.0-preview1' ]
+```
+
+This step assumes that the root of the app is the workspace, it will inspect it and produce a `Dockerfile` that uses one of the provided base images depending on the version of .NET Core being targeted. The runtime builder will fail (return non-zero exit code) if the app targets a version of .NET Core that is not supported.
