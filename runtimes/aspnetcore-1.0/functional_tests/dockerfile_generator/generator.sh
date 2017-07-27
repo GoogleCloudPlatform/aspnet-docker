@@ -37,7 +37,6 @@ readonly output=$1/Dockerfile
 # Generate the dockerfile.
 echo "FROM $2" > ${output}
 echo "ADD ./ /app" >> ${output}
-echo "WORKDIR /app" >> ${output}
-echo "ENTRYPOINT [ \"dotnet\", \"test-1.0.dll\" ]" >> ${output}
+echo "ENTRYPOINT [ \"dotnet\", \"/app/test-1.0.dll\" ]" >> ${output}
 
 exit 0

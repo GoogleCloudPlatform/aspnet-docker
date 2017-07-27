@@ -49,10 +49,10 @@ steps:
   id: 'generator-run'
   waitFor: [ 'generator-build', 'aspnetcore-1-0-5-build' ]
 - name: gcr.io/cloud-builders/docker
-  args: [ 'build', '-t', '${_DOCKER_NAMESPACE}/test-app', './functional_tests/published' ]
+  args: [ 'build', '-t', 'test-app', './functional_tests/published' ]
   id: 'test-app-build'
   waitFor: [ 'generator-run' ]
-- name: '${_DOCKER_NAMESPACE}/test-app'
+- name: 'test-app'
   id: 'test-app-run'
   waitFor: [ 'test-app-build' ]
 
