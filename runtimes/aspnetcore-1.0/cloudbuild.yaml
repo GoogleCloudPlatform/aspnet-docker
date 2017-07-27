@@ -46,15 +46,12 @@ steps:
 # Functional tests.
 - name: generator
   args: [ './functional_tests/published', '${_DOCKER_NAMESPACE}/aspnetcore:1.0.5-${_TAG}' ]
-  id: 'generator-run'
-  waitFor: [ 'generator-build', 'aspnetcore-1-0-5-build' ]
+  id: 'generator-run-1-0-5'
 - name: gcr.io/cloud-builders/docker
-  args: [ 'build', '-t', 'test-app', './functional_tests/published' ]
-  id: 'test-app-build'
-  waitFor: [ 'generator-run' ]
-- name: 'test-app'
-  id: 'test-app-run'
-  waitFor: [ 'test-app-build' ]
+  args: [ 'build', '-t', 'test-app-1-0-5', './functional_tests/published' ]
+  id: 'test-app-build-1-0-5'
+- name: test-app-1-0-5
+  id: 'test-app-run-1-0-5'
 
 # Publish the images.
 images:
