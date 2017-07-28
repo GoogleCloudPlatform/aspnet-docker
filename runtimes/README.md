@@ -4,7 +4,14 @@ This directory contains the major versions of .NET Core supported by this repo. 
 * The `versions` directory, which contains a directory for each supported minor version. Each directory contains the Dockerfile to build the image for the minor version.
 * The `structural_tests` directory, which again contains a directory for each supported minor version. Each directory contains a file called `aspnet.yaml` which defines what structural tests to run as part of the build for that minor version. These tests typically check that the right dotnet binary is included in the image and the licenses for all packages used in building the image.
 * The `functional_tests` directory, which contains the functional tests (unit tests) for each of the minor versions of the runtime. These tests are implemented as a simple console app that prints "Hello World!" to stdout. The build script will check that the app suceeded to run (had an exit code of 0).
-  + To update the tests, edit the source code in the `functional_tests/apps` directory and then run the [`udpate_runtime_functional_tests.sh`](../tools/update_runtime_functional_tests.sh) script on the corresponding `aspnetcore-<version>` directory. The script will take care of building the app and publishing it to the `functional_tests/published` directory for you.
+
+## Updating tests
+To update the tests, edit the source code in the `functional_tests/apps` directory and then run the [`udpate_runtime_functional_tests.sh`](../tools/update_runtime_functional_tests.sh) script on the corresponding `aspnetcore-<version>` directory. The script will take care of building the app and publishing it to the `functional_tests/published` directory for you.
+
+To update the test you can use a command line like the following from the root of the repo:
+```bash
+./tools/update_runtime_functional_tests.sh ./runtimes/aspnetcore-1.0
+```
 
 ## Adding a new major version
 To add a new major version create a new directory following the same naming convention, `aspnetcore-<version>`. Replicate the same structure as the existing major versions, and create the `cloudbuild.yaml` file that defines how to build and push the resulting images.
