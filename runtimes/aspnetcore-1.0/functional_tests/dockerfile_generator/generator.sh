@@ -33,10 +33,11 @@ if [ -z "${2:-}" ]; then
 fi
 
 readonly output=$1/Dockerfile
+readonly app_name=$(basename $1)
 
 # Generate the dockerfile.
 echo "FROM $2" > ${output}
 echo "ADD ./ /app" >> ${output}
-echo "ENTRYPOINT [ \"dotnet\", \"/app/test-1.0.dll\" ]" >> ${output}
+echo "ENTRYPOINT [ \"dotnet\", \"/app/${app_name}.dll\" ]" >> ${output}
 
 exit 0
