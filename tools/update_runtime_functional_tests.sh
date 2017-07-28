@@ -35,6 +35,9 @@ function get_absolute_path() {
 readonly apps_dir=$1/functional_tests/apps/
 readonly published_dir=$1/functional_tests/published/
 
+# Make sure the root published dir exists.
+mkdir -p ${published_dir}
+
 function publish_app() {
     local readonly app_name=$(basename $1)
     local readonly published=$(get_absolute_path ${published_dir}/${app_name})
