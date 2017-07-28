@@ -13,7 +13,6 @@
 /Users/ivann/gcp/aspnet-docker/integration_tests/apps/test-1.1/bin/Debug/netcoreapp1.1/app.yaml
 /Users/ivann/gcp/aspnet-docker/integration_tests/apps/test-1.1/bin/Debug/netcoreapp1.1/runtimes.yaml
 /Users/ivann/gcp/aspnet-docker/integration_tests/apps/test-1.1/bin/Debug/netcoreapp1.1/test.yaml.in
-/Users/ivann/gcp/aspnet-docker/integration_tests/apps/test-1.1/bin/Debug/netcoreapp1.1/run_tests.yaml
 /Users/ivann/gcp/aspnet-docker/integration_tests/apps/test-1.1/bin/Debug/netcoreapp1.1/test-1.1.deps.json
 /Users/ivann/gcp/aspnet-docker/integration_tests/apps/test-1.1/bin/Debug/netcoreapp1.1/test-1.1.runtimeconfig.json
 /Users/ivann/gcp/aspnet-docker/integration_tests/apps/test-1.1/bin/Debug/netcoreapp1.1/test-1.1.runtimeconfig.dev.json
