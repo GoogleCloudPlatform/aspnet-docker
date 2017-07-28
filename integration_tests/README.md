@@ -3,4 +3,4 @@ This directory contains the integration test apps used to test the end-to-end fu
 
 The tests are run from the [`published`](./published) directory, where the .NET Core apps are published to by the [`update_integration_tests.sh`](../tools/update_integration_tests.sh) script. The source of the apps is stored in the [`apps`](./apps) directory. To update the tests then it is highly recommended that the [`update_integration_tests.sh`](../tools/update_integration_tests.sh) script is used, as it will take care of building and publishing to the right directory.
 
-The test apps currently only implement the [Serving Root](https://github.com/GoogleCloudPlatform/runtimes-common/tree/master/integration_tests#serving-root) protocol to verify that the app is correctly deployed and serving traffic. More tests will be added soon.
+The test apps currently only implement the [Serving](https://github.com/GoogleCloudPlatform/runtimes-common/tree/master/integration_tests#serving-root) protocol to verify that the app is correctly deployed and serving traffic. More tests will be added soon.
