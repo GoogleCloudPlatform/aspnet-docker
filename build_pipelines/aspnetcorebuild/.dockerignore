@@ -1,3 +1,0 @@
-# Do not include the test infrastructure into the final Dockerfile.
-aspnet.yaml
-tests/**

@@ -12,9 +12,9 @@ set -eu
 
 readonly workspace=$(dirname $0)/..
 readonly apps_dir=${workspace}/tests/apps
-readonly bins_dir=${workspace}/tests/bins
+readonly bins_dir=${workspace}/tests/integration_tests
 
-for app in $(find ${apps_dir} -maxdepth 1 -type d -name 'clean*-*'); do
+for app in $(find ${apps_dir} -maxdepth 1 -type d -name 'test*-*'); do
     publish_dir=${PWD}/${bins_dir}/$(basename ${app})
 
     echo "Building ${app} publishing to ${publish_dir}"

@@ -1,32 +1,23 @@
-# Docker image for ASP.NET Core apps on App Engine Flex
-This repo containes the definition of the Docker images for the .NET runtime to be able to run ASP.NET Core apps on App Engine Flex as well as the runtime builder which will generate the necessary `Dockerfile` to build ASP.NET Core apps pushed to App Engine Flex.
+# Docker images for ASP.NET Core apps on Google Cloud
+This repo containes the definition of the Docker images for the .NET runtime to be able to run ASP.NET Core apps on App Engine Flexible environment as well as the runtime builder which will generate the necessary `Dockerfile` to build ASP.NET Core apps pushed to App Engine Flex.
 
 The repo is divided in two sections:
-* The [runtimes](./runtimes) section, which will contain the definition for all of the supported .NET Core runtimes. Currently only the 1.0.x (or LTS) is supported.
-* The [build_pipelines](./build_pipelines) section which contains the definition for the runtime builders associated with the various runtimes. Currently onthe 1.0 version is supported.
+* The [runtimes](./runtimes) section, which will contain the definition for all of .NET Core runtimes, grouped by major version.
+* The [builder](./builder) section which contains the definition for the runtime builder image.
 
 ## The runtimes
-As mentioned before only the .NET Core 1.0.x (LTS branch) is supported at the moment, so only that runtime is defined.
-
-The runtime defines a templatized file called `cloudbuild.yaml.in`, which contains a Cloud Builder build definition with placeholders for the gcr.io repo where the resulting image must be pushed and the version to tag it with. This will allow the image to be pushed to test projects and, with the right credentials, be pushed to the final location.
-
-Note that building the image with the Cloud Builder is not required, if you have Docker installed locally you can just run:
+The [runtimes](./runtimes) directory contains definition for the .NET Core runtime images grouped by major version. Each major version contains a `cloudbuild.yaml` file that defines how to build all of the images within that major version. To build each major version you will use the following command from the root of the repo:
 ```bash
-docker build -t tag-of-your-choice runtimes/aspnetcore-1.0
+./test/submit_build.sh ./runtimes/aspnetcore-<version>/cloudbuild.yaml
 ```
 
-And that will produce a valid image for you to use.
+This will build all of the minor version runtimes supported for that .NET Core `<version>`. Tests will run during the build to ensure that the images have the right contents.
 
-## The build pipeline
-The build pipeline defines the build step that will ensure that a published ASP.NET Core app is ready to be published.
+## The runtime builder
+The [builder](./builder) directory contains the definition for the builder image for the `aspnetcore` runtime for Google App Engine Flexible environment. This builder image is responsible for generating a `Dockerfile` for a given published .NET Core application. This `Dockerfile` is then used during the deployment process to generate the app's image that will ultimately run in Google App Engine Flexible environment.
 
-## Building and pushing
-The image is being built and deployed using the Google Container Builder service, a cloudbuild.yaml file is provided to do so. To build and test the image locally you will need to have Docker installed.
-
-The build of the image has been tested with Docker 1.10.
-
-## Using the image to deploy ASP.NET Core apps
-This image is initially designed and tested to run apps on App Engine Flex but it can also be used to run .NET Core apps on other Docker hosts such as Container Engine or just plain Docker.
+## Using the images to deploy ASP.NET Core apps
+This image is initially designed and tested to run apps on App Engine Flexible environment but it can also be used to run .NET Core apps on other Docker hosts such as Container Engine or just plain Docker.
 
 The image is designed to run self-contained .NET Core apps, which means that the app must be published before you can build the app's image. To publish the app run the following command at the root of your app's project:
 ```bash
@@ -42,12 +33,17 @@ runtime: aspnetcore
 env: flex
 ```
 
-You should copy the `app.yaml` file to the publish directory for your app and then to deploy you run the comand:
-```bash
-gcloud beta app deploy <path to app.yaml>
+Typically you will have the `app.yaml` in the root of your project, we recommend that you add the `app.yaml` to your `.csproj` file with a line like this:
+```XML
+<None Include="app.yaml" CopyToOutputDirectory="Always" />
 ```
 
-During the publishing process a Dockerfile will be generated and your app will be correctly packaged.
+This will ensure that the file `app.yaml` is published with the rest of the app. To deploy you will run the comand (assuming you are running from the project's root):
+```bash
+gcloud beta app deploy ./bin/release/netcoreapp1.0/publish/app.yaml
+```
+
+The deployment process will automatically use the runtime builder, which will detect what version of .NET Core you are using and produce the appropriate `Dockerfile` for your app.
 
 ### Using the runtime image in other environments
 The runtime image can be used as the base image for an ASP.NET Core apps and run in other environments such as Google Container Engine (GKE) and any other Docker host.
@@ -61,7 +57,12 @@ WORKDIR /app
 ENTRYPOINT [ "dotnet", "<dll_name>.dll" ]
 ```
 
-Replace the `<dll_name>` with the name of your project, that should start your app listening on port 8080.
+Replace the `<dll_name>` with the name of the entrypoing `.dll` in your project, that should start your app listening on port 8080.
+
+We recommend that you store the `Dockerfile` on the root of your project and you add it to your `.csproj` so it is published with the rest of the app. You can add the `Dockerfile` with a line like this:
+```XML
+<None Include="Dockerfile" CopyToOutputDirectory="Always" />
+```
 
 ## Support
 To get help on using the aspnet runtime, please log an issue in this repo

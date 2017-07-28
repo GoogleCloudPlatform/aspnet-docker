@@ -1,0 +1,80 @@
+# This file defines how the builder image is built. The file expects
+# the following substitutions:
+#   _DOCKER_NAMESPACE, the repository where to push the images.
+#   _TAG, the tag to use for the published images.
+steps:
+# Build the test validator image.
+- name: gcr.io/cloud-builders/docker
+  args: [ 'build', '-t', 'test-validator', '--no-cache', '--pull', './functional_tests_validator' ]
+  id: 'test-validator-build'
+  waitFor: ['-']
+
+# Build the builder image.
+- name: gcr.io/cloud-builders/docker
+  args: [ 'build', '-t', '${_DOCKER_NAMESPACE}/aspnetcorebuild:${_TAG}',
+          '--no-cache', '--pull', './src' ]
+  id: 'builder-build'
+  waitFor: ['-']
+
+# Test the images structure.
+- name: gcr.io/gcp-runtimes/structure_test
+  args: ['-i', '${_DOCKER_NAMESPACE}/aspnetcorebuild:${_TAG}',
+         '--config', '/workspace/structural_tests/aspnet.yaml', '-v']
+  id: 'builder-structural-test'
+  waitFor: [ 'builder-build' ]
+
+# Test the builder functionality.
+- name: '${_DOCKER_NAMESPACE}/aspnetcorebuild:${_TAG}'
+  args:
+    - '--version-map'
+    - '1.1.2=aspnetcore:1.1'
+    - '1.0.5=aspnetcore:1.0'
+    - '2.0.0=aspnetcore:2.0'
+  dir: 'functional_tests/clean-1.0'
+  id: 'builder-functional-test-1-0'
+  waitFor: [ 'builder-build' ]
+- name: '${_DOCKER_NAMESPACE}/aspnetcorebuild:${_TAG}'
+  args:
+    - '--version-map'
+    - '1.1.2=aspnetcore:1.1'
+    - '1.0.5=aspnetcore:1.0'
+    - '2.0.0=aspnetcore:2.0'
+  dir: 'functional_tests/cleanjs-1.0'
+  id: 'builder-functional-test-js-1-0'
+  waitFor: [ 'builder-build' ]
+- name: '${_DOCKER_NAMESPACE}/aspnetcorebuild:${_TAG}'
+  args:
+    - '--version-map'
+    - '1.1.2=aspnetcore:1.1'
+    - '1.0.5=aspnetcore:1.0'
+    - '2.0.0=aspnetcore:2.0'
+  dir: 'functional_tests/clean-1.1'
+  id: 'builder-functional-test-1-1'
+  waitFor: [ 'builder-build' ]
+- name: '${_DOCKER_NAMESPACE}/aspnetcorebuild:${_TAG}'
+  args:
+    - '--version-map'
+    - '1.1.2=aspnetcore:1.1'
+    - '1.0.5=aspnetcore:1.0'
+    - '2.0.0=aspnetcore:2.0'
+  dir: 'functional_tests/clean-2.0'
+  id: 'builder-functional-test-2-0'
+  waitFor: [ 'builder-build' ]
+
+# Validate the results of the test.
+- name: 'test-validator'
+  args: 'functional_tests/clean-1.0'
+  waitFor: [ 'test-validator-build', 'builder-functional-test-1-0' ]
+- name: 'test-validator'
+  args: 'functional_tests/cleanjs-1.0'
+  waitFor: [ 'test-validator-build', 'builder-functional-test-js-1-0' ]
+- name: 'test-validator'
+  args: 'functional_tests/clean-1.1'
+  waitFor: [ 'test-validator-build', 'builder-functional-test-1-1' ]
+- name: 'test-validator'
+  args: 'functional_tests/clean-2.0'
+  waitFor: [ 'test-validator-build', 'builder-functional-test-2-0' ]
+
+# Publish the image.
+images:
+  - '${_DOCKER_NAMESPACE}/aspnetcorebuild:${_TAG}'
