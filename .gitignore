@@ -5,3 +5,5 @@
 .DS_Store
 tests/apps/*/obj
 tests/apps/*/bin
+runtimes/aspnetcore-1.0/functional_tests/apps/*/obj
+runtimes/aspnetcore-1.0/functional_tests/apps/*/bin

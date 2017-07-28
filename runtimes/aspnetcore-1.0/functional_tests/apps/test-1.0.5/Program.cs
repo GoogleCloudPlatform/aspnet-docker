@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace test_1._0
+namespace test_1._0._5
 {
     class Program
     {
