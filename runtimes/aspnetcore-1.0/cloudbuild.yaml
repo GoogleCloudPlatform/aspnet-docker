@@ -3,6 +3,12 @@
 #   _DOCKER_NAMESPACE, the repository where to push the images.
 #   _TAG, the tag to use for the published images.
 steps:
+# Build the generator for testing later.
+- name: gcr.io/cloud-builders/docker
+  args: [ 'build', '-t', 'generator', './functional_tests/dockerfile_generator' ]
+  id: 'generator-build'
+  waitFor: ['-']
+
 # Build the runtime images in parallel.
 - name: gcr.io/cloud-builders/docker
   args: [ 'build', '-t', '${_DOCKER_NAMESPACE}/aspnetcore:1.0.3-${_TAG}',
@@ -37,8 +43,50 @@ steps:
   id: 'aspnetcore-1-0-5-test'
   waitFor: [ 'aspnetcore-1-0-5-build' ]
 
+# Functional tests.
+
+# Test the 1.0.3 runtime.
+- name: generator
+  args: [ './functional_tests/published/test-1.0.3', '${_DOCKER_NAMESPACE}/aspnetcore:1.0.3-${_TAG}' ]
+  id: 'generator-run-1-0-3'
+  waitFor: [ 'generator-build', 'aspnetcore-1-0-3-build' ]
+- name: gcr.io/cloud-builders/docker
+  args: [ 'build', '-t', 'test-app-1-0-3', './functional_tests/published/test-1.0.3' ]
+  id: 'test-app-build-1-0-3'
+  waitFor: [ 'generator-run-1-0-3' ]
+- name: test-app-1-0-3
+  id: 'test-app-run-1-0-3'
+  waitFor: [ 'test-app-build-1-0-3' ]
+
+# Test the 1.0.4 runtime.
+- name: generator
+  args: [ './functional_tests/published/test-1.0.4', '${_DOCKER_NAMESPACE}/aspnetcore:1.0.4-${_TAG}' ]
+  id: 'generator-run-1-0-4'
+  waitFor: [ 'generator-build', 'aspnetcore-1-0-4-build' ]
+- name: gcr.io/cloud-builders/docker
+  args: [ 'build', '-t', 'test-app-1-0-4', './functional_tests/published/test-1.0.4' ]
+  id: 'test-app-build-1-0-4'
+  waitFor: [ 'generator-run-1-0-4' ]
+- name: test-app-1-0-4
+  id: 'test-app-run-1-0-4'
+  waitFor: [ 'test-app-build-1-0-4' ]
+
+# Test the 1.0.5 runtime.
+- name: generator
+  args: [ './functional_tests/published/test-1.0.5', '${_DOCKER_NAMESPACE}/aspnetcore:1.0.5-${_TAG}' ]
+  id: 'generator-run-1-0-5'
+  waitFor: [ 'generator-build', 'aspnetcore-1-0-5-build' ]
+- name: gcr.io/cloud-builders/docker
+  args: [ 'build', '-t', 'test-app-1-0-5', './functional_tests/published/test-1.0.5' ]
+  id: 'test-app-build-1-0-5'
+  waitFor: [ 'generator-run-1-0-5' ]
+- name: test-app-1-0-5
+  id: 'test-app-run-1-0-5'
+  waitFor: [ 'test-app-build-1-0-5' ]
+
 # Publish the images.
 images:
   - '${_DOCKER_NAMESPACE}/aspnetcore:1.0.3-${_TAG}'
   - '${_DOCKER_NAMESPACE}/aspnetcore:1.0.4-${_TAG}'
   - '${_DOCKER_NAMESPACE}/aspnetcore:1.0.5-${_TAG}'
+

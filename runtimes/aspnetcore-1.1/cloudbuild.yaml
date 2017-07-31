@@ -3,6 +3,12 @@
 #   _DOCKER_NAMESPACE, the repository where to push the images.
 #   _TAG, the tag to use for the published images.
 steps:
+# Build the generator for testing later.
+- name: gcr.io/cloud-builders/docker
+  args: [ 'build', '-t', 'generator', './functional_tests/dockerfile_generator' ]
+  id: 'generator-build'
+  waitFor: ['-']
+
 # Build the runtime images in parallel.
 - name: gcr.io/cloud-builders/docker
   args: [ 'build', '-t', '${_DOCKER_NAMESPACE}/aspnetcore:1.1.1-${_TAG}',
@@ -26,6 +32,34 @@ steps:
          '--config', '/workspace/structural_tests/1.1.2/aspnet.yaml', '-v']
   id: 'aspnetcore-1-1-2-test'
   waitFor: [ 'aspnetcore-1-1-2-build' ]
+
+# Functional tests.
+
+# Test the 1.1.1 runtime.
+- name: generator
+  args: [ './functional_tests/published/test-1.1.1', '${_DOCKER_NAMESPACE}/aspnetcore:1.1.1-${_TAG}' ]
+  id: 'generator-run-1-1-1'
+  waitFor: [ 'generator-build', 'aspnetcore-1-1-1-build' ]
+- name: gcr.io/cloud-builders/docker
+  args: [ 'build', '-t', 'test-app-1-1-1', './functional_tests/published/test-1.1.1' ]
+  id: 'test-app-build-1-1-1'
+  waitFor: [ 'generator-run-1-1-1' ]
+- name: test-app-1-1-1
+  id: 'test-app-run-1-1-1'
+  waitFor: [ 'test-app-build-1-1-1' ]
+
+# Test the 1.1.2 runtime.
+- name: generator
+  args: [ './functional_tests/published/test-1.1.2', '${_DOCKER_NAMESPACE}/aspnetcore:1.1.2-${_TAG}' ]
+  id: 'generator-run-1-1-2'
+  waitFor: [ 'generator-build', 'aspnetcore-1-1-2-build' ]
+- name: gcr.io/cloud-builders/docker
+  args: [ 'build', '-t', 'test-app-1-1-2', './functional_tests/published/test-1.1.2' ]
+  id: 'test-app-build-1-1-2'
+  waitFor: [ 'generator-run-1-1-2' ]
+- name: test-app-1-1-2
+  id: 'test-app-run-1-1-2'
+  waitFor: [ 'test-app-build-1-1-2' ]
 
 # Publish the images.
 images:

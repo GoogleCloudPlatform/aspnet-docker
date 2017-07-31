@@ -21,6 +21,8 @@
 # Exit on error or undefined variable
 set -eu
 
+readonly workspace=$(dirname $0)/..
+
 if [ -z "${1:-}" ]; then
     echo "Must specify the root of the app."
     exit 1
@@ -48,8 +50,20 @@ export readonly CLOUDSDK_APP_RUNTIME_BUILDERS_ROOT=file://${temp_builders_root}
 export readonly CLOUDSDK_CORE_PROJECT=${project_id}
 
 readonly app_name=$(basename $1)
-readonly version_id=$(echo ${app_name} | tr "." "-")
+readonly version_id=$(echo ${app_name} | tr "." "-")-$(date +"%Y%m%d%H%M")
+
+# Use the override build script if provided, otherwise use the common one.
+if [ -f $1/run_tests.yaml ]; then
+    readonly run_script=$1/run_tests.yaml
+else
+    readonly run_script=${workspace}/integration_tests/run_tests.yaml
+fi
 
 # Deploy and run the tests.
-gcloud beta app deploy $1/app.yaml --quiet --verbosity=info --version=${version_id}
-gcloud container builds submit --config=$1/run_tests.yaml --quiet --verbosity=info --no-source
+gcloud beta app deploy $1/app.yaml --quiet --verbosity=info --version=${version_id} --no-promote
+gcloud container builds submit \
+    --config=${run_script} \
+    --substitutions _VERSION_ID=${version_id} \
+    --quiet \
+    --verbosity=info \
+    --no-source

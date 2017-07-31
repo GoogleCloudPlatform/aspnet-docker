@@ -1,0 +1,13 @@
+# This build script will run the tests agains the provided version and
+# project.
+steps:
+- name: gcr.io/gcp-runtimes/integration_test
+  args:
+    - '--no-deploy'
+    - '--url'
+    - 'https://${_VERSION_ID}-dot-${PROJECT_ID}.appspot.com'
+    - '--skip-monitoring-tests'
+    - '--skip-standard-logging-tests'
+    - '--skip-custom-logging-tests'
+    - '--skip-exception-tests'
+    - '--skip-custom-tests'
