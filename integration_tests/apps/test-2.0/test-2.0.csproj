@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
-
+n
   <ItemGroup>
     <Folder Include="wwwroot\" />
   </ItemGroup>
@@ -21,5 +21,13 @@
     <None Include="runtimes.yaml" CopyToOutputDirectory="Always" />
     <None Include="test.yaml.in" CopyToOutputDirectory="Always" />
   </ItemGroup>
+
+  <!--   
+       This property is necessary because the generated manifest is incorrect, check GitHub issue
+       at: https://github.com/dotnet/cli/issues/6516
+  -->
+  <PropertyGroup>
+    <PublishWithAspNetCoreTargetManifest>false</PublishWithAspNetCoreTargetManifest>
+  </PropertyGroup>
 
 </Project>
