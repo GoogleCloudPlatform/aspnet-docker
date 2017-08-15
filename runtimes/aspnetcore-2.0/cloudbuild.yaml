@@ -35,6 +35,8 @@ steps:
   waitFor: [ 'generator-run-2-0-0' ]
 - name: test-app-2-0-0
   id: 'test-app-run-2-0-0'
+  entrypoint: 'bash'
+  args: [ '-c', '[[ "$(dotnet /app/test-2.0.0.dll)" == "Hello World!" ]]' ]
   waitFor: [ 'test-app-build-2-0-0' ]
 
 # Publish the images.
