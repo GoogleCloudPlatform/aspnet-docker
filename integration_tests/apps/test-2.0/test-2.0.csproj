@@ -16,4 +16,10 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="app.yaml" CopyToOutputDirectory="Always" />
+    <None Include="runtimes.yaml" CopyToOutputDirectory="Always" />
+    <None Include="test.yaml.in" CopyToOutputDirectory="Always" />
+  </ItemGroup>
+
 </Project>
