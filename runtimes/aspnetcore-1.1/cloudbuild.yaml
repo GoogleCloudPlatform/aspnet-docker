@@ -46,6 +46,8 @@ steps:
   waitFor: [ 'generator-run-1-1-1' ]
 - name: test-app-1-1-1
   id: 'test-app-run-1-1-1'
+  entrypoint: 'bash'
+  args: [ '-c', '[[ "$(dotnet /app/test-1.1.1.dll)" == "Hello World!" ]]' ]
   waitFor: [ 'test-app-build-1-1-1' ]
 
 # Test the 1.1.2 runtime.
@@ -59,6 +61,8 @@ steps:
   waitFor: [ 'generator-run-1-1-2' ]
 - name: test-app-1-1-2
   id: 'test-app-run-1-1-2'
+  entrypoint: 'bash'
+  args: [ '-c', '[[ "$(dotnet /app/test-1.1.2.dll)" == "Hello World!" ]]' ]
   waitFor: [ 'test-app-build-1-1-2' ]
 
 # Publish the images.
