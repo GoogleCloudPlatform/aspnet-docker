@@ -3,7 +3,6 @@
 steps:
 - name: gcr.io/gcp-runtimes/integration_test
   args:
-    - '--no-deploy'
     - '--url'
     - 'https://${_VERSION_ID}-dot-${PROJECT_ID}.appspot.com'
     - '--skip-monitoring-tests'
