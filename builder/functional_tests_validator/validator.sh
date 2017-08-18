@@ -32,12 +32,15 @@ readonly app_name=$(basename $1)
 readonly from_line=$(cat $1/Dockerfile | head -n1)
 readonly entrypoint_line=$(cat $1/Dockerfile | tail -n1)
 
-if [[ ${from_line} != "FROM aspnetcore:${app_version}" ]]; then
-    echo "Failed to produce right FROM line for $1: ${from_line}"
+readonly expected_from_line="FROM aspnetcore:${app_version}"
+if [[ "${from_line}" != "${expected_from_line}" ]]; then
+    echo "Failed to produce right FROM line for $1, actual: <${from_line}> expected: <${expected_from_line}>"
     exit 1
 fi
-if [[ ${entrypoint_line} != "ENTRYPOINT [ \"dotnet\", \"${app_name}.dll\" ]" ]]; then
-    echo "Failed to produce right entrypoint for $1: ${entrypoint_line}"
+
+readonly expected_entrypoint_line="ENTRYPOINT [ \"dotnet\", \"${app_name}.dll\" ]"
+if [[ "${entrypoint_line}" != "${expected_entrypoint_line}" ]]; then
+    echo "Failed to produce right entrypoint for $1 actual: <${entrypoint_line}> expected: <${expected_entrypoint_line}>"
     exit 1
 fi
 
