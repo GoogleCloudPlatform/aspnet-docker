@@ -13,4 +13,4 @@ RUN mkdir -p /builder
 ADD . /builder
 
 WORKDIR /workspace
-ENTRYPOINT [ "/builder/prepare_project.py" ]
+ENTRYPOINT [ "/builder/build_app.sh" ]
