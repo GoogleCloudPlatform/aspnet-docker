@@ -11,20 +11,20 @@ steps:
 
 # Build the builder image.
 - name: gcr.io/cloud-builders/docker
-  args: [ 'build', '-t', '${_DOCKER_NAMESPACE}/aspnetcorebuidexp:${_TAG}',
+  args: [ 'build', '-t', '${_DOCKER_NAMESPACE}/aspnetcorebuildexp:${_TAG}',
           '--no-cache', '--pull', './src' ]
   id: 'builder-build'
   waitFor: ['-']
 
 # Test the images structure.
 - name: gcr.io/gcp-runtimes/structure_test
-  args: ['-i', '${_DOCKER_NAMESPACE}/aspnetcorebuidexp:${_TAG}',
+  args: ['-i', '${_DOCKER_NAMESPACE}/aspnetcorebuildexp:${_TAG}',
          '--config', '/workspace/structural_tests/aspnet.yaml', '-v']
   id: 'builder-structural-test'
   waitFor: [ 'builder-build' ]
 
 # Test builder functionality with pre-published apps.
-- name: '${_DOCKER_NAMESPACE}/aspnetcorebuidexp:${_TAG}'
+- name: '${_DOCKER_NAMESPACE}/aspnetcorebuildexp:${_TAG}'
   args:
     - '1.1.2=aspnetcore:1.1'
     - '1.0.5=aspnetcore:1.0'
@@ -43,7 +43,7 @@ steps:
   - name: 'published-clean-1-0'
     path: '/clean-1.0'
 
-- name: '${_DOCKER_NAMESPACE}/aspnetcorebuidexp:${_TAG}'
+- name: '${_DOCKER_NAMESPACE}/aspnetcorebuildexp:${_TAG}'
   args:
     - '1.1.2=aspnetcore:1.1'
     - '1.0.5=aspnetcore:1.0'
@@ -62,7 +62,7 @@ steps:
   - name: 'published-cleanjs-1-0'
     path: '/cleanjs-1.0'
 
-- name: '${_DOCKER_NAMESPACE}/aspnetcorebuidexp:${_TAG}'
+- name: '${_DOCKER_NAMESPACE}/aspnetcorebuildexp:${_TAG}'
   args:
     - '1.1.2=aspnetcore:1.1'
     - '1.0.5=aspnetcore:1.0'
@@ -81,7 +81,7 @@ steps:
   - name: 'published-clean-1-1'
     path: '/clean-1.1'
 
-- name: '${_DOCKER_NAMESPACE}/aspnetcorebuidexp:${_TAG}'
+- name: '${_DOCKER_NAMESPACE}/aspnetcorebuildexp:${_TAG}'
   args:
     - '1.1.2=aspnetcore:1.1'
     - '1.0.5=aspnetcore:1.0'
@@ -101,7 +101,7 @@ steps:
     path: '/clean-2.0'
 
 # Test builder functionality with source apps.
-- name: '${_DOCKER_NAMESPACE}/aspnetcorebuidexp:${_TAG}'
+- name: '${_DOCKER_NAMESPACE}/aspnetcorebuildexp:${_TAG}'
   args:
     - '1.1.2=aspnetcore:1.1'
     - '1.0.5=aspnetcore:1.0'
@@ -122,4 +122,4 @@ steps:
 
 # Publish the image.
 images:
-  - '${_DOCKER_NAMESPACE}/aspnetcorebuidexp:${_TAG}'
+  - '${_DOCKER_NAMESPACE}/aspnetcorebuildexp:${_TAG}'
