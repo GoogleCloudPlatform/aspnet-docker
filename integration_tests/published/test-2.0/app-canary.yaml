@@ -1,0 +1,4 @@
+runtime: aspnetcore
+env: flex
+beta_settings:
+  image: nextcanary
