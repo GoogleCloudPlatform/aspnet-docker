@@ -43,6 +43,7 @@ if [ -z "${deps_json}" ]; then
     readonly solution=$(find . -maxdepth 1 -name '*.sln')
     if [ -z "${solution}" ]; then
 	echo "Building project."
+	find . -name 'obj' -or -name 'bin' -type d | xargs rm -rf
 	dotnet restore
 	dotnet publish -c ${configuration} -o ${output}
     else
@@ -52,6 +53,7 @@ if [ -z "${deps_json}" ]; then
 	    exit 1
 	fi
 	echo "Building solution."
+	find . -name 'obj' -or -name 'bin' -type d | xargs rm -rf
 	dotnet restore
 	dotnet publish -c ${configuration} -o ${output} ${entrypoint_project}
     fi
