@@ -1,0 +1,10 @@
+runtime: aspnetcore
+env: flex
+service: cleansolution-2-0
+
+runtime_config:
+  entrypoint: 'MainProject'
+
+manual_scaling:
+  instances: 1
+

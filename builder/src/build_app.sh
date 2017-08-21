@@ -42,12 +42,18 @@ readonly deps_json=$(find . -maxdepth 1 -name '*.deps.json' -type f)
 if [ -z "${deps_json}" ]; then
     readonly solution=$(find . -maxdepth 1 -name '*.sln')
     if [ -z "${solution}" ]; then
-	echo "Building the app."
+	echo "Building project."
 	dotnet restore
 	dotnet publish -c ${configuration} -o ${output}
     else
-	echo "Solutions are not supported... Yet..."
-	exit 1
+	readonly entrypoint_project=$(python ${builder}/parse_yaml.py -f ./app.yaml -p runtime_config.entrypoint)
+	if [ -z "${entrypoint_project}" ]; then
+	    echo "Must specify entry point project when deploying a solution."
+	    exit 1
+	fi
+	echo "Building solution."
+	dotnet restore
+	dotnet publish -c ${configuration} -o ${output} ${entrypoint_project}
     fi
 else
     echo "Packaging the app."
