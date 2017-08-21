@@ -41,7 +41,12 @@ readonly temp_builders_root=$(mktemp -d -t test_run)
 
 # Generate the builders root.
 cp $1/runtimes.yaml ${temp_builders_root}
-export readonly STAGING_BUILDER_IMAGE=gcr.io/aspnetcore-staging/aspnetcorebuild:${TAG:-latest}
+if [ -z "${BUILDER_OVERRIDE:-}" ]; then
+    export readonly STAGING_BUILDER_IMAGE=gcr.io/aspnetcore-staging/aspnetcorebuild:${TAG:-latest}
+else
+    echo "Warning: Using builder: ${BUILDER_OVERRIDE}"
+    export readonly STAGING_BUILDER_IMAGE=${BUILDER_OVERRIDE}
+fi
 envsubst '$STAGING_BUILDER_IMAGE' < $1/test.yaml.in > ${temp_builders_root}/test.yaml
 
 # Configure gcloud to use the specified runtime builders.
