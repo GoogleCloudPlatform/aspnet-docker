@@ -36,12 +36,15 @@ steps:
   - name: 'published-clean-1-0'
     path: '/published'
 - name: 'test-validator'
-  args: '/clean-1.0'
+  args:
+    - '/published'
+    - 'aspnetcore:1.0'
+    - 'clean-1.0'
   waitFor: [ 'test-validator-build', 'builder-functional-test-1-0' ]
   id: 'test-validator-clean-1-0'
   volumes:
   - name: 'published-clean-1-0'
-    path: '/clean-1.0'
+    path: '/published'
 
 - name: '${_DOCKER_NAMESPACE}/aspnetcorebuildexp:${_TAG}'
   args:
@@ -55,12 +58,15 @@ steps:
   - name: 'published-cleanjs-1-0'
     path: '/published'
 - name: 'test-validator'
-  args: '/cleanjs-1.0'
+  args:
+    - '/published'
+    - 'aspnetcore:1.0'
+    - 'cleanjs-1.0'
   waitFor: [ 'test-validator-build', 'builder-functional-test-js-1-0' ]
   id: 'test-validator-cleanjs-1-0'
   volumes:
   - name: 'published-cleanjs-1-0'
-    path: '/cleanjs-1.0'
+    path: '/published'
 
 - name: '${_DOCKER_NAMESPACE}/aspnetcorebuildexp:${_TAG}'
   args:
@@ -74,12 +80,15 @@ steps:
   - name: 'published-clean-1-1'
     path: '/published'
 - name: 'test-validator'
-  args: '/clean-1.1'
+  args:
+    - '/published'
+    - 'aspnetcore:1.1'
+    - 'clean-1.1'
   waitFor: [ 'test-validator-build', 'builder-functional-test-1-1' ]
   id: 'test-validator-clean-1-1'
   volumes:
   - name: 'published-clean-1-1'
-    path: '/clean-1.1'
+    path: '/published'
 
 - name: '${_DOCKER_NAMESPACE}/aspnetcorebuildexp:${_TAG}'
   args:
@@ -93,14 +102,17 @@ steps:
   - name: 'published-clean-2-0'
     path: '/published'
 - name: 'test-validator'
-  args: '/clean-2.0'
+  args:
+    - '/published'
+    - 'aspnetcore:2.0'
+    - 'clean-2.0'
   waitFor: [ 'test-validator-build', 'builder-functional-test-2-0' ]
   id: 'test-validator-clean-2-0'
   volumes:
   - name: 'published-clean-2-0'
-    path: '/clean-2.0'
+    path: '/published'
 
-# Test builder functionality with source apps.
+# Test builder functionality with project apps.
 - name: '${_DOCKER_NAMESPACE}/aspnetcorebuildexp:${_TAG}'
   args:
     - '1.1.2=aspnetcore:1.1'
@@ -113,12 +125,29 @@ steps:
   - name: 'published-cleansource-1-0'
     path: '/published'
 - name: 'test-validator'
-  args: '/cleansource-1.0'
+  args:
+    - '/published'
+    - 'aspnetcore:1.0'
+    - 'cleansource-1.0'
   waitFor: [ 'test-validator-build', 'builder-functional-cleansource-1-0' ]
   id: 'test-validator-cleansource-1-0'
   volumes:
   - name: 'published-cleansource-1-0'
-    path: '/cleansource-1.0'
+    path: '/published'
+
+# Test builder functionality with solution apps.
+# - name: '${_DOCKER_NAMESPACE}/aspnetcorebuildexp:${_TAG}'
+#   args:
+#     - '1.1.2=aspnetcore:1.1'
+#     - '1.0.5=aspnetcore:1.0'
+#     - '2.0.0=aspnetcore:2.0'
+#   dir: 'functional_tests/cleansolution-2.0'
+#   id: 'builder-functional-cleansolution-2-0'
+#   waitFor: [ 'builder-build' ]
+#   volumes:
+#   - name: 'published-cleansolution-2-0'
+#     path: '/published'
+
 
 # Publish the image.
 images:

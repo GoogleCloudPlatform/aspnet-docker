@@ -16,7 +16,9 @@
 
 # This script will validate the Dockerfile generated during the
 # functional tests for the builder.
-#   $1, the path to the Dockerfile to validate.
+#   $1, the path to the app's published directory.
+#   $2, the expected runtime version.
+#   $3, the expected app name.
 
 # Exit on error or undefined variable
 set -eu
@@ -26,13 +28,23 @@ if [ -z "${1:-}" ]; then
     exit 1
 fi
 
-readonly app_version=$(echo $1 | cut -d '-' -f 2-)
-readonly app_name=$(basename $1)
+if [ -z "${2:-}" ]; then
+    echo "Must specify the expected runtime version."
+    exit 1
+fi
+
+if [ -z "${3:-}" ]; then
+    echo "Must specify the expected app name."
+    exit 1
+fi
+
+readonly runtime_version=$2
+readonly app_name=$3
 
 readonly from_line=$(cat $1/Dockerfile | head -n1)
 readonly entrypoint_line=$(cat $1/Dockerfile | tail -n1)
 
-readonly expected_from_line="FROM aspnetcore:${app_version}"
+readonly expected_from_line="FROM ${runtime_version}"
 if [[ "${from_line}" != "${expected_from_line}" ]]; then
     echo "Failed to produce right FROM line for $1, actual: <${from_line}> expected: <${expected_from_line}>"
     exit 1
