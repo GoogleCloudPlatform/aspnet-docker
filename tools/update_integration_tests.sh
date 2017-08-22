@@ -45,6 +45,9 @@ function publish_app() {
     popd
 }
 
+# Cleanup the existing files.
+rm -rf ${published_dir}/*
+
 # Now publish all of the apps.
 for app in $(find ${apps_dir} -maxdepth 1 -type d -name 'test-*'); do
     publish_app ${app}
