@@ -63,9 +63,18 @@ if [ -f $1/run_tests.yaml ]; then
 else
     readonly run_script=${workspace}/integration_tests/run_tests.yaml
 fi
+7
+# Choose the right .yaml file depending on whether we're deploying against the
+# canary or not.
+if [[ "${USE_FLEX_CANARY:-}" == "1" ]]; then
+    echo "Warning: Deploying using the canary image."
+    readonly app_yaml=$1/app-canary.yaml
+else
+    readonly app_yaml=$1/app.yaml
+fi
 
 # Deploy and run the tests.
-gcloud beta app deploy $1/app.yaml --quiet --verbosity=info --version=${version_id} --no-promote
+gcloud beta app deploy ${app_yaml} --quiet --verbosity=info --version=${version_id} --no-promote
 gcloud container builds submit \
     --config=${run_script} \
     --substitutions _VERSION_ID=${version_id} \
