@@ -72,3 +72,11 @@ gcloud container builds submit \
     --quiet \
     --verbosity=info \
     --no-source
+
+# Cleanup the deployed version.
+if [[ "${SKIP_CLEANUP:-}" == "1" ]]; then
+    echo "Skipping cleanup of version: ${version_id}"
+else
+    echo "Cleaning up: ${version_id}"
+    gcloud app versions delete ${version_id} --quiet
+fi
