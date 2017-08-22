@@ -63,11 +63,11 @@ if [ -f $1/run_tests.yaml ]; then
 else
     readonly run_script=${workspace}/integration_tests/run_tests.yaml
 fi
-
+7
 # Choose the right .yaml file depending on whether we're deploying against the
 # canary or not.
 if [[ "${USE_FLEX_CANARY:-}" == "1" ]]; then
-    echo "Warning: Deploying using the canaray image."
+    echo "Warning: Deploying using the canary image."
     readonly app_yaml=$1/app-canary.yaml
 else
     readonly app_yaml=$1/app.yaml
