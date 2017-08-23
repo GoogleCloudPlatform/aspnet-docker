@@ -17,9 +17,8 @@
 # This script will build all apps under the test/apps directory and update the
 # binaries in the bins directory. To succesfully run this script you need to
 # have installed the following .NET Core SDKs:
-# 1.0.0-preview2-003156, for project.json apps.
-# 1.0.1, for 1.0, 1.1 .NET Core apps.
-# 2.0.0-preview1-005977, for 2.0 .NET core apps.
+# * 1.0.4, for 1.0, 1.1 .NET Core apps.
+# * 2.0.0, for .NET Core 2.0 apps.
 
 # Exit on error or undefined variable
 set -eu
@@ -44,6 +43,9 @@ function publish_app() {
     dotnet publish -o ${published}
     popd
 }
+
+# Cleanup the existing files.
+rm -rf ${published_dir}/*
 
 # Now publish all of the apps.
 for app in $(find ${apps_dir} -maxdepth 1 -type d -name 'test-*'); do

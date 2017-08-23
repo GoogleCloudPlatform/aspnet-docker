@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <None Include="app.yaml" CopyToOutputDirectory="Always" />
+    <None Include="app-canary.yaml" CopyToOutputDirectory="Always" />
     <None Include="runtimes.yaml" CopyToOutputDirectory="Always" />
     <None Include="test.yaml.in" CopyToOutputDirectory="Always" />
   </ItemGroup>
