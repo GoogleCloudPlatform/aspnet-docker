@@ -142,7 +142,7 @@ steps:
     - '2.0.0=aspnetcore:2.0'
   dir: 'functional_tests/cleansource-1.1'
   id: 'builder-functional-cleansource-1-1'
-  waitFor: [ 'builder-build' ]
+  waitFor: [ 'builder-build', 'builder-functional-cleansource-1-0' ]
   volumes:
   - name: 'published-cleansource-1-1'
     path: '/published'
@@ -164,7 +164,7 @@ steps:
     - '2.0.0=aspnetcore:2.0'
   dir: 'functional_tests/cleansource-2.0'
   id: 'builder-functional-cleansource-2-0'
-  waitFor: [ 'builder-build' ]
+  waitFor: [ 'builder-build', 'builder-functional-cleansource-1-1' ]
   volumes:
   - name: 'published-cleansource-2-0'
     path: '/published'
@@ -187,7 +187,7 @@ steps:
     - '2.0.0=aspnetcore:2.0'
   dir: 'functional_tests/cleansolution-2.0'
   id: 'builder-functional-cleansolution-2-0'
-  waitFor: [ 'builder-build' ]
+  waitFor: [ 'builder-build', 'builder-functional-cleansource-2-0' ]
   volumes:
   - name: 'published-cleansolution-2-0'
     path: '/published'
