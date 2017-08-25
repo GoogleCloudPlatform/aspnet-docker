@@ -47,15 +47,17 @@ if [ -z "${deps_json}" ]; then
 	dotnet restore
 	dotnet publish -c ${configuration} -o ${output}
     else
-	readonly entrypoint_project=$(python ${builder}/parse_yaml.py -f ./app.yaml -p runtime_config.entrypoint)
-	if [ -z "${entrypoint_project}" ]; then
+	# Extract the startup roject from the runtime config, making
+	# sure that Windows paths are transformed into Unix paths.
+	readonly startup=$(python ${builder}/parse_yaml.py -f ./app.yaml -p runtime_config.startup_project | tr '\' '/')
+	if [ -z "${startup}" ]; then
 	    echo "Must specify entry point project when deploying a solution."
 	    exit 1
 	fi
 	echo "Building solution."
 	find . -name 'obj' -or -name 'bin' -type d | xargs rm -rf
 	dotnet restore
-	dotnet publish -c ${configuration} -o ${output} ${entrypoint_project}
+	dotnet publish -c ${configuration} -o ${output} ${startup}
     fi
 else
     echo "Packaging the app."

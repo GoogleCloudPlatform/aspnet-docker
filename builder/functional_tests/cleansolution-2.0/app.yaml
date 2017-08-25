@@ -3,7 +3,7 @@ env: flex
 service: cleansolution-2-0
 
 runtime_config:
-  entrypoint: 'MainProject'
+  startup_project: 'MainProject\MainProject.csproj'
 
 manual_scaling:
   instances: 1
