@@ -16,5 +16,4 @@ RUN pip install PyYaml
 RUN mkdir -p /builder
 ADD . /builder
 
-WORKDIR /workspace
-ENTRYPOINT [ "/builder/build_app.sh" ]
+ENTRYPOINT [ "/builder/prepare_project.py" ]

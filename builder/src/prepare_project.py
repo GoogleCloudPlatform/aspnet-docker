@@ -36,14 +36,50 @@ ASSEMBLY_NAME_TEMPLATE = '{0}.dll'
 DEPS_PATTERN = '*.deps.json'
 DEPS_EXTENSION = '.deps.json'
 DOCKERFILE_NAME = 'Dockerfile'
-DOCKERFILE_CONTENTS = textwrap.dedent(
-    """\
+
+# Dockerfile template to be used when packaging up published apps.
+PUBLISHED_DOCKERFILE_CONTENTS = textwrap.dedent(
+    """
     FROM {runtime_image}
     ADD ./ /app
     ENV ASPNETCORE_URLS=http://*:${{PORT}}
     WORKDIR /app
     ENTRYPOINT [ "dotnet", "{dll_name}.dll" ]
     """)
+
+# Dockerfile template to be used when packaging .csproj based apps.
+PROJECT_DOCKERFILE_CONTENTS = textwrap.dedent(
+    """
+    FROM gcr.io/cloud-builders/csharp/dotnet AS builder
+    COPY . /src
+    WORKDIR /src
+    RUN dotnet restore --packages /packages
+    RUN dotnet publish -c Release -o /published
+
+    FROM {runtime_image}
+    COPY --from=builder /published /app
+    ENV ASPNETCORE_URLS=http://*:${PORT}
+    WORKDIR /app
+    ENTRYPOINT [ "dotnet", "{dll_name}.dll" ]
+    """)
+
+# Dockerfile template to be used when packaging .sln based apps.
+SOLUTION_DOCKERFILE_CONTENTS = textwrap.dedent(
+    """
+    FROM gcr.io/cloud-builders/csharp/dotnet AS builder
+    COPY . /src
+    WORKDIR /src
+    RUN dotnet restore --packages /packages
+    RUN dotnet publish -c Release -o /published {main_project}
+
+    FROM {runtime_image}
+    COPY --from=builder /published /app
+    ENV ASPNETCORE_URLS=http://*:${PORT}
+    WORKDIR /app
+    ENTRYPOINT [ "dotnet", "{dll_name}.dll" ]
+    """)
+
+
 NETCORE_APP_PREFIX = 'microsoft.netcore.app/'
 
 
