@@ -32,20 +32,11 @@ import textwrap
 from distutils.version import StrictVersion
 
 
+APP_YAML_NAME = 'app.yaml'
 ASSEMBLY_NAME_TEMPLATE = '{0}.dll'
 DEPS_PATTERN = '*.deps.json'
 DEPS_EXTENSION = '.deps.json'
 DOCKERFILE_NAME = 'Dockerfile'
-
-# Dockerfile template to be used when packaging up published apps.
-PUBLISHED_DOCKERFILE_CONTENTS = textwrap.dedent(
-    """
-    FROM {runtime_image}
-    ADD ./ /app
-    ENV ASPNETCORE_URLS=http://*:${{PORT}}
-    WORKDIR /app
-    ENTRYPOINT [ "dotnet", "{dll_name}.dll" ]
-    """)
 
 # Dockerfile template to be used when packaging .csproj based apps.
 PROJECT_DOCKERFILE_CONTENTS = textwrap.dedent(
@@ -83,61 +74,6 @@ SOLUTION_DOCKERFILE_CONTENTS = textwrap.dedent(
 NETCORE_APP_PREFIX = 'microsoft.netcore.app/'
 
 
-def get_project_assembly_name(deps_path):
-    """Returns the name of the entrypoint assembly given the .deps.json
-    file name.
-
-    Args:
-        deps_path: The path to the .deps.json file for the project.
-
-    Returns:
-        The name of the entry point assembly.
-    """
-    filename = os.path.basename(deps_path)
-    return filename[:-len(DEPS_EXTENSION)]
-
-
-def get_deps_path(root):
-    """Finds the .deps.json file for the project.
-
-    Looks for the .deps.json file for the project in the current
-    directory, there should be only one such file per published
-    project.
-
-    Args:
-        root: The path to the root of the app.
-
-    Returns:
-        The path to the .deps.json file for the project.
-    """
-    app_root = os.path.join(root, DEPS_PATTERN)
-    files = glob.glob(app_root)
-    if len(files) != 1:
-        return None
-    return files[0]
-
-
-def get_runtime_minor_version(deps_path):
-    """Determines the target of the .NET Core runtime needed by the app.
-
-    Reads the given .deps.json file and determines the version of the
-    runtime used by the app.
-
-    Returns:
-        The version of the runtime used by the app.
-    """
-    with open(deps_path, 'r') as src:
-        content = json.load(src)
-        try:
-            libraries = content['libraries']
-            for key in libraries:
-                if key.lower().startswith(NETCORE_APP_PREFIX):
-                    version = key[len(NETCORE_APP_PREFIX):]
-                    return version.split('-')[0]
-        except KeyError:
-            return None
-
-
 def get_major_version(version):
     """Returns the major version of a parsed version.
 
@@ -149,6 +85,26 @@ def get_major_version(version):
     """
     parsed_version = version.split('.')
     return '.'.join(parsed_version[0:2])
+
+
+def get_deps_path(root):
+    """Finds the .deps.json file for the project.
+
+       Looks for the .deps.json file for the project in the current
+       directory, there should be only one such file per published
+       project.
+
+       Args:
+           root: The path to the root of the app.
+        
+       Returns:
+           The path to the .deps.json file for the project.
+    """
+    app_root = os.path.join(root, DEPS_PATTERN)
+    files = glob.glob(app_root)
+    if len(files) != 1:
+        return None
+    return files[0]
 
 
 class BaseImage(object):
@@ -185,6 +141,87 @@ class BaseImage(object):
         major_version = get_major_version(version)
         return (self.major_version == major_version and
                 StrictVersion(self.version) >= StrictVersion(version))
+
+
+class PublishedApp(object):
+    """Represents a published app.
+
+    This class represetns an app that has already been published. This
+    is the simplest clase for an app. A very simple Dockerfile can be
+    generated.
+    """
+
+    # Dockerfile template to be used when packaging up published apps.
+    DOCKERFILE_CONTENTS = textwrap.dedent(
+        """\
+        FROM {runtime_image}
+        ADD ./ /app
+        ENV ASPNETCORE_URLS=http://*:${{PORT}}
+        WORKDIR /app
+        ENTRYPOINT [ "dotnet", "{dll_name}.dll" ]
+        """)
+
+
+    def __init__(self, root):
+        self.root = root;
+        self.deps_path = get_deps_path(root)
+        
+
+    def generate_dockerfile(self, version_map, output):
+        """Generates the Dockerfile for this app."""
+        minor_version = self._get_runtime_minor_version()
+        if minor_version is None:
+            print ('No valid .NET Core runtime version found for the app or it is not a ' +
+                   'supported app.')
+            sys.exit(1)
+
+        base_image = get_base_image(version_map, minor_version)
+        if base_image is None:
+            print ('The app requires .NET Core runtime version {0} which is not supported at ' +
+                   'this time.').format(minor_version)
+            sys.exit(1)
+
+        project_name = self._get_project_assembly_name()
+        assembly_name = ASSEMBLY_NAME_TEMPLATE.format(project_name)
+        if not os.path.isfile(os.path.join(self.root, assembly_name)):
+            print 'Cannot find entry point assembly {0} for ASP.NET Core project'.format(assembly_name)
+            sys.exit(1)
+
+        contents = PublishedApp.DOCKERFILE_CONTENTS.format(runtime_image=base_image.image, dll_name=project_name)
+        with open(output, 'wt') as out:
+            out.write(contents)
+
+
+    def _get_project_assembly_name(self):
+        """Returns the name of the entrypoint assembly given the .deps.json
+        file name.
+
+        Returns:
+            The name of the entry point assembly.
+        """
+        filename = os.path.basename(self.deps_path)
+        return filename[:-len(DEPS_EXTENSION)]
+
+
+    def _get_runtime_minor_version(self):
+        """Determines the target of the .NET Core runtime needed by the app.
+
+        Reads the given .deps.json file and determines the version of the
+        runtime used by the app.
+
+        Returns:
+            The version of the runtime used by the app.
+        """
+        with open(self.deps_path, 'r') as src:
+            content = json.load(src)
+            try:
+                libraries = content['libraries']
+                for key in libraries:
+                    if key.lower().startswith(NETCORE_APP_PREFIX):
+                        version = key[len(NETCORE_APP_PREFIX):]
+                        return version.split('-')[0]
+            except KeyError:
+                return None
 
 
 def parse_version_map(version_map):
@@ -238,7 +275,22 @@ def get_base_image(version_map, version):
     return None
 
 
+def get_app(root, app_yaml):
+    """Detects the kind of app given the sources.
+
+    This function will inspect the app and determine what kind of app
+    it is. Will return an instance of the appropriate class to handle
+    that kind of app.
+    """
+    deps_path = get_deps_path(root)
+    if deps_path:
+        return PublishedApp(root)
+
+    return None
+
+
 def main(params):
+
     """Ensures that a Dockerfile exists in the current directory.
 
     Assumest that the current directory is set to the root of the
@@ -247,8 +299,6 @@ def main(params):
     main assembly for the project.
 
     """
-    version_map = parse_version_map(params.version_map)
-
     # The app cannot specify it's own Dockerfile when building with
     # the aspnetcore image, the builder is the one that has to build
     # it. To avoid any confusion the builder will fail with this
@@ -258,32 +308,15 @@ def main(params):
                'cannot be used with the aspnetcore runtime.')
         sys.exit(1)
 
-    deps_path = get_deps_path(params.root)
-    if deps_path is None:
-        print 'No .deps.json file found for the app'
+    # Detect the type of app being deployed.
+    app = get_app(params.root, os.path.join(params.root, APP_YAML_NAME))
+    if not app:
+        print ('The app is not supported for deployment.')
         sys.exit(1)
 
-    minor_version = get_runtime_minor_version(deps_path)
-    if minor_version is None:
-        print ('No valid .NET Core runtime version found for the app or it is not a ' +
-               'supported app.')
-        sys.exit(1)
-
-    base_image = get_base_image(version_map, minor_version)
-    if base_image is None:
-        print ('The app requires .NET Core runtime version {0} which is not supported at ' +
-               'this time.').format(minor_version)
-        sys.exit(1)
-
-    project_name = get_project_assembly_name(deps_path)
-    assembly_name = ASSEMBLY_NAME_TEMPLATE.format(project_name)
-    if not os.path.isfile(os.path.join(params.root, assembly_name)):
-        print 'Cannot find entry point assembly {0} for ASP.NET Core project'.format(assembly_name)
-        sys.exit(1)
-
-    contents = DOCKERFILE_CONTENTS.format(runtime_image=base_image.image, dll_name=project_name)
-    with open(params.output, 'wt') as out:
-        out.write(contents)
+    # Generate the Dockerfile for the app.
+    version_map = parse_version_map(params.version_map)
+    app.generate_dockerfile(version_map, params.output)
 
 
 # Start the script.

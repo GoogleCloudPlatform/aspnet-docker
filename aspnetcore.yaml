@@ -2,18 +2,13 @@
 # image to be deployed to Google App Engine Flex.
 steps:
 - name: 'gcr.io/aspnetcore-staging/aspnetcorebuildexp:latest'
-  args: [ '1.1.2=gcr.io/google-appengine/aspnetcore:1.1.2',
-          '1.0.5=gcr.io/google-appengine/aspnetcore:1.0.5',
-          '2.0.0=gcr.io/google-appengine/aspnetcore:2.0.0' ]
-  volumes:
-  - name: 'published'
-    path: '/published'
-
+  args:
+    - '-m'
+    - '1.1.2=gcr.io/google-appengine/aspnetcore:1.1.2'
+    - '1.0.5=gcr.io/google-appengine/aspnetcore:1.0.5'
+    - '2.0.0=gcr.io/google-appengine/aspnetcore:2.0.0'
 - name: gcr.io/cloud-builders/docker:latest
-  args: [ 'build', '-t', '$_OUTPUT_IMAGE', '--no-cache', '--pull', '/published' ]
-  volumes:
-  - name: 'published'
-    path: '/published'
+  args: [ 'build', '-t', '$_OUTPUT_IMAGE', '--no-cache', '--pull', '.' ]
   
 images:
   ['$_OUTPUT_IMAGE']
