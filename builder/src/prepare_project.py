@@ -29,30 +29,20 @@ import json
 import os
 import sys
 import textwrap
+import xml.etree.ElementTree as ET
 from distutils.version import StrictVersion
 
 
 APP_YAML_NAME = 'app.yaml'
 ASSEMBLY_NAME_TEMPLATE = '{0}.dll'
+CSPROJ_PATTERN = '*.csproj'
 DEPS_PATTERN = '*.deps.json'
 DEPS_EXTENSION = '.deps.json'
 DOCKERFILE_NAME = 'Dockerfile'
 
-# Dockerfile template to be used when packaging .csproj based apps.
-PROJECT_DOCKERFILE_CONTENTS = textwrap.dedent(
-    """
-    FROM gcr.io/cloud-builders/csharp/dotnet AS builder
-    COPY . /src
-    WORKDIR /src
-    RUN dotnet restore --packages /packages
-    RUN dotnet publish -c Release -o /published
+NETCOREAPP_VERSION_PREFIX = 'netcoreapp'
+NETCORE_APP_PREFIX = 'microsoft.netcore.app/'
 
-    FROM {runtime_image}
-    COPY --from=builder /published /app
-    ENV ASPNETCORE_URLS=http://*:${PORT}
-    WORKDIR /app
-    ENTRYPOINT [ "dotnet", "{dll_name}.dll" ]
-    """)
 
 # Dockerfile template to be used when packaging .sln based apps.
 SOLUTION_DOCKERFILE_CONTENTS = textwrap.dedent(
@@ -71,9 +61,6 @@ SOLUTION_DOCKERFILE_CONTENTS = textwrap.dedent(
     """)
 
 
-NETCORE_APP_PREFIX = 'microsoft.netcore.app/'
-
-
 def get_major_version(version):
     """Returns the major version of a parsed version.
 
@@ -87,27 +74,63 @@ def get_major_version(version):
     return '.'.join(parsed_version[0:2])
 
 
-def get_deps_path(root):
-    """Finds the .deps.json file for the project.
+def get_file_from_pattern(root, pattern):
+    """This function returns the file that matches the given pattern.
 
-       Looks for the .deps.json file for the project in the current
-       directory, there should be only one such file per published
-       project.
+    This function uses the given pattern to find the single file that
+    matches it. If more than one file is found then we act as if
+    nothing was found.
 
-       Args:
-           root: The path to the root of the app.
-        
-       Returns:
-           The path to the .deps.json file for the project.
+    Args:
+        root: A string with the path where to search.
+        pattern: A string with the pattern to use to find the file.
+
+    Returns:
+        A string with the path to the file found or None if no file,
+        or more than one, is found.
     """
-    app_root = os.path.join(root, DEPS_PATTERN)
-    files = glob.glob(app_root)
+    root_pattern = os.path.join(root, pattern)
+    files = glob.glob(root_pattern)
     if len(files) != 1:
         return None
     return files[0]
 
 
+def get_deps_path(root):
+    """Finds the .deps.json file for the app.
+
+       Looks for the .deps.json file for the app in the given
+       directory, there should be only one such file per published
+       project.
+
+       Args:
+           root: The path to the root of the app.
+
+       Returns:
+           The path to the .deps.json file for the project.
+
+    """
+    return get_file_from_pattern(root, DEPS_PATTERN)
+
+
+def get_project_path(root):
+    """Find the .csproj file for the app.
+
+    Looks for the .csproj for the app in the given directory. There
+    should be only one .csproj found.
+
+    Args:
+        root: A string with the path to the root of the app's sources.
+
+    Returns:
+        A string with the path to the .csproj for the app, or None if
+        nothing or more than one file was found.
+    """
+    return get_file_from_pattern(root, CSPROJ_PATTERN)
+
+
 class BaseImage(object):
+
     """The information about the base image for a given .NET Core version."""
 
     def __init__(self, version, image):
@@ -165,7 +188,7 @@ class PublishedApp(object):
     def __init__(self, root):
         self.root = root;
         self.deps_path = get_deps_path(root)
-        
+
 
     def generate_dockerfile(self, version_map, output):
         """Generates the Dockerfile for this app."""
@@ -224,7 +247,98 @@ class PublishedApp(object):
                 return None
 
 
+class SingleProjectApp(object):
+    """An app that is composed of a single .csproj build file.
+
+    This class represents an app that is composed of a single app, as
+    it is with the apps generated using "dotnet new" by default.
+
+    Since there is a single project, this project is considered to be
+    the entry point for the app.
+    """
+
+    # Dockerfile template to be used when packaging .csproj based apps.
+    DOCKERFILE_CONTENTS = textwrap.dedent(
+        """\
+        FROM gcr.io/cloud-builders/csharp/dotnet AS builder
+        COPY . /src
+        WORKDIR /src
+        RUN dotnet restore --packages /packages
+        RUN dotnet publish -c Release -o /published
+
+        FROM {runtime_image}
+        COPY --from=builder /published /app
+        ENV ASPNETCORE_URLS=http://*:${{PORT}}
+        WORKDIR /app
+        ENTRYPOINT [ "dotnet", "{dll_name}.dll" ]
+        """)
+
+
+    def __init__(self, root):
+        self.root = root
+        self.project = get_project_path(root)
+
+
+    def generate_dockerfile(self, version_map, output):
+        """Generates the Dockerfile for the app.
+
+        This method will generate a Dockerfile that will build/publish
+        the app and then package it up.
+        """
+        minor_version = self._get_project_runtime_version()
+        if minor_version is None:
+            print ('No valid .NET Core runtime version found for the app or it is not a ' +
+                   'supported app.')
+            sys.exit(1)
+
+        base_image = get_base_image(version_map, minor_version)
+        if base_image is None:
+            print ('The app requires .NET Core runtime version {0} which is not supported at ' +
+                   'this time.').format(minor_version)
+            sys.exit(1)
+
+        project_name = self._get_project_assembly_name()
+        assembly_name = ASSEMBLY_NAME_TEMPLATE.format(project_name)
+        contents = SingleProjectApp.DOCKERFILE_CONTENTS.format(runtime_image=base_image.image, dll_name=project_name)
+        with open(output, 'wt') as out:
+            out.write(contents)
+
+
+    def _get_project_assembly_name(self):
+        """Returns the name of the main assembly for the project.
+
+        This method will use the file path as the basis for the name
+        of the assembly.
+        """
+        basename = os.path.basename(self.project)
+        return os.path.splitext(basename)[0]
+
+
+    def _get_project_runtime_version(self):
+        """This method returns runtime targeted by this project.
+
+        This method will parse the .csproj file and look for the
+        TargetFramework property if present.
+
+        Returns:
+            A string with the target version.
+        """
+        tree = ET.parse(self.project)
+        root = tree.getroot()
+        framework_element = root.find('./PropertyGroup/TargetFramework')
+        if framework_element is None:
+            return None
+
+        framework = framework_element.text
+        if not framework.startswith(NETCOREAPP_VERSION_PREFIX):
+            print ('The app is not supported to release, must be an executable.')
+            sys.exit(1)
+
+        return framework[len(NETCOREAPP_VERSION_PREFIX):]
+
+
 def parse_version_map(version_map):
+
     """Produces a list of version to Docker tag from the map.
 
     Parses the given version_map and produces a list that contains all
@@ -285,6 +399,10 @@ def get_app(root, app_yaml):
     deps_path = get_deps_path(root)
     if deps_path:
         return PublishedApp(root)
+
+    project_path = get_project_path(root)
+    if project_path:
+        return SingleProjectApp(root)
 
     return None
 
