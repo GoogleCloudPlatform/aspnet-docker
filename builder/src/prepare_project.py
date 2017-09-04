@@ -30,6 +30,7 @@ import os
 import sys
 import textwrap
 import xml.etree.ElementTree as ET
+import yaml
 from distutils.version import StrictVersion
 
 
@@ -37,28 +38,11 @@ APP_YAML_NAME = 'app.yaml'
 ASSEMBLY_NAME_TEMPLATE = '{0}.dll'
 CSPROJ_PATTERN = '*.csproj'
 DEPS_PATTERN = '*.deps.json'
+SOLUTION_PATTERN = '*.sln'
 DEPS_EXTENSION = '.deps.json'
 DOCKERFILE_NAME = 'Dockerfile'
-
 NETCOREAPP_VERSION_PREFIX = 'netcoreapp'
 NETCORE_APP_PREFIX = 'microsoft.netcore.app/'
-
-
-# Dockerfile template to be used when packaging .sln based apps.
-SOLUTION_DOCKERFILE_CONTENTS = textwrap.dedent(
-    """
-    FROM gcr.io/cloud-builders/csharp/dotnet AS builder
-    COPY . /src
-    WORKDIR /src
-    RUN dotnet restore --packages /packages
-    RUN dotnet publish -c Release -o /published {main_project}
-
-    FROM {runtime_image}
-    COPY --from=builder /published /app
-    ENV ASPNETCORE_URLS=http://*:${PORT}
-    WORKDIR /app
-    ENTRYPOINT [ "dotnet", "{dll_name}.dll" ]
-    """)
 
 
 def get_major_version(version):
@@ -129,6 +113,44 @@ def get_project_path(root):
     return get_file_from_pattern(root, CSPROJ_PATTERN)
 
 
+def get_solution_path(root):
+    """Find the .sln file for the app.
+
+    Looks for the .sln for the app in the given directory. There
+    should be only one .sln found.
+
+    Args:
+        root: A string with the path to the root of the app's sources.
+
+    Returns:
+        A string with the path to the .sln for the app, or None if
+        nothing or more than one file was found.
+
+    """
+    return get_file_from_pattern(root, SOLUTION_PATTERN)
+
+
+def get_startup_project(app_yaml):
+    """Returns the startup_project setting stored in app.yaml
+
+    Args:
+        app_yaml: String with the path to the app.yaml file to parse.
+
+    Returns:
+
+        A string with the contents of the startup_project setting, or
+        None if the setting cannot be found. If there's a path it will
+        be transformed into a Unix style path.
+    """
+    with open(app_yaml, 'r') as src:
+        content = yaml.load(src)
+        try:
+            result = content['runtime_config']['startup_project']
+            return result.replace('\\', '/')
+        except KeyError:
+            return None
+
+
 class BaseImage(object):
 
     """The information about the base image for a given .NET Core version."""
@@ -184,11 +206,9 @@ class PublishedApp(object):
         ENTRYPOINT [ "dotnet", "{dll_name}.dll" ]
         """)
 
-
     def __init__(self, root):
         self.root = root;
         self.deps_path = get_deps_path(root)
-
 
     def generate_dockerfile(self, version_map, output):
         """Generates the Dockerfile for this app."""
@@ -214,7 +234,6 @@ class PublishedApp(object):
         with open(output, 'wt') as out:
             out.write(contents)
 
-
     def _get_project_assembly_name(self):
         """Returns the name of the entrypoint assembly given the .deps.json
         file name.
@@ -224,7 +243,6 @@ class PublishedApp(object):
         """
         filename = os.path.basename(self.deps_path)
         return filename[:-len(DEPS_EXTENSION)]
-
 
     def _get_runtime_minor_version(self):
         """Determines the target of the .NET Core runtime needed by the app.
@@ -273,11 +291,9 @@ class SingleProjectApp(object):
         ENTRYPOINT [ "dotnet", "{dll_name}.dll" ]
         """)
 
-
-    def __init__(self, root):
+    def __init__(self, root, project):
         self.root = root
-        self.project = get_project_path(root)
-
+        self.project = project
 
     def generate_dockerfile(self, version_map, output):
         """Generates the Dockerfile for the app.
@@ -303,7 +319,6 @@ class SingleProjectApp(object):
         with open(output, 'wt') as out:
             out.write(contents)
 
-
     def _get_project_assembly_name(self):
         """Returns the name of the main assembly for the project.
 
@@ -312,7 +327,6 @@ class SingleProjectApp(object):
         """
         basename = os.path.basename(self.project)
         return os.path.splitext(basename)[0]
-
 
     def _get_project_runtime_version(self):
         """This method returns runtime targeted by this project.
@@ -335,6 +349,63 @@ class SingleProjectApp(object):
             sys.exit(1)
 
         return framework[len(NETCOREAPP_VERSION_PREFIX):]
+
+
+class SolutionApp(SingleProjectApp):
+    """An app that is composed of a solution and one, or more, projects.
+
+    This class contains the information for an app that is composed of
+    a .sln and one, or more, projects. One of the projects will be the
+    startup project and thus the one used to launch the app in the
+    generated Dockerfile.
+    """
+
+    # Dockerfile template to be used when packaging .sln based apps.
+    DOCKERFILE_CONTENTS = textwrap.dedent(
+        """\
+        FROM gcr.io/cloud-builders/csharp/dotnet AS builder
+        COPY . /src
+        WORKDIR /src
+        RUN dotnet restore --packages /packages
+        RUN dotnet publish -c Release -o /published {main_project}
+
+        FROM {runtime_image}
+        COPY --from=builder /published /app
+        ENV ASPNETCORE_URLS=http://*:${{PORT}}
+        WORKDIR /app
+        ENTRYPOINT [ "dotnet", "{dll_name}.dll" ]
+        """)
+
+    def __init__(self, root, app_yaml):
+        main_project = get_startup_project(app_yaml)
+        super(SolutionApp, self).__init__(root, get_startup_project(app_yaml))
+        self.main_project = main_project
+
+    def generate_dockerfile(self, version_map, output):
+        """Generates the Dockerfile for the app.
+
+        This method will generate a Dockerfile that will build/publish
+        the app and then package it up.
+        """
+        minor_version = self._get_project_runtime_version()
+        if minor_version is None:
+            print ('No valid .NET Core runtime version found for the app or it is not a ' +
+                   'supported app.')
+            sys.exit(1)
+
+        base_image = get_base_image(version_map, minor_version)
+        if base_image is None:
+            print ('The app requires .NET Core runtime version {0} which is not supported at ' +
+                   'this time.').format(minor_version)
+            sys.exit(1)
+
+        project_name = self._get_project_assembly_name()
+        assembly_name = ASSEMBLY_NAME_TEMPLATE.format(project_name)
+        contents = SolutionApp.DOCKERFILE_CONTENTS.format(runtime_image=base_image.image,
+                                                          main_project=self.main_project,
+                                                          dll_name=project_name)
+        with open(output, 'wt') as out:
+            out.write(contents)
 
 
 def parse_version_map(version_map):
@@ -400,9 +471,13 @@ def get_app(root, app_yaml):
     if deps_path:
         return PublishedApp(root)
 
+    solution_path = get_solution_path(root)
+    if solution_path:
+        return SolutionApp(root, app_yaml)
+
     project_path = get_project_path(root)
     if project_path:
-        return SingleProjectApp(root)
+        return SingleProjectApp(root, project_path)
 
     return None
 
