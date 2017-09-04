@@ -9,6 +9,12 @@ steps:
   id: 'test-validator-build'
   waitFor: ['-']
 
+# Builds the Dockerfile validator.
+- name: gcr.io/cloud-builders/docker
+  args: [ 'build', '-t', 'dockerfile-validator', './dockerfile_validator' ]
+  id: 'dockerfile-validator-build'
+  waitFor: ['-']
+
 # Build the builder image.
 - name: gcr.io/cloud-builders/docker
   args: [ 'build', '-t', '${_DOCKER_NAMESPACE}/aspnetcorebuildexp:${_TAG}',
@@ -102,7 +108,38 @@ steps:
   dir: 'functional_tests/cleansource-1.0'
   id: 'builder-functional-cleansource-1-0'
   waitFor: [ 'builder-build' ]
+- name: 'dockerfile-validator'
+  args: 'functional_tests/cleansource-1.0'
+  id: 'dockerfile-validator-cleansource-1-0'
+  waitFor: [ 'dockerfile-validator-build', 'builder-functional-cleansource-1-0' ]
 
+- name: '${_DOCKER_NAMESPACE}/aspnetcorebuildexp:${_TAG}'
+  args:
+    - '-m'
+    - '1.1.2=aspnetcore:1.1'
+    - '1.0.5=aspnetcore:1.0'
+    - '2.0.0=aspnetcore:2.0'
+  dir: 'functional_tests/cleansource-1.1'
+  id: 'builder-functional-cleansource-1-1'
+  waitFor: [ 'builder-build' ]
+- name: 'dockerfile-validator'
+  args: 'functional_tests/cleansource-1.1'
+  id: 'dockerfile-validator-cleansource-1-1'
+  waitFor: [ 'dockerfile-validator-build', 'builder-functional-cleansource-1-1' ]
+
+- name: '${_DOCKER_NAMESPACE}/aspnetcorebuildexp:${_TAG}'
+  args:
+    - '-m'
+    - '1.1.2=aspnetcore:1.1'
+    - '1.0.5=aspnetcore:1.0'
+    - '2.0.0=aspnetcore:2.0'
+  dir: 'functional_tests/cleansource-2.0'
+  id: 'builder-functional-cleansource-2-0'
+  waitFor: [ 'builder-build' ]
+- name: 'dockerfile-validator'
+  args: 'functional_tests/cleansource-2.0'
+  id: 'dockerfile-validator-cleansource-2-0'
+  waitFor: [ 'dockerfile-validator-build', 'builder-functional-cleansource-2-0' ]
 
 # Publish the image.
 images:
