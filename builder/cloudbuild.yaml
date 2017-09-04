@@ -92,6 +92,18 @@ steps:
   waitFor: [ 'test-validator-build', 'builder-functional-test-2-0' ]
   id: 'test-validator-clean-2-0'
 
+# Test the functionality for single project apps.
+- name: '${_DOCKER_NAMESPACE}/aspnetcorebuildexp:${_TAG}'
+  args:
+    - '-m'
+    - '1.1.2=aspnetcore:1.1'
+    - '1.0.5=aspnetcore:1.0'
+    - '2.0.0=aspnetcore:2.0'
+  dir: 'functional_tests/cleansource-1.0'
+  id: 'builder-functional-cleansource-1-0'
+  waitFor: [ 'builder-build' ]
+
+
 # Publish the image.
 images:
   - '${_DOCKER_NAMESPACE}/aspnetcorebuildexp:${_TAG}'
