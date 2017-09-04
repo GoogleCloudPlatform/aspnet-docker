@@ -23,6 +23,8 @@ It is assumed that the current directory is the published directory.
 
 """
 
+from __future__ import print_function
+
 import argparse
 import glob
 import json
@@ -30,8 +32,8 @@ import os
 import sys
 import textwrap
 import xml.etree.ElementTree as ET
-import yaml
 from distutils.version import StrictVersion
+import yaml
 
 
 APP_YAML_NAME = 'app.yaml'
@@ -207,30 +209,32 @@ class PublishedApp(object):
         """)
 
     def __init__(self, root):
-        self.root = root;
+        self.root = root
         self.deps_path = get_deps_path(root)
 
     def generate_dockerfile(self, version_map, output):
         """Generates the Dockerfile for this app."""
         minor_version = self._get_runtime_minor_version()
         if minor_version is None:
-            print ('No valid .NET Core runtime version found for the app or it is not a ' +
-                   'supported app.')
+            print('No valid .NET Core runtime version found for the app or it is not a ' +
+                  'supported app.')
             sys.exit(1)
 
         base_image = get_base_image(version_map, minor_version)
         if base_image is None:
-            print ('The app requires .NET Core runtime version {0} which is not supported at ' +
-                   'this time.').format(minor_version)
+            print('The app requires .NET Core runtime version {0} which is not supported at ' +
+                  'this time.').format(minor_version)
             sys.exit(1)
 
         project_name = self._get_project_assembly_name()
         assembly_name = ASSEMBLY_NAME_TEMPLATE.format(project_name)
         if not os.path.isfile(os.path.join(self.root, assembly_name)):
-            print 'Cannot find entry point assembly {0} for ASP.NET Core project'.format(assembly_name)
+            print('Cannot find entry point assembly {0} for ASP.NET Core project'
+                  .format(assembly_name))
             sys.exit(1)
 
-        contents = PublishedApp.DOCKERFILE_CONTENTS.format(runtime_image=base_image.image, dll_name=project_name)
+        contents = PublishedApp.DOCKERFILE_CONTENTS.format(runtime_image=base_image.image,
+                                                           dll_name=project_name)
         with open(output, 'wt') as out:
             out.write(contents)
 
@@ -303,19 +307,19 @@ class SingleProjectApp(object):
         """
         minor_version = self._get_project_runtime_version()
         if minor_version is None:
-            print ('No valid .NET Core runtime version found for the app or it is not a ' +
-                   'supported app.')
+            print('No valid .NET Core runtime version found for the app or it is not a ' +
+                  'supported app.')
             sys.exit(1)
 
         base_image = get_base_image(version_map, minor_version)
         if base_image is None:
-            print ('The app requires .NET Core runtime version {0} which is not supported at ' +
-                   'this time.').format(minor_version)
+            print('The app requires .NET Core runtime version {0} which is not supported at ' +
+                  'this time.').format(minor_version)
             sys.exit(1)
 
         project_name = self._get_project_assembly_name()
-        assembly_name = ASSEMBLY_NAME_TEMPLATE.format(project_name)
-        contents = SingleProjectApp.DOCKERFILE_CONTENTS.format(runtime_image=base_image.image, dll_name=project_name)
+        contents = SingleProjectApp.DOCKERFILE_CONTENTS.format(runtime_image=base_image.image,
+                                                               dll_name=project_name)
         with open(output, 'wt') as out:
             out.write(contents)
 
@@ -345,7 +349,7 @@ class SingleProjectApp(object):
 
         framework = framework_element.text
         if not framework.startswith(NETCOREAPP_VERSION_PREFIX):
-            print ('The app is not supported to release, must be an executable.')
+            print('The app is not supported to release, must be an executable.')
             sys.exit(1)
 
         return framework[len(NETCOREAPP_VERSION_PREFIX):]
@@ -389,18 +393,17 @@ class SolutionApp(SingleProjectApp):
         """
         minor_version = self._get_project_runtime_version()
         if minor_version is None:
-            print ('No valid .NET Core runtime version found for the app or it is not a ' +
-                   'supported app.')
+            print('No valid .NET Core runtime version found for the app or it is not a ' +
+                  'supported app.')
             sys.exit(1)
 
         base_image = get_base_image(version_map, minor_version)
         if base_image is None:
-            print ('The app requires .NET Core runtime version {0} which is not supported at ' +
-                   'this time.').format(minor_version)
+            print('The app requires .NET Core runtime version {0} which is not supported at ' +
+                  'this time.').format(minor_version)
             sys.exit(1)
 
         project_name = self._get_project_assembly_name()
-        assembly_name = ASSEMBLY_NAME_TEMPLATE.format(project_name)
         contents = SolutionApp.DOCKERFILE_CONTENTS.format(runtime_image=base_image.image,
                                                           main_project=self.main_project,
                                                           dll_name=project_name)
@@ -426,7 +429,7 @@ def parse_version_map(version_map):
             key, value = entry.split('=')
             result.append(BaseImage(key, value))
         except ValueError:
-            print 'Invalid version map entry {0}'.format(entry)
+            print('Invalid version map entry {0}'.format(entry))
             sys.exit(1)
     # Returns the list sorted in descending order, this way the latest
     # minor version is always available first.
@@ -497,14 +500,14 @@ def main(params):
     # it. To avoid any confusion the builder will fail with this
     # error.
     if os.path.isfile(DOCKERFILE_NAME):
-        print ('A Dockerfile already exists in the workspace, this Dockerfile ' +
-               'cannot be used with the aspnetcore runtime.')
+        print('A Dockerfile already exists in the workspace, this Dockerfile ' +
+              'cannot be used with the aspnetcore runtime.')
         sys.exit(1)
 
     # Detect the type of app being deployed.
     app = get_app(params.root, os.path.join(params.root, APP_YAML_NAME))
     if not app:
-        print ('The app is not supported for deployment.')
+        print('The app is not supported for deployment.')
         sys.exit(1)
 
     # Generate the Dockerfile for the app.
