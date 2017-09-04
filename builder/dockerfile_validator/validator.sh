@@ -39,4 +39,5 @@ if [[ "${expected_sha1}" != "${actual_sha1}" ]]; then
 fi
 
 # Success.
+echo "Success: $1"
 exit 0
