@@ -141,6 +141,20 @@ steps:
   id: 'dockerfile-validator-cleansource-2-0'
   waitFor: [ 'dockerfile-validator-build', 'builder-functional-cleansource-2-0' ]
 
+- name: '${_DOCKER_NAMESPACE}/aspnetcorebuildexp:${_TAG}'
+  args:
+    - '-m'
+    - '1.1.2=aspnetcore:1.1'
+    - '1.0.5=aspnetcore:1.0'
+    - '2.0.0=aspnetcore:2.0'
+  dir: 'functional_tests/fsharp-2.0'
+  id: 'builder-functional-fsharp-2-0'
+  waitFor: [ 'builder-build' ]
+- name: 'dockerfile-validator'
+  args: 'functional_tests/fsharp-2.0'
+  id: 'dockerfile-validator-fsharp-2-0'
+  waitFor: [ 'dockerfile-validator-build', 'builder-functional-fsharp-2-0' ]
+
 # Test the functionality for solution based apps.
 - name: '${_DOCKER_NAMESPACE}/aspnetcorebuildexp:${_TAG}'
   args:

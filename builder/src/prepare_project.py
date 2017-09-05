@@ -39,6 +39,7 @@ import yaml
 APP_YAML_NAME = 'app.yaml'
 ASSEMBLY_NAME_TEMPLATE = '{0}.dll'
 CSPROJ_PATTERN = '*.csproj'
+FSPROJ_PATTERN = '*.fsproj'
 DEPS_PATTERN = '*.deps.json'
 SOLUTION_PATTERN = '*.sln'
 DEPS_EXTENSION = '.deps.json'
@@ -112,7 +113,16 @@ def get_project_path(root):
         A string with the path to the .csproj for the app, or None if
         nothing or more than one file was found.
     """
-    return get_file_from_pattern(root, CSPROJ_PATTERN)
+    csproj_path = get_file_from_pattern(root, CSPROJ_PATTERN)
+    fsproj_path = get_file_from_pattern(root, FSPROJ_PATTERN)
+    if csproj_path and fsproj_path:
+        print('The project contains both a .csproj and a .fsproj, this is not supported.')
+        sys.exit(1)
+
+    if csproj_path:
+        return csproj_path
+    if fsproj_path:
+        return fsproj_path
 
 
 def get_solution_path(root):
