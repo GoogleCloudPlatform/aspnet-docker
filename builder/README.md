@@ -15,10 +15,11 @@ The structure of the directory is as follows:
 To use the image you add a step to the `cloudbuild.yaml` that looks like this:
 ```yaml
 - name: 'gcr.io/gcp-runtimes/aspnetcorebuild:latest'
-  args: [ '--version-map',
-          '1.1.2=gcr.io/google-appengine/aspnetcore:1.1.2',
-          '1.0.5=gcr.io/google-appengine/aspnetcore:1.0.5',
-          '2.0.0=gcr.io/google-appengine/aspnetcore:2.0.0' ]
+  args:
+    - '--version-map'
+    - '1.1.2=gcr.io/google-appengine/aspnetcore:1.1.2'
+    - '1.0.5=gcr.io/google-appengine/aspnetcore:1.0.5'
+    - '2.0.0=gcr.io/google-appengine/aspnetcore:2.0.0'
 ```
 
 This step assumes that the root of the app is the workspace, it will inspect it and produce a `Dockerfile` that uses one of the provided base images depending on the version of .NET Core being targeted. The runtime builder will fail (return non-zero exit code) if the app targets a version of .NET Core that is not supported.
