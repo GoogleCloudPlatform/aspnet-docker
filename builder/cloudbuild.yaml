@@ -30,11 +30,11 @@ steps:
     - '1.1.2=aspnetcore:1.1'
     - '1.0.5=aspnetcore:1.0'
     - '2.0.0=aspnetcore:2.0'
-  dir: 'functional_tests/clean-1.0'
+  dir: 'functional_tests/published_apps/published-1.0'
   id: 'builder-functional-test-1-0'
   waitFor: [ 'builder-build' ]
 - name: 'dockerfile-validator'
-  args: 'functional_tests/clean-1.0'
+  args: 'functional_tests/published_apps/published-1.0'
   waitFor: [ 'dockerfile-validator-build', 'builder-functional-test-1-0' ]
   id: 'test-validator-clean-1-0'
 
@@ -44,11 +44,11 @@ steps:
     - '1.1.2=aspnetcore:1.1'
     - '1.0.5=aspnetcore:1.0'
     - '2.0.0=aspnetcore:2.0'
-  dir: 'functional_tests/cleanjs-1.0'
+  dir: 'functional_tests/published_apps/published-js-1.0'
   id: 'builder-functional-test-js-1-0'
   waitFor: [ 'builder-build' ]
 - name: 'dockerfile-validator'
-  args: 'functional_tests/cleanjs-1.0'
+  args: 'functional_tests/published_apps/published-js-1.0'
   waitFor: [ 'dockerfile-validator-build', 'builder-functional-test-js-1-0' ]
   id: 'test-validator-cleanjs-1-0'
 
@@ -58,11 +58,11 @@ steps:
     - '1.1.2=aspnetcore:1.1'
     - '1.0.5=aspnetcore:1.0'
     - '2.0.0=aspnetcore:2.0'
-  dir: 'functional_tests/clean-1.1'
+  dir: 'functional_tests/published_apps/published-1.1'
   id: 'builder-functional-test-1-1'
   waitFor: [ 'builder-build' ]
 - name: 'dockerfile-validator'
-  args: 'functional_tests/clean-1.1'
+  args: 'functional_tests/published_apps/published-1.1'
   waitFor: [ 'dockerfile-validator-build', 'builder-functional-test-1-1' ]
   id: 'test-validator-clean-1-1'
 
@@ -72,11 +72,11 @@ steps:
     - '1.1.2=aspnetcore:1.1'
     - '1.0.5=aspnetcore:1.0'
     - '2.0.0=aspnetcore:2.0'
-  dir: 'functional_tests/clean-2.0'
+  dir: 'functional_tests/published_apps/published-2.0'
   id: 'builder-functional-test-2-0'
   waitFor: [ 'builder-build' ]
 - name: 'dockerfile-validator'
-  args: 'functional_tests/clean-2.0'
+  args: 'functional_tests/published_apps/published-2.0'
   waitFor: [ 'dockerfile-validator-build', 'builder-functional-test-2-0' ]
   id: 'test-validator-clean-2-0'
 
@@ -87,11 +87,11 @@ steps:
     - '1.1.2=aspnetcore:1.1'
     - '1.0.5=aspnetcore:1.0'
     - '2.0.0=aspnetcore:2.0'
-  dir: 'functional_tests/cleansource-1.0'
+  dir: 'functional_tests/single_project_apps/singleproject-1.0'
   id: 'builder-functional-cleansource-1-0'
   waitFor: [ 'builder-build' ]
 - name: 'dockerfile-validator'
-  args: 'functional_tests/cleansource-1.0'
+  args: 'functional_tests/single_project_apps/singleproject-1.0'
   id: 'dockerfile-validator-cleansource-1-0'
   waitFor: [ 'dockerfile-validator-build', 'builder-functional-cleansource-1-0' ]
 
@@ -101,11 +101,11 @@ steps:
     - '1.1.2=aspnetcore:1.1'
     - '1.0.5=aspnetcore:1.0'
     - '2.0.0=aspnetcore:2.0'
-  dir: 'functional_tests/cleansource-1.1'
+  dir: 'functional_tests/single_project_apps/singleproject-1.1'
   id: 'builder-functional-cleansource-1-1'
   waitFor: [ 'builder-build' ]
 - name: 'dockerfile-validator'
-  args: 'functional_tests/cleansource-1.1'
+  args: 'functional_tests/single_project_apps/singleproject-1.1'
   id: 'dockerfile-validator-cleansource-1-1'
   waitFor: [ 'dockerfile-validator-build', 'builder-functional-cleansource-1-1' ]
 
@@ -115,11 +115,11 @@ steps:
     - '1.1.2=aspnetcore:1.1'
     - '1.0.5=aspnetcore:1.0'
     - '2.0.0=aspnetcore:2.0'
-  dir: 'functional_tests/cleansource-2.0'
+  dir: 'functional_tests/single_project_apps/singleproject-2.0'
   id: 'builder-functional-cleansource-2-0'
   waitFor: [ 'builder-build' ]
 - name: 'dockerfile-validator'
-  args: 'functional_tests/cleansource-2.0'
+  args: 'functional_tests/single_project_apps/singleproject-2.0'
   id: 'dockerfile-validator-cleansource-2-0'
   waitFor: [ 'dockerfile-validator-build', 'builder-functional-cleansource-2-0' ]
 
@@ -129,11 +129,11 @@ steps:
     - '1.1.2=aspnetcore:1.1'
     - '1.0.5=aspnetcore:1.0'
     - '2.0.0=aspnetcore:2.0'
-  dir: 'functional_tests/fsharp-2.0'
+  dir: 'functional_tests/single_project_apps/singleproject-fsharp-2.0'
   id: 'builder-functional-fsharp-2-0'
   waitFor: [ 'builder-build' ]
 - name: 'dockerfile-validator'
-  args: 'functional_tests/fsharp-2.0'
+  args: 'functional_tests/single_project_apps/singleproject-fsharp-2.0'
   id: 'dockerfile-validator-fsharp-2-0'
   waitFor: [ 'dockerfile-validator-build', 'builder-functional-fsharp-2-0' ]
 
@@ -144,11 +144,11 @@ steps:
     - '1.1.2=aspnetcore:1.1'
     - '1.0.5=aspnetcore:1.0'
     - '2.0.0=aspnetcore:2.0'
-  dir: 'functional_tests/cleansolution-2.0'
+  dir: 'functional_tests/solution_apps/solution-2.0'
   id: 'builder-functional-cleansolution-2-0'
   waitFor: [ 'builder-build' ]
 - name: 'dockerfile-validator'
-  args: 'functional_tests/cleansolution-2.0'
+  args: 'functional_tests/solution_apps/solution-2.0'
   id: 'dockerfile-validator-cleansolution-2-0'
   waitFor: [ 'dockerfile-validator-build', 'builder-functional-cleansolution-2-0' ]
 
