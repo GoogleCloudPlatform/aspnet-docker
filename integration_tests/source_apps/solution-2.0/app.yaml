@@ -1,0 +1,5 @@
+runtime: aspnetcoreexp
+env: flex
+
+runtime_config:
+  startup_project: MainProject\MainProject.csproj
