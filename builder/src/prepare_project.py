@@ -164,6 +164,12 @@ def get_startup_project(app_yaml):
             return None
 
 
+def is_compatible_version(requested, sdk):
+    if sdk.version[0] != requested.version[0]:
+        return False
+    return sdk >= requested
+
+
 def is_supported_sdk(requested_sdk, sdks):
     """Validates the given SDK is a supported SDK.
 
@@ -177,7 +183,21 @@ def is_supported_sdk(requested_sdk, sdks):
     if requested_sdk in sdks:
         return True
 
-    # TODO: Check for the versions.
+    # If the requested SDK is a preview/beta then we're done, we only
+    # match preview/beta SDKs by exact name.
+    if '-' in requested_sdk:
+        return False
+
+    requested_version = StrictVersion(requested_sdk)
+
+    # Look for a version of the SDK that maches, excluding all the
+    # beta/preview versions.
+    for sdk in [ x for x in sdks if '-' not in x ]:
+        sdk_version = StrictVersion(sdk)
+        if is_compatible_version(requested_version, sdk_version):
+            return True
+
+    # No compatible version of the SDK could be found for the app.
     return False
 
 
