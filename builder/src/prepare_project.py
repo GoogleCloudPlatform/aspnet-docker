@@ -165,12 +165,31 @@ def get_startup_project(app_yaml):
 
 
 def is_compatible_version(requested, sdk):
+    """Checks that the version is compatible with the SDK version.
+
+    The function checks that the versions are compatible by first
+    checking that the major versions are the same, then verifying that
+    the SDK version is equal or newer.
+
+    The rule is that the major versions of the SDKs are compatible.
+
+    Args:
+        requested: A StrictVersion object with the version that is
+                   requested.
+        sdk: A StricrtVersion object with the version of the SDK to
+             check against.
+
+    Returns:
+        A boolean with True if the SDK version supports the requested
+        version False otherwise.
+    """
     if sdk.version[0] != requested.version[0]:
         return False
     return sdk >= requested
 
 
 def is_supported_sdk(requested_sdk, sdks):
+
     """Validates the given SDK is a supported SDK.
 
     Args:
@@ -192,7 +211,7 @@ def is_supported_sdk(requested_sdk, sdks):
 
     # Look for a version of the SDK that maches, excluding all the
     # beta/preview versions.
-    for sdk in [ x for x in sdks if '-' not in x ]:
+    for sdk in [x for x in sdks if '-' not in x]:
         sdk_version = StrictVersion(sdk)
         if is_compatible_version(requested_version, sdk_version):
             return True
