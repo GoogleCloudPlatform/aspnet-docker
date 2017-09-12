@@ -1,7 +1,7 @@
 # Build script to transform a .NET Core app's sources into a Docker
 # image to be deployed to Google App Engine Flex.
 steps:
-- name: 'gcr.io/aspnetcore-staging/aspnetcorebuildexp:latest'
+- name: 'gcr.io/aspnetcore-staging/aspnetcorebuild:latest'
   args:
     - '-m'
     - '1.1.2=gcr.io/google-appengine/aspnetcore:1.1.2'
