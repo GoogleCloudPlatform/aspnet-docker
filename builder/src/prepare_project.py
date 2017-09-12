@@ -44,6 +44,7 @@ DEPS_PATTERN = '*.deps.json'
 SOLUTION_PATTERN = '*.sln'
 DEPS_EXTENSION = '.deps.json'
 DOCKERFILE_NAME = 'Dockerfile'
+GLOBALJSON_NAME = 'global.json'
 NETCOREAPP_VERSION_PREFIX = 'netcoreapp'
 NETCORE_APP_PREFIX = 'microsoft.netcore.app/'
 
@@ -163,6 +164,57 @@ def get_startup_project(app_yaml):
             return None
 
 
+def is_supported_sdk(requested_sdk, sdks):
+    """Validates the given SDK is a supported SDK.
+
+    Args:
+        requested_sdk: A string with the version of the SDK to check.
+        sdks: A list of strings with the list of supported SDKs.
+
+    Returns:
+        A boolean with True if the sdk is supported, False if not.
+    """
+    if requested_sdk in sdks:
+        return True
+
+    # TODO: Check for the versions.
+    return False
+
+
+def validate_sdks(root, sdks):
+    """Validates that the SDK required by the app.
+
+    This function will ensure that the SDK required by the app, as
+    indicated by the 'global.json' file, is in the list of supported
+    SDKs.
+
+    Args:
+        root: String with the path to the root of the app.
+        sdks: List of strings witht the versions of the SDKs supported.
+    """
+    globaljson_path = os.path.join(root, GLOBALJSON_NAME)
+    if not os.path.isfile(globaljson_path):
+        print('Warning, no global.json found. Will be using the latest version of the ' +
+              '.NET core SDK installed')
+        return
+
+    # No SDKs are passed in, this means that validation is optional.
+    if not sdks:
+        return
+
+    with open(globaljson_path, 'r') as src:
+        content = json.load(src)
+        try:
+            requested_sdk = content['sdk']['version']
+            if not is_supported_sdk(requested_sdk, sdks):
+                print(('The requested version of the .NET Core SDK (%s) is ' +
+                       'not supported.') % requested_sdk)
+                sys.exit(1)
+        except KeyError:
+            print('The file %s is not a valid globa.json file.' % globaljson_path)
+            sys.exit(1)
+
+
 class BaseImage(object):
 
     """The information about the base image for a given .NET Core version."""
@@ -219,11 +271,28 @@ class PublishedApp(object):
         """)
 
     def __init__(self, root):
+        """Initializes the PublishedApp instance.
+
+        Args:
+            root: A string with the path to the root of the published
+                  app.
+        """
         self.root = root
         self.deps_path = get_deps_path(root)
 
     def generate_dockerfile(self, version_map, output):
-        """Generates the Dockerfile for this app."""
+        """Generates the Dockerfile for this app.
+
+        Generates a simple Dockerfile that will wrap an already
+        published app. This Dockerfile will just take the files as is,
+        no build will be attempted.
+
+        Args:
+            version_map: A dictionary that maps versions of the
+                         runtime to the base Docker image to use.
+            output: A string with the path where to save the resulting
+                    Dockerfile.
+        """
         minor_version = self._get_runtime_minor_version()
         if minor_version is None:
             print('No valid .NET Core runtime version found for the app or it is not a ' +
@@ -306,14 +375,28 @@ class SingleProjectApp(object):
         """)
 
     def __init__(self, root, project):
+        """Initializes the instance of SingleProjectApp.
+
+        Args:
+            root: A string with the path to the directory that contains the project.
+            project: A string with the path to the project file.
+        """
         self.root = root
         self.project = project
 
     def generate_dockerfile(self, version_map, output):
         """Generates the Dockerfile for the app.
 
-        This method will generate a Dockerfile that will build/publish
-        the app and then package it up.
+        This method will generate a multi-stage Dockerfile that will
+        first build the app (restore + publish) and then will package
+        up the resulting file into a Docker image.
+
+        Args:
+            version_map: A dictionary that maps versions of the
+                         runtime to the base Docker image to use.
+            output: A string with the path where to save the resulting
+                    Dockerfile.
+
         """
         minor_version = self._get_project_runtime_version()
         if minor_version is None:
@@ -338,6 +421,9 @@ class SingleProjectApp(object):
 
         This method will use the file path as the basis for the name
         of the assembly.
+
+        Returns:
+            A string with the name of the main assbemly for the project.
         """
         basename = os.path.basename(self.project)
         return os.path.splitext(basename)[0]
@@ -473,7 +559,7 @@ def get_base_image(version_map, version):
     return None
 
 
-def get_app(root, app_yaml):
+def get_app(root, app_yaml, sdks):
     """Detects the kind of app given the sources.
 
     This function will inspect the app and determine what kind of app
@@ -486,10 +572,12 @@ def get_app(root, app_yaml):
 
     solution_path = get_solution_path(root)
     if solution_path:
+        validate_sdks(root, sdks)
         return SolutionApp(root, app_yaml)
 
     project_path = get_project_path(root)
     if project_path:
+        validate_sdks(root, sdks)
         return SingleProjectApp(root, project_path)
 
     return None
@@ -515,7 +603,7 @@ def main(params):
         sys.exit(1)
 
     # Detect the type of app being deployed.
-    app = get_app(params.root, os.path.join(params.root, APP_YAML_NAME))
+    app = get_app(params.root, os.path.join(params.root, APP_YAML_NAME), params.sdks)
     if not app:
         print('The app is not supported for deployment.')
         sys.exit(1)
@@ -533,6 +621,11 @@ if __name__ == '__main__':
                         help='The mapping of supported versions to images.',
                         nargs='+',
                         required=True)
+    PARSER.add_argument('-s', '--supported-sdks',
+                        dest='sdks',
+                        help='The list of supported SDK versions.',
+                        nargs='+',
+                        required=False)
     PARSER.add_argument('-o', '--output',
                         help='The output for the Dockefile.',
                         default=DOCKERFILE_NAME,
