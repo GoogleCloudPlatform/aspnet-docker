@@ -13,6 +13,6 @@ steps:
     - '2.0.0'
 - name: gcr.io/cloud-builders/docker:latest
   args: [ 'build', '-t', '$_OUTPUT_IMAGE', '--no-cache', '--pull', '.' ]
-  
+
 images:
   ['$_OUTPUT_IMAGE']
