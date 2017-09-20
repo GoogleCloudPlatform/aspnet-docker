@@ -102,17 +102,18 @@ def get_deps_path(root):
 
 
 def get_project_path(root):
-    """Find the .csproj file for the app.
+    """Find the project file for the app.
 
-    Looks for the .csproj for the app in the given directory. There
-    should be only one .csproj found.
+    Looks for the .csproj/.fsproj for the app in the given directory. There
+    should be only one .csproj/.fsproj found.
 
     Args:
         root: A string with the path to the root of the app's sources.
 
     Returns:
-        A string with the path to the .csproj for the app, or None if
+        A string with the path to the .csproj/.fsproj for the app, or None if
         nothing or more than one file was found.
+
     """
     csproj_path = get_file_from_pattern(root, CSPROJ_PATTERN)
     fsproj_path = get_file_from_pattern(root, FSPROJ_PATTERN)
@@ -120,10 +121,7 @@ def get_project_path(root):
         print('The project contains both a .csproj and a .fsproj, this is not supported.')
         sys.exit(1)
 
-    if csproj_path:
-        return csproj_path
-    if fsproj_path:
-        return fsproj_path
+    return csproj_path or fsproj_path
 
 
 def get_solution_path(root):
@@ -403,6 +401,7 @@ class SingleProjectApp(object):
         FROM gcr.io/cloud-builders/csharp/dotnet AS builder
         COPY . /src
         WORKDIR /src
+        RUN dotnet clean
         RUN dotnet restore --packages /packages
         RUN dotnet publish -c Release -o /published
 
@@ -413,14 +412,12 @@ class SingleProjectApp(object):
         ENTRYPOINT [ "dotnet", "{dll_name}.dll" ]
         """)
 
-    def __init__(self, root, project):
+    def __init__(self, project):
         """Initializes the instance of SingleProjectApp.
 
         Args:
-            root: A string with the path to the directory that contains the project.
             project: A string with the path to the project file.
         """
-        self.root = root
         self.project = project
 
     def generate_dockerfile(self, version_map, output):
@@ -505,6 +502,7 @@ class SolutionApp(SingleProjectApp):
         FROM gcr.io/cloud-builders/csharp/dotnet AS builder
         COPY . /src
         WORKDIR /src
+        RUN dotnet clean
         RUN dotnet restore --packages /packages
         RUN dotnet publish -c Release -o /published {main_project}
 
@@ -515,9 +513,9 @@ class SolutionApp(SingleProjectApp):
         ENTRYPOINT [ "dotnet", "{dll_name}.dll" ]
         """)
 
-    def __init__(self, root, app_yaml):
+    def __init__(self, app_yaml):
         main_project = get_startup_project(app_yaml)
-        super(SolutionApp, self).__init__(root, get_startup_project(app_yaml))
+        super(SolutionApp, self).__init__(main_project)
         self.main_project = main_project
 
     def generate_dockerfile(self, version_map, output):
@@ -612,12 +610,12 @@ def get_app(root, app_yaml, sdks):
     solution_path = get_solution_path(root)
     if solution_path:
         validate_sdks(root, sdks)
-        return SolutionApp(root, app_yaml)
+        return SolutionApp(app_yaml)
 
     project_path = get_project_path(root)
     if project_path:
         validate_sdks(root, sdks)
-        return SingleProjectApp(root, project_path)
+        return SingleProjectApp(project_path)
 
     return None
 
