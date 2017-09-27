@@ -25,6 +25,11 @@ steps:
           '--no-cache', '--pull', './versions/1.0.5' ]
   id: 'aspnetcore-1-0-5-build'
   waitFor: ['-']
+- name: gcr.io/cloud-builders/docker
+  args: [ 'build', '-t', '${_DOCKER_NAMESPACE}/aspnetcore:1.0.7-${_TAG}',
+          '--no-cache', '--pull', './versions/1.0.7' ]
+  id: 'aspnetcore-1-0-7-build'
+  waitFor: ['-']
 
 # Test the images structure.
 - name: gcr.io/gcp-runtimes/structure_test
@@ -42,6 +47,11 @@ steps:
          '--config', '/workspace/structural_tests/1.0.5/aspnet.yaml', '-v']
   id: 'aspnetcore-1-0-5-test'
   waitFor: [ 'aspnetcore-1-0-5-build' ]
+- name: gcr.io/gcp-runtimes/structure_test
+  args: ['-i', '${_DOCKER_NAMESPACE}/aspnetcore:1.0.7-${_TAG}',
+         '--config', '/workspace/structural_tests/1.0.7/aspnet.yaml', '-v']
+  id: 'aspnetcore-1-0-7-test'
+  waitFor: [ 'aspnetcore-1-0-7-build' ]
 
 # Functional tests.
 
