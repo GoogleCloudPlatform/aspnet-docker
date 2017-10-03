@@ -1,4 +1,4 @@
-runtime: aspnetcoreexp
+runtime: aspnetcore
 env: flex
 
 runtime_config:
