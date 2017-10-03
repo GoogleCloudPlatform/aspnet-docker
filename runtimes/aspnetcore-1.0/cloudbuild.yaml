@@ -25,6 +25,11 @@ steps:
           '--no-cache', '--pull', './versions/1.0.5' ]
   id: 'aspnetcore-1-0-5-build'
   waitFor: ['-']
+- name: gcr.io/cloud-builders/docker
+  args: [ 'build', '-t', '${_DOCKER_NAMESPACE}/aspnetcore:1.0.7-${_TAG}',
+          '--no-cache', '--pull', './versions/1.0.7' ]
+  id: 'aspnetcore-1-0-7-build'
+  waitFor: ['-']
 
 # Test the images structure.
 - name: gcr.io/gcp-runtimes/structure_test
@@ -42,6 +47,11 @@ steps:
          '--config', '/workspace/structural_tests/1.0.5/aspnet.yaml', '-v']
   id: 'aspnetcore-1-0-5-test'
   waitFor: [ 'aspnetcore-1-0-5-build' ]
+- name: gcr.io/gcp-runtimes/structure_test
+  args: ['-i', '${_DOCKER_NAMESPACE}/aspnetcore:1.0.7-${_TAG}',
+         '--config', '/workspace/structural_tests/1.0.7/aspnet.yaml', '-v']
+  id: 'aspnetcore-1-0-7-test'
+  waitFor: [ 'aspnetcore-1-0-7-build' ]
 
 # Functional tests.
 
@@ -90,9 +100,24 @@ steps:
   args: [ '-c', '[[ "$(dotnet /app/test-1.0.5.dll)" == "Hello World!" ]]' ]
   waitFor: [ 'test-app-build-1-0-5' ]
 
+# Test the 1.0.7 runtime.
+- name: generator
+  args: [ './functional_tests/published/test-1.0.7', '${_DOCKER_NAMESPACE}/aspnetcore:1.0.7-${_TAG}' ]
+  id: 'generator-run-1-0-7'
+  waitFor: [ 'generator-build', 'aspnetcore-1-0-7-build' ]
+- name: gcr.io/cloud-builders/docker
+  args: [ 'build', '-t', 'test-app-1-0-7', './functional_tests/published/test-1.0.7' ]
+  id: 'test-app-build-1-0-7'
+  waitFor: [ 'generator-run-1-0-7' ]
+- name: test-app-1-0-7
+  id: 'test-app-run-1-0-7'
+  entrypoint: 'bash'
+  args: [ '-c', '[[ "$(dotnet /app/test-1.0.7.dll)" == "Hello World!" ]]' ]
+  waitFor: [ 'test-app-build-1-0-7' ]
+
 # Publish the images.
 images:
   - '${_DOCKER_NAMESPACE}/aspnetcore:1.0.3-${_TAG}'
   - '${_DOCKER_NAMESPACE}/aspnetcore:1.0.4-${_TAG}'
   - '${_DOCKER_NAMESPACE}/aspnetcore:1.0.5-${_TAG}'
-
+  - '${_DOCKER_NAMESPACE}/aspnetcore:1.0.7-${_TAG}'
