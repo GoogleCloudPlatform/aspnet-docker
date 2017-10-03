@@ -8,6 +8,7 @@ steps:
     - '--supported-sdks'
     - '1.0.0-preview2-003156'
     - '1.0.4'
+    - '1.1.4'
     - '2.0.0'
 - name: gcr.io/cloud-builders/docker:latest
   args: [ 'build', '-t', '$_OUTPUT_IMAGE', '--no-cache', '--pull', '.' ]
