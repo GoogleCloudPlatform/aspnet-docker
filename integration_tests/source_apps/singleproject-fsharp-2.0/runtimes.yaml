@@ -3,6 +3,6 @@
 schema_version: 1
 
 runtimes:
-  aspnetcoreexp:
+  aspnetcore:
     target:
       file: test.yaml
