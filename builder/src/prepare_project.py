@@ -40,7 +40,6 @@ DOCKERFILE_CONTENTS = textwrap.dedent(
     """\
     FROM {runtime_image}
     ADD ./ /app
-    ENV ASPNETCORE_URLS=http://*:${{PORT}}
     WORKDIR /app
     ENTRYPOINT [ "dotnet", "{dll_name}.dll" ]
     """)
