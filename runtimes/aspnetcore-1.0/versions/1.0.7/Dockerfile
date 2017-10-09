@@ -37,5 +37,9 @@ RUN mkdir -p /usr/share/dotnet && \
     curl -sL https://storage.googleapis.com/gcp-aspnetcore-packages/dotnet-debian-x64.1.0.7.tar.gz | tar -xz -C /usr/share/dotnet/ && \
     ln -s /usr/share/dotnet/dotnet /usr/bin/dotnet
 
+# Define the environment variables
+ENV PORT=8080
+ENV ASPNETCORE_URLS=http://*:${PORT}
+
 # Expose the port for the app.
 EXPOSE $PORT
