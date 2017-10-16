@@ -74,7 +74,7 @@ else
 fi
 
 # Deploy and run the tests.
-gcloud beta app deploy ${app_yaml} --quiet --verbosity=info --version=${version_id} --no-promote
+gcloud app deploy ${app_yaml} --quiet --verbosity=info --version=${version_id} --no-promote
 gcloud container builds submit \
     --config=${run_script} \
     --substitutions _VERSION_ID=${version_id} \
