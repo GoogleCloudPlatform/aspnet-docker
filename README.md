@@ -8,7 +8,7 @@ The repo is divided in two sections:
 ## The runtimes
 The [runtimes](./runtimes) directory contains definition for the .NET Core runtime images grouped by major version. Each major version contains a `cloudbuild.yaml` file that defines how to build all of the images within that major version. To build each major version you will use the following command from the root of the repo:
 ```bash
-./test/submit_build.sh ./runtimes/aspnetcore-<version>/cloudbuild.yaml
+./tools/submit_build.sh ./runtimes/aspnetcore-<version>/cloudbuild.yaml
 ```
 
 This will build all of the minor version runtimes supported for that .NET Core `<version>`. Tests will run during the build to ensure that the images have the right contents.
