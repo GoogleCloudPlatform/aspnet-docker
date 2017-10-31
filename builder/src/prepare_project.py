@@ -302,7 +302,6 @@ class PublishedApp(object):
         """\
         FROM {runtime_image}
         ADD ./ /app
-        ENV ASPNETCORE_URLS=http://*:${{PORT}}
         WORKDIR /app
         ENTRYPOINT [ "dotnet", "{dll_name}.dll" ]
         """)
@@ -407,7 +406,6 @@ class SingleProjectApp(object):
 
         FROM {runtime_image}
         COPY --from=builder /published /app
-        ENV ASPNETCORE_URLS=http://*:${{PORT}}
         WORKDIR /app
         ENTRYPOINT [ "dotnet", "{dll_name}.dll" ]
         """)
@@ -508,7 +506,6 @@ class SolutionApp(SingleProjectApp):
 
         FROM {runtime_image}
         COPY --from=builder /published /app
-        ENV ASPNETCORE_URLS=http://*:${{PORT}}
         WORKDIR /app
         ENTRYPOINT [ "dotnet", "{dll_name}.dll" ]
         """)
