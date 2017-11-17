@@ -1,0 +1,11 @@
+FROM gcr.io/cloud-builders/csharp/dotnet AS builder
+COPY . /src
+WORKDIR /src
+RUN dotnet clean
+RUN dotnet restore --packages /packages
+RUN dotnet publish -c Release -o /published
+
+FROM aspnetcore:1.1
+COPY --from=builder /published /app
+WORKDIR /app
+ENTRYPOINT [ "dotnet", "singleproject-1.1.dll" ]

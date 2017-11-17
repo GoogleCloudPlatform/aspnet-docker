@@ -1,0 +1,4 @@
+FROM aspnetcore:1.0
+ADD ./ /app
+WORKDIR /app
+ENTRYPOINT [ "dotnet", "published-1.0.dll" ]

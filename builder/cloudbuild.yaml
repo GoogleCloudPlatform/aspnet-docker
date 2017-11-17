@@ -3,10 +3,10 @@
 #   _DOCKER_NAMESPACE, the repository where to push the images.
 #   _TAG, the tag to use for the published images.
 steps:
-# Build the test validator image.
+# Builds the Dockerfile validator.
 - name: gcr.io/cloud-builders/docker
-  args: [ 'build', '-t', 'test-validator', '--no-cache', '--pull', './functional_tests_validator' ]
-  id: 'test-validator-build'
+  args: [ 'build', '-t', 'dockerfile-validator', './dockerfile_validator' ]
+  id: 'dockerfile-validator-build'
   waitFor: ['-']
 
 # Build the builder image.
@@ -23,57 +23,134 @@ steps:
   id: 'builder-structural-test'
   waitFor: [ 'builder-build' ]
 
-# Test the builder functionality.
+# Test builder functionality with pre-published apps.
 - name: '${_DOCKER_NAMESPACE}/aspnetcorebuild:${_TAG}'
   args:
-    - '--version-map'
+    - '-m'
     - '1.1.2=aspnetcore:1.1'
     - '1.0.5=aspnetcore:1.0'
     - '2.0.0=aspnetcore:2.0'
-  dir: 'functional_tests/clean-1.0'
+  dir: 'functional_tests/published_apps/published-1.0'
   id: 'builder-functional-test-1-0'
   waitFor: [ 'builder-build' ]
+- name: 'dockerfile-validator'
+  args: 'functional_tests/published_apps/published-1.0'
+  waitFor: [ 'dockerfile-validator-build', 'builder-functional-test-1-0' ]
+  id: 'test-validator-clean-1-0'
+
 - name: '${_DOCKER_NAMESPACE}/aspnetcorebuild:${_TAG}'
   args:
-    - '--version-map'
+    - '-m'
     - '1.1.2=aspnetcore:1.1'
     - '1.0.5=aspnetcore:1.0'
     - '2.0.0=aspnetcore:2.0'
-  dir: 'functional_tests/cleanjs-1.0'
+  dir: 'functional_tests/published_apps/published-js-1.0'
   id: 'builder-functional-test-js-1-0'
   waitFor: [ 'builder-build' ]
+- name: 'dockerfile-validator'
+  args: 'functional_tests/published_apps/published-js-1.0'
+  waitFor: [ 'dockerfile-validator-build', 'builder-functional-test-js-1-0' ]
+  id: 'test-validator-cleanjs-1-0'
+
 - name: '${_DOCKER_NAMESPACE}/aspnetcorebuild:${_TAG}'
   args:
-    - '--version-map'
+    - '-m'
     - '1.1.2=aspnetcore:1.1'
     - '1.0.5=aspnetcore:1.0'
     - '2.0.0=aspnetcore:2.0'
-  dir: 'functional_tests/clean-1.1'
+  dir: 'functional_tests/published_apps/published-1.1'
   id: 'builder-functional-test-1-1'
   waitFor: [ 'builder-build' ]
+- name: 'dockerfile-validator'
+  args: 'functional_tests/published_apps/published-1.1'
+  waitFor: [ 'dockerfile-validator-build', 'builder-functional-test-1-1' ]
+  id: 'test-validator-clean-1-1'
+
 - name: '${_DOCKER_NAMESPACE}/aspnetcorebuild:${_TAG}'
   args:
-    - '--version-map'
+    - '-m'
     - '1.1.2=aspnetcore:1.1'
     - '1.0.5=aspnetcore:1.0'
     - '2.0.0=aspnetcore:2.0'
-  dir: 'functional_tests/clean-2.0'
+  dir: 'functional_tests/published_apps/published-2.0'
   id: 'builder-functional-test-2-0'
   waitFor: [ 'builder-build' ]
+- name: 'dockerfile-validator'
+  args: 'functional_tests/published_apps/published-2.0'
+  waitFor: [ 'dockerfile-validator-build', 'builder-functional-test-2-0' ]
+  id: 'test-validator-clean-2-0'
 
-# Validate the results of the test.
-- name: 'test-validator'
-  args: 'functional_tests/clean-1.0'
-  waitFor: [ 'test-validator-build', 'builder-functional-test-1-0' ]
-- name: 'test-validator'
-  args: 'functional_tests/cleanjs-1.0'
-  waitFor: [ 'test-validator-build', 'builder-functional-test-js-1-0' ]
-- name: 'test-validator'
-  args: 'functional_tests/clean-1.1'
-  waitFor: [ 'test-validator-build', 'builder-functional-test-1-1' ]
-- name: 'test-validator'
-  args: 'functional_tests/clean-2.0'
-  waitFor: [ 'test-validator-build', 'builder-functional-test-2-0' ]
+# Test the functionality for single project apps.
+- name: '${_DOCKER_NAMESPACE}/aspnetcorebuild:${_TAG}'
+  args:
+    - '-m'
+    - '1.1.2=aspnetcore:1.1'
+    - '1.0.5=aspnetcore:1.0'
+    - '2.0.0=aspnetcore:2.0'
+  dir: 'functional_tests/single_project_apps/singleproject-1.0'
+  id: 'builder-functional-cleansource-1-0'
+  waitFor: [ 'builder-build' ]
+- name: 'dockerfile-validator'
+  args: 'functional_tests/single_project_apps/singleproject-1.0'
+  id: 'dockerfile-validator-cleansource-1-0'
+  waitFor: [ 'dockerfile-validator-build', 'builder-functional-cleansource-1-0' ]
+
+- name: '${_DOCKER_NAMESPACE}/aspnetcorebuild:${_TAG}'
+  args:
+    - '-m'
+    - '1.1.2=aspnetcore:1.1'
+    - '1.0.5=aspnetcore:1.0'
+    - '2.0.0=aspnetcore:2.0'
+  dir: 'functional_tests/single_project_apps/singleproject-1.1'
+  id: 'builder-functional-cleansource-1-1'
+  waitFor: [ 'builder-build' ]
+- name: 'dockerfile-validator'
+  args: 'functional_tests/single_project_apps/singleproject-1.1'
+  id: 'dockerfile-validator-cleansource-1-1'
+  waitFor: [ 'dockerfile-validator-build', 'builder-functional-cleansource-1-1' ]
+
+- name: '${_DOCKER_NAMESPACE}/aspnetcorebuild:${_TAG}'
+  args:
+    - '-m'
+    - '1.1.2=aspnetcore:1.1'
+    - '1.0.5=aspnetcore:1.0'
+    - '2.0.0=aspnetcore:2.0'
+  dir: 'functional_tests/single_project_apps/singleproject-2.0'
+  id: 'builder-functional-cleansource-2-0'
+  waitFor: [ 'builder-build' ]
+- name: 'dockerfile-validator'
+  args: 'functional_tests/single_project_apps/singleproject-2.0'
+  id: 'dockerfile-validator-cleansource-2-0'
+  waitFor: [ 'dockerfile-validator-build', 'builder-functional-cleansource-2-0' ]
+
+- name: '${_DOCKER_NAMESPACE}/aspnetcorebuild:${_TAG}'
+  args:
+    - '-m'
+    - '1.1.2=aspnetcore:1.1'
+    - '1.0.5=aspnetcore:1.0'
+    - '2.0.0=aspnetcore:2.0'
+  dir: 'functional_tests/single_project_apps/singleproject-fsharp-2.0'
+  id: 'builder-functional-fsharp-2-0'
+  waitFor: [ 'builder-build' ]
+- name: 'dockerfile-validator'
+  args: 'functional_tests/single_project_apps/singleproject-fsharp-2.0'
+  id: 'dockerfile-validator-fsharp-2-0'
+  waitFor: [ 'dockerfile-validator-build', 'builder-functional-fsharp-2-0' ]
+
+# Test the functionality for solution based apps.
+- name: '${_DOCKER_NAMESPACE}/aspnetcorebuild:${_TAG}'
+  args:
+    - '-m'
+    - '1.1.2=aspnetcore:1.1'
+    - '1.0.5=aspnetcore:1.0'
+    - '2.0.0=aspnetcore:2.0'
+  dir: 'functional_tests/solution_apps/solution-2.0'
+  id: 'builder-functional-cleansolution-2-0'
+  waitFor: [ 'builder-build' ]
+- name: 'dockerfile-validator'
+  args: 'functional_tests/solution_apps/solution-2.0'
+  id: 'dockerfile-validator-cleansolution-2-0'
+  waitFor: [ 'dockerfile-validator-build', 'builder-functional-cleansolution-2-0' ]
 
 # Publish the image.
 images:

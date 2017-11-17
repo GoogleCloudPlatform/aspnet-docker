@@ -16,30 +16,28 @@
 
 # This script will validate the Dockerfile generated during the
 # functional tests for the builder.
-#   $1, the path to the Dockerfile to validate.
+#   $1, the path to the directory to validate.
 
 # Exit on error or undefined variable
 set -eu
 
 if [ -z "${1:-}" ]; then
-    echo "Must specify the Dockerfile to validate."
+    echo "Must specify the directory to validate."
     exit 1
 fi
 
-readonly app_version=$(echo $1 | cut -d '-' -f 2-)
-readonly app_name=$(basename $1)
+readonly actual_path=$1/Dockerfile
+readonly expected_path=$1/Dockerfile.expected
 
-readonly from_line=$(cat $1/Dockerfile | head -n1)
-readonly entrypoint_line=$(cat $1/Dockerfile | tail -n1)
+readonly actual_sha1=$(openssl sha1 ${actual_path} | cut -d '=' -f 2)
+readonly expected_sha1=$(openssl sha1 ${expected_path} | cut -d '=' -f 2)
 
-if [[ ${from_line} != "FROM aspnetcore:${app_version}" ]]; then
-    echo "Failed to produce right FROM line for $1: ${from_line}"
-    exit 1
-fi
-if [[ ${entrypoint_line} != "ENTRYPOINT [ \"dotnet\", \"${app_name}.dll\" ]" ]]; then
-    echo "Failed to produce right entrypoint for $1: ${entrypoint_line}"
+if [[ "${expected_sha1}" != "${actual_sha1}" ]]; then
+    echo "The generated Dockerfile and the expected do not match: $1"
+    diff ${actual_path} ${expected_path}
     exit 1
 fi
 
-echo "Success!!!"
+# Success.
+echo "Success: $1"
 exit 0
