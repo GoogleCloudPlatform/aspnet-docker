@@ -7,6 +7,5 @@ RUN dotnet publish -c Release -o /published MainProject/MainProject.csproj
 
 FROM aspnetcore:2.0
 COPY --from=builder /published /app
-ENV ASPNETCORE_URLS=http://*:${PORT}
 WORKDIR /app
 ENTRYPOINT [ "dotnet", "MainProject.dll" ]

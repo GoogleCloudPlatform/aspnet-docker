@@ -1,5 +1,4 @@
 FROM aspnetcore:1.0
 ADD ./ /app
-ENV ASPNETCORE_URLS=http://*:${PORT}
 WORKDIR /app
 ENTRYPOINT [ "dotnet", "published-js-1.0.dll" ]
