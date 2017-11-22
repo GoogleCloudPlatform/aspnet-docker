@@ -40,7 +40,9 @@ readonly workspace=$(dirname $0)/..
 
 # Set the TAG environment to the current timestamp, it will be used to create
 # the image names.
-export readonly TAG=$(date +"%Y-%m-%d_%H_%M")
+if [ -z "${TAG:-}" ]; then
+    export readonly TAG=$(date +"%Y-%m-%d_%H_%M")
+fi
 
 # Perform the actual build.
 ${workspace}/tools/submit_build.sh $1/cloudbuild.yaml ${repo}
