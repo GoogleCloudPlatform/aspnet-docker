@@ -6,7 +6,7 @@ namespace test_2._0._0
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Hello World 2.0.0!");
         }
     }
 }

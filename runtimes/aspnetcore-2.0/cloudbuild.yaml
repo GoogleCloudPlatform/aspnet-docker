@@ -14,6 +14,10 @@ steps:
   args: [ 'build', '-t', '${_DOCKER_NAMESPACE}/aspnetcore:2.0.0-${_TAG}', './versions/2.0.0' ]
   id: 'aspnetcore-2-0-0-build'
   waitFor: ['-']
+- name: gcr.io/cloud-builders/docker
+  args: [ 'build', '-t', '${_DOCKER_NAMESPACE}/aspnetcore:2.0.3-${_TAG}', './versions/2.0.3' ]
+  id: 'aspnetcore-2-0-3-build'
+  waitFor: ['-']
 
 # Test the images structure.
 - name: gcr.io/gcp-runtimes/structure_test
@@ -21,6 +25,11 @@ steps:
          '--config', '/workspace/structural_tests/2.0.0/aspnet.yaml', '-v']
   id: 'aspnetcore-2-0-0-test'
   waitFor: [ 'aspnetcore-2-0-0-build' ]
+- name: gcr.io/gcp-runtimes/structure_test
+  args: ['-i', '${_DOCKER_NAMESPACE}/aspnetcore:2.0.3-${_TAG}',
+         '--config', '/workspace/structural_tests/2.0.3/aspnet.yaml', '-v']
+  id: 'aspnetcore-2-0-3-test'
+  waitFor: [ 'aspnetcore-2-0-3-build' ]
 
 # Functional tests.
 
@@ -36,9 +45,30 @@ steps:
 - name: test-app-2-0-0
   id: 'test-app-run-2-0-0'
   entrypoint: 'bash'
-  args: [ '-c', '[[ "$(dotnet /app/test-2.0.0.dll)" == "Hello World!" ]]' ]
+  args: [ '-c', '[[ "$(dotnet /app/test-2.0.0.dll)" == "Hello World 2.0.0!" ]]' ]
   waitFor: [ 'test-app-build-2-0-0' ]
+
+# Test the 2.0.3 runtime.
+
+# Note: The 2.0.0 app is used because as of .NET Core 2.0 there is no
+# way to make an app target a specific version of a runtime because
+# the implementation of the framework comes from the runtime not from
+# the app.
+- name: generator
+  args: [ './functional_tests/published/test-2.0.0', '${_DOCKER_NAMESPACE}/aspnetcore:2.0.3-${_TAG}' ]
+  id: 'generator-run-2-0-3'
+  waitFor: [ 'generator-build', 'aspnetcore-2-0-3-build' ]
+- name: gcr.io/cloud-builders/docker
+  args: [ 'build', '-t', 'test-app-2-0-3', './functional_tests/published/test-2.0.0' ]
+  id: 'test-app-build-2-0-3'
+  waitFor: [ 'generator-run-2-0-3' ]
+- name: test-app-2-0-3
+  id: 'test-app-run-2-0-3'
+  entrypoint: 'bash'
+  args: [ '-c', '[[ "$(dotnet /app/test-2.0.0.dll)" == "Hello World 2.0.0!" ]]' ]
+  waitFor: [ 'test-app-build-2-0-3' ]
 
 # Publish the images.
 images:
   - '${_DOCKER_NAMESPACE}/aspnetcore:2.0.0-${_TAG}'
+  - '${_DOCKER_NAMESPACE}/aspnetcore:2.0.3-${_TAG}'
