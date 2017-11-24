@@ -23,6 +23,10 @@ set -eu
 readonly workspace=$(dirname $0)/..
 readonly tools=${workspace}/tools
 
+if [ -z "{1:-}" ]; then
+  echo "Need to specify the repo."
+fi
+
 # Determining the project from the ambient settings.
 if [ -z "${1:-}" ]; then
     readonly project_id=$(gcloud config list core/project --format="csv[no-heading](core)" | cut -f 2 -d '=')
@@ -31,18 +35,6 @@ if [ -z "${1:-}" ]; then
 else
     readonly repo=$1
 fi
-
-# Create a tag for all of the images.
-export readonly TAG=$(date +"%Y-%m-%d_%H_%M")
-
-# Build and tag all of the versions.
-for ver in {1.0,1.1,2.0}; do
-    ${tools}/build_and_tag.sh ${workspace}/runtimes/aspnetcore-${ver} ${repo}
-done
-
-# Build and tag the builder.
-${tools}/submit_build.sh ${workspace}/cloudbuild.yaml ${repo}
-gcloud container images add-tag ${repo}/aspnetcorebuild:${TAG} ${repo}/aspnetcorebuild:latest --quiet
 
 # Run the integration tests.
 export readonly BUILDER_OVERRIDE=${repo}/aspnetcorebuild:latest
