@@ -37,7 +37,7 @@ else
 fi
 
 # Where to store the modified app definitions.
-readonly temp_builders_root=$(mktemp -d -t test_run)
+readonly temp_builders_root=$(mktemp -d -t test_run.XXXX)
 
 # Generate the builders root.
 cp $1/runtimes.yaml ${temp_builders_root}

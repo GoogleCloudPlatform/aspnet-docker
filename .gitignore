@@ -9,5 +9,7 @@ runtimes/aspnetcore-1.0/functional_tests/apps/*/obj
 runtimes/aspnetcore-1.0/functional_tests/apps/*/bin
 runtimes/aspnetcore-1.1/functional_tests/apps/*/obj
 runtimes/aspnetcore-1.1/functional_tests/apps/*/bin
+runtimes/aspnetcore-2.0/functional_tests/apps/*/obj
+runtimes/aspnetcore-2.0/functional_tests/apps/*/bin
 integration_tests/apps/*/obj
 integration_tests/apps/*/bin
