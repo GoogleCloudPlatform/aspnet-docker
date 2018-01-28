@@ -17,7 +17,7 @@ This will build all of the minor version runtimes supported for that .NET Core `
 The [builder](./builder) directory contains the definition for the builder image for the `aspnetcore` runtime for Google App Engine Flexible environment. This builder image is responsible for generating a `Dockerfile` for a given published .NET Core application. This `Dockerfile` is then used during the deployment process to generate the app's image that will ultimately run in Google App Engine Flexible environment.
 
 ## Using the images to deploy ASP.NET Core apps
-This image is initially designed and tested to run apps on App Engine Flexible environment but it can also be used to run .NET Core apps on other Docker hosts such as Container Engine or just plain Docker.
+This image is initially designed and tested to run apps on App Engine Flexible environment but it can also be used to run .NET Core apps on other Docker hosts such as Kubernetes Engine or just plain Docker.
 
 The image is designed to run self-contained .NET Core apps, which means that the app must be published before you can build the app's image. To publish the app run the following command at the root of your app's project:
 ```bash
@@ -46,7 +46,7 @@ gcloud beta app deploy ./bin/release/netcoreapp1.0/publish/app.yaml
 The deployment process will automatically use the runtime builder, which will detect what version of .NET Core you are using and produce the appropriate `Dockerfile` for your app.
 
 ### Using the runtime image in other environments
-The runtime image can be used as the base image for an ASP.NET Core apps and run in other environments such as Google Container Engine (GKE) and any other Docker host.
+The runtime image can be used as the base image for an ASP.NET Core apps and run in other environments such as Google Kubernetes Engine (GKE) and any other Docker host.
 
 To create a Docker image for your app create a `Dockerfile` that looks like this:
 ```Dockerfile
