@@ -150,6 +150,21 @@ steps:
   args: [ '-c', '[[ "$(dotnet /app/test-1.0.8.dll)" == "Hello World 1.0.8!" ]]' ]
   waitFor: [ 'test-app-build-1-0-8' ]
 
+# Test the 1.0.9 runtime.
+- name: generator
+  args: [ './functional_tests/published/test-1.0.9', '${_DOCKER_NAMESPACE}/aspnetcore:1.0.9-${_TAG}' ]
+  id: 'generator-run-1-0-9'
+  waitFor: [ 'generator-build', 'aspnetcore-1-0-9-build' ]
+- name: gcr.io/cloud-builders/docker
+  args: [ 'build', '-t', 'test-app-1-0-9', './functional_tests/published/test-1.0.9' ]
+  id: 'test-app-build-1-0-9'
+  waitFor: [ 'generator-run-1-0-9' ]
+- name: test-app-1-0-9
+  id: 'test-app-run-1-0-9'
+  entrypoint: 'bash'
+  args: [ '-c', '[[ "$(dotnet /app/test-1.0.9.dll)" == "Hello World 1.0.9!" ]]' ]
+  waitFor: [ 'test-app-build-1-0-9' ]
+
 # Publish the images.
 images:
   - '${_DOCKER_NAMESPACE}/aspnetcore:1.0.3-${_TAG}'
