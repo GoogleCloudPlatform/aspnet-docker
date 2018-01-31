@@ -2,9 +2,9 @@ steps:
 - name: '${STAGING_BUILDER_IMAGE}'
   args:
     - '--version-map'
-    - '1.0.8=gcr.io/aspnetcore-staging/aspnetcore:1.0.8'
-    - '1.1.5=gcr.io/aspnetcore-staging/aspnetcore:1.1.5'
-    - '2.0.4=gcr.io/aspnetcore-staging/aspnetcore:2.0.4'
+    - '1.0.9=gcr.io/aspnetcore-staging/aspnetcore:1.0.9'
+    - '1.1.6=gcr.io/aspnetcore-staging/aspnetcore:1.1.6'
+    - '2.0.5=gcr.io/aspnetcore-staging/aspnetcore:2.0.5'
 - name: gcr.io/cloud-builders/docker:latest
   args: [ 'build', '-t', '$_OUTPUT_IMAGE', '--no-cache', '--pull', '.' ]
 images:
