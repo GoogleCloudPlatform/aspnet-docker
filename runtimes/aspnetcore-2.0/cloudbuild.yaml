@@ -22,6 +22,10 @@ steps:
   args: [ 'build', '-t', '${_DOCKER_NAMESPACE}/aspnetcore:2.0.4-${_TAG}', './versions/2.0.4' ]
   id: 'aspnetcore-2-0-4-build'
   waitFor: ['-']
+- name: gcr.io/cloud-builders/docker
+  args: [ 'build', '-t', '${_DOCKER_NAMESPACE}/aspnetcore:2.0.5-${_TAG}', './versions/2.0.5' ]
+  id: 'aspnetcore-2-0-5-build'
+  waitFor: ['-']
 
 # Test the images structure.
 - name: gcr.io/gcp-runtimes/structure_test
@@ -39,6 +43,11 @@ steps:
          '--config', '/workspace/structural_tests/2.0.4/aspnet.yaml', '-v']
   id: 'aspnetcore-2-0-4-test'
   waitFor: [ 'aspnetcore-2-0-4-build' ]
+- name: gcr.io/gcp-runtimes/structure_test
+  args: ['-i', '${_DOCKER_NAMESPACE}/aspnetcore:2.0.5-${_TAG}',
+         '--config', '/workspace/structural_tests/2.0.5/aspnet.yaml', '-v']
+  id: 'aspnetcore-2-0-5-test'
+  waitFor: [ 'aspnetcore-2-0-5-build' ]
 
 # Functional tests.
 
@@ -87,8 +96,24 @@ steps:
   args: [ '-c', '[[ "$(dotnet /app/test-2.0.4.dll)" == "Hello World 2.0.4!" ]]' ]
   waitFor: [ 'test-app-build-2-0-4' ]
 
+# Test the 2.0.5 runtime.
+- name: generator
+  args: [ './functional_tests/published/test-2.0.5', '${_DOCKER_NAMESPACE}/aspnetcore:2.0.5-${_TAG}' ]
+  id: 'generator-run-2-0-5'
+  waitFor: [ 'generator-build', 'aspnetcore-2-0-5-build' ]
+- name: gcr.io/cloud-builders/docker
+  args: [ 'build', '-t', 'test-app-2-0-5', './functional_tests/published/test-2.0.5' ]
+  id: 'test-app-build-2-0-5'
+  waitFor: [ 'generator-run-2-0-5' ]
+- name: test-app-2-0-5
+  id: 'test-app-run-2-0-5'
+  entrypoint: 'bash'
+  args: [ '-c', '[[ "$(dotnet /app/test-2.0.5.dll)" == "Hello World 2.0.5!" ]]' ]
+  waitFor: [ 'test-app-build-2-0-5' ]
+
 # Publish the images.
 images:
   - '${_DOCKER_NAMESPACE}/aspnetcore:2.0.0-${_TAG}'
   - '${_DOCKER_NAMESPACE}/aspnetcore:2.0.3-${_TAG}'
   - '${_DOCKER_NAMESPACE}/aspnetcore:2.0.4-${_TAG}'
+  - '${_DOCKER_NAMESPACE}/aspnetcore:2.0.5-${_TAG}'
