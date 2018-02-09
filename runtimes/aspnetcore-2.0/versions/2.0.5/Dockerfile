@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM gcr.io/google_appengine/debian8
+FROM ubuntu:16.04
 
 # Install .NET Core dependencies
 RUN apt-get update \
@@ -20,7 +20,7 @@ RUN apt-get update \
         libc6 \
         libcurl3 \
         libgcc1 \
-        libicu52 \
+        libicu55 \
         liblttng-ust0 \
         libssl1.0.0 \
         libstdc++6 \
