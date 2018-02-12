@@ -8,8 +8,6 @@ steps:
   id: 'generator-build'
   waitFor: ['-']
 
-# Build and test the images.
-
 # .NET Core 1.0.x
 - name: gcr.io/cloud-builders/docker
   args: [ 'build', '-t', '${_DOCKER_NAMESPACE}/aspnetcore:1.0.9-${_TAG}',
