@@ -36,9 +36,7 @@ fi
 export readonly TAG=$(date +"%Y-%m-%d_%H_%M")
 
 # Build and tag all of the versions.
-for ver in {1.0,1.1,2.0}; do
-    ${tools}/build_and_tag.sh ${workspace}/runtimes/aspnetcore-${ver} ${repo}
-done
+${tools}/build_and_tag.sh ${ver} ${repo}
 
 # Build and tag the builder.
 ${tools}/submit_build.sh ${workspace}/builder/cloudbuild.yaml ${repo}
