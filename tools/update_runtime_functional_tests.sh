@@ -16,15 +16,9 @@
 
 # This script will build, publish and package each functional test app
 # for the .NET Core runtime major version.
-#   $1, path to the root of the .NET Core major version.
 
 # Exit on error or undefined variable
 set -eu
-
-if [ -z "${1:-}" ]; then
-    echo "Must specify the root .NET Core version."
-    exit 1
-fi
 
 # Returns the full path of the given relative path.
 function get_absolute_path() {
