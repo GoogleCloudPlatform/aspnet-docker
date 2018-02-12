@@ -23,10 +23,6 @@ set -eu
 readonly workspace=$(dirname $0)/..
 readonly tools=${workspace}/tools
 
-if [ -z "{1:-}" ]; then
-  echo "Need to specify the repo."
-fi
-
 # Determining the project from the ambient settings.
 if [ -z "${1:-}" ]; then
     readonly project_id=$(gcloud config list core/project --format="csv[no-heading](core)" | cut -f 2 -d '=')
@@ -39,6 +35,7 @@ fi
 # Run the integration tests.
 export readonly BUILDER_OVERRIDE=${repo}/aspnetcorebuild:latest
 
-for ver in {1.0,1.1,2.0}; do
-    ${tools}/test.sh ${workspace}/integration_tests/published/test-${ver}
+for ver in $(find ${workspace}/integration_tests/published -type d -maxdepth 1 -name 'test-*'); do
+    echo "Testing ${ver}"
+    ${tools}/test.sh ${ver}
 done
