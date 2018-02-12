@@ -1,0 +1,8 @@
+/Users/ivann/gcp/aspnet-docker/runtimes/versions/aspnetcore-1.0/functional_tests/app/bin/Debug/netcoreapp1.0/app.deps.json
+/Users/ivann/gcp/aspnet-docker/runtimes/versions/aspnetcore-1.0/functional_tests/app/bin/Debug/netcoreapp1.0/app.runtimeconfig.json
+/Users/ivann/gcp/aspnet-docker/runtimes/versions/aspnetcore-1.0/functional_tests/app/bin/Debug/netcoreapp1.0/app.runtimeconfig.dev.json
+/Users/ivann/gcp/aspnet-docker/runtimes/versions/aspnetcore-1.0/functional_tests/app/bin/Debug/netcoreapp1.0/app.dll
+/Users/ivann/gcp/aspnet-docker/runtimes/versions/aspnetcore-1.0/functional_tests/app/bin/Debug/netcoreapp1.0/app.pdb
+/Users/ivann/gcp/aspnet-docker/runtimes/versions/aspnetcore-1.0/functional_tests/app/obj/Debug/netcoreapp1.0/app.AssemblyInfo.cs
+/Users/ivann/gcp/aspnet-docker/runtimes/versions/aspnetcore-1.0/functional_tests/app/obj/Debug/netcoreapp1.0/app.dll
+/Users/ivann/gcp/aspnet-docker/runtimes/versions/aspnetcore-1.0/functional_tests/app/obj/Debug/netcoreapp1.0/app.pdb

@@ -26,16 +26,15 @@ function get_absolute_path() {
 }
 
 # Get the paths.
-readonly apps_dir=$1/functional_tests/apps/
-readonly published_dir=$1/functional_tests/published/
+readonly workspace=$(dirname $0)/..
+readonly runtime_versions=${workspace}/runtimes/versions
 
-# Make sure the root published dir exists.
-mkdir -p ${published_dir}
-
+# Publishes the given app.
+#   $1, the path to the apps source.
+#   $2, where to store published bits.
 function publish_app() {
-    local readonly app_name=$(basename $1)
-    local readonly published=$(get_absolute_path ${published_dir}/${app_name})
-    echo "Publishing ${app_name} to ${published}"
+    echo "Publishing $1 to $2"
+    local readonly published=$(get_absolute_path $2)
 
     # Actually restore and build the app.
     pushd $1
@@ -44,7 +43,12 @@ function publish_app() {
     popd
 }
 
-# Now publish all of the apps.
-for app in $(find ${apps_dir} -maxdepth 1 -type d -name 'test-*'); do
-    publish_app ${app}
+# Now publish the test of all of the apps.
+for ver in $(find ${runtime_versions} -maxdepth 1 -type d -name 'aspnetcore-*'); do
+    echo "Publishing test for runtime ${ver}"
+    if [ -d ${ver}/functional_tests/app/ ]; then
+        publish_app ${ver}/functional_tests/app/ ${ver}/functional_tests/published/
+    else
+        echo "The runtime ${ver} does not have tests."
+    fi
 done
