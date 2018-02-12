@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "targets": {
     ".NETCoreApp,Version=v1.0": {
       "Libuv/1.9.1": {
@@ -6719,13 +6719,17 @@
       "projectUniqueName": "/Users/ivann/gcp/aspnet-docker/runtimes/versions/aspnetcore-1.0/functional_tests/app/app.csproj",
       "projectName": "app",
       "projectPath": "/Users/ivann/gcp/aspnet-docker/runtimes/versions/aspnetcore-1.0/functional_tests/app/app.csproj",
+      "packagesPath": "/Users/ivann/.nuget/packages/",
       "outputPath": "/Users/ivann/gcp/aspnet-docker/runtimes/versions/aspnetcore-1.0/functional_tests/app/obj/",
       "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/Users/ivann/.nuget/NuGet/NuGet.Config"
+      ],
       "originalTargetFrameworks": [
         "netcoreapp1.0"
       ],
-      "files": {
-        "lib/netcoreapp1.0/app.dll": "/Users/ivann/gcp/aspnet-docker/runtimes/versions/aspnetcore-1.0/functional_tests/app/bin/placeholder/netcoreapp1.0/app.dll"
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp1.0": {
@@ -6738,7 +6742,8 @@
         "dependencies": {
           "Microsoft.NETCore.App": {
             "target": "Package",
-            "version": "1.0.5"
+            "version": "1.0.5",
+            "autoReferenced": true
           }
         }
       }
