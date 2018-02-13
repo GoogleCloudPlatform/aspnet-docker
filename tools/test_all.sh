@@ -14,7 +14,7 @@
 #     See the License for the specific language governing permissions and
 #     limitations under the License.
 
-# This script will build all of the images in the repo and run all of the tests.
+# This script run all of the integration tests in the repo.
 #   $1, the Docker repository to use to build the images.
 
 # Exit on error or undefined variable

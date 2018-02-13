@@ -14,8 +14,8 @@
 #     See the License for the specific language governing permissions and
 #     limitations under the License.
 
-# This script will build all of the images in the repo.
-#   $1, the Docker repository to use to build the images.
+# This script will build the builder image.
+#   $1, the Docker repository to use, defaults to gcr.io/$PROJECT_ID
 
 # Exit on error or undefined variable
 set -eu
@@ -23,7 +23,7 @@ set -eu
 readonly workspace=$(dirname $0)/..
 readonly tools=${workspace}/tools
 
-# Determining the project from the ambient settings.
+# If no repo is given get it from the ambient project.
 if [ -z "${1:-}" ]; then
     readonly project_id=$(gcloud config list core/project --format="csv[no-heading](core)" | cut -f 2 -d '=')
     readonly repo=gcr.io/${project_id}
@@ -32,11 +32,16 @@ else
     readonly repo=$1
 fi
 
-# Create a tag for all of the images.
-export readonly TAG=$(date +"%Y-%m-%d_%H_%M")
-
-# Build and tag all of the versions.
-${tools}/build_runtimes.sh ${ver} ${repo}
+# Set the TAG environment to the current timestamp, it will be used to create
+# the image names.
+if [ -z "${TAG:-}" ]; then
+    export readonly TAG=$(date +"%Y-%m-%d_%H_%M")
+fi
 
 # Build and tag the builder.
-${tools}/build_builder.sh ${repo}
+${tools}/submit_build.sh ${workspace}/builder/cloudbuild.yaml ${repo}
+
+readonly builder_datestamp_image=${repo}/aspnetcorebuild:${TAG}
+readonly builder_versioned_image=${repo}/aspnetcorebuild:latest
+
+gcloud container images add-tag ${builder_datestamp_image} ${builder_versioned_image} --quiet
