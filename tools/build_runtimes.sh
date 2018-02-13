@@ -41,17 +41,15 @@ fi
 # build all of the images.
 ${workspace}/tools/submit_build.sh ${workspace}/runtimes/cloudbuild.yaml ${repo}
 
-# The list of supported versions.
-readonly runtime_versions=(
-    "1.0.9"
-    "1.1.6"
-    "2.0.5"
-)
+# Tag major versions.
+gcloud container images add-tag ${repo}/aspnetcore:1.0-${TAG} ${repo}/aspnetcore:1.0 --quiet
+gcloud container images add-tag ${repo}/aspnetcore:1.1-${TAG} ${repo}/aspnetcore:1.1 --quiet
+gcloud container images add-tag ${repo}/aspnetcore:2.0-${TAG} ${repo}/aspnetcore:2.0 --quiet
 
-# Tag all of the images.
-for ver in ${runtime_versions[@]}; do
-    datestamp_image=${repo}/aspnetcore:${ver}-${TAG}
-    versioned_image=${repo}/aspnetcore:${ver}
-    echo "Tagging ${datestamp_image} with ${versioned_image}"
-    gcloud container images add-tag ${datestamp_image} ${versioned_image} --quiet
-done
+# Tag minor versions.
+gcloud container images add-tag ${repo}/aspnetcore:1.0-${TAG} ${repo}/aspnetcore:1.0.9 --quiet
+gcloud container images add-tag ${repo}/aspnetcore:1.1-${TAG} ${repo}/aspnetcore:1.1.6 --quiet
+gcloud container images add-tag ${repo}/aspnetcore:2.0-${TAG} ${repo}/aspnetcore:2.0.5 --quiet
+
+# Tag latest.
+gcloud container images add-tag ${repo}/aspnetcore:2.0-${TAG} ${repo}/aspnetcore:latest --quiet
