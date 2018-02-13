@@ -36,7 +36,7 @@ fi
 export readonly TAG=$(date +"%Y-%m-%d_%H_%M")
 
 # Build and tag all of the versions.
-${tools}/build_runtimes.sh ${ver} ${repo}
+${tools}/build_runtimes.sh ${repo}
 
 # Build and tag the builder.
 ${tools}/build_builder.sh ${repo}
