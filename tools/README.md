@@ -19,4 +19,4 @@ The [`test_all.sh`](./test_all.sh) script is a helper script to run all of the i
 The [`build_runtimes.sh`](./build_runtimes.sh) script is a helper script to build all runtimes stored in the repo from a single command. It will also tag them if possible with the version numbers.
 
 ## The build_builder.sh script.
-The [`build_builder.sh`](./build_builder.sh) script is a helper swcript to build the builder image. This script will also tag the builder as `latest` after it is done.
+The [`build_builder.sh`](./build_builder.sh) script is a helper script to build the builder image. This script will also tag the builder as `latest` after it is done.
