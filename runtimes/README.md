@@ -1,6 +1,6 @@
-2# .NET Core runtime images
+# .NET Core runtime images
 This directory contains the build definition for all of the supported .NET Core runtimes. The main structure is:
-* The `cloudbuild.yaml` file contains the instructions to build and test all of the runtime images. This `cloudbuild.y`aml` needs two substitutions to succeed, `_DOCKER_NAMESPACE` which is the name of the Docker repository where to store the image, and `_TAG` which is the tag to append to the image name to make it unique, typically this `_TAG` will be date based.
+* The `cloudbuild.yaml` file contains the instructions to build and test all of the runtime images. This `cloudbuild.yaml` needs two substitutions to succeed, `_DOCKER_NAMESPACE` which is the name of the Docker repository where to store the image, and `_TAG` which is the tag to append to the image name to make it unique, typically this `_TAG` will be date based.
 * The `versions` directory contains the definition for each .NET Core version supported. In each version you will find:
   + The `image` directory, which contains the `Dockerfile` that defines the runtime image.
   + The `structural_tests` directory, which contains the file called `aspnet.yaml`, this file defines what structural tests to run as part of the build for that version. These tests typically check that the right dotnet binary is included in the image and the licenses for all packages used in building the image.

@@ -21,16 +21,10 @@
 set -eu
 
 readonly workspace=$(dirname $0)/..
+source ${workspace}/tools/common.inc
 readonly tools=${workspace}/tools
 
-# If no repo is given get it from the ambient project.
-if [ -z "${1:-}" ]; then
-    readonly project_id=$(gcloud config list core/project --format="csv[no-heading](core)" | cut -f 2 -d '=')
-    readonly repo=gcr.io/${project_id}
-    echo "Warning: Using repo ${repo} from ambient project."
-else
-    readonly repo=$1
-fi
+readonly repo=$(get_docker_namespace "${1:-}")
 
 # Set the TAG environment to the current timestamp, it will be used to create
 # the image names.

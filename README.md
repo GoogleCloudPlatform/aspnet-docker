@@ -24,7 +24,7 @@ Each image is designed to run self-contained .NET Core apps, which means that th
 dotnet publish -c Release
 ```
 
-This will produce a directory, for .NET Core 2.0 it will be under `bin/release/netcoreapp2.0/publish/`. This is the directory where the `Dockerfile` for app's image should be placed.
+This will produce a directory with the app's code and all its dependencies. For a .NET Core 2.0 app this directory will be under `bin/release/netcoreapp2.0/publish/`; This is the directory where the `Dockerfile` for app's image should be placed.
 
 ### Using the runtime image in App Engine Flex
 Typically you won't need to produce a `Dockerfile` when deploying ASP.NET Core apps to App Engine Flex, the deployment process will generate one for you when you specify the `aspnetcore` runtime in your `app.yaml` file. The minimal `app.yaml` file looks like this:

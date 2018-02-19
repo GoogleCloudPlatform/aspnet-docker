@@ -10,7 +10,7 @@ The [`test.sh`](./test.sh) script is a helper script to run integration tests on
 This script does not perform cleanup, the idea being that you might want to need to debug tests, re-run the tests manually after you are done, etc... To clean up you can just use `gcloud` to delete the versions created by this script. The versions are named after the directory name.
 
 ## The build_all.sh script.
-The [`build_all.sh`](./build_all.sh) script is a helper script to build all runtime images and the builder image in a single command. It will use the currently selected GCP project by default, but you can override the Docker namespace to use in the parameter.
+The [`build_all.sh`](./build_all.sh) script is a helper script to build all runtime images and the builder image in a single command. It will use the currently selected GCP project as the Docker repository by default but you can override the repo by specifying it as the parameter of the script.
 
 ## The test_all.sh script.
 The [`test_all.sh`](./test_all.sh) script is a helper script to run all of the integration tests in a single command.
