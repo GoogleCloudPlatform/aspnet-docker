@@ -14,31 +14,22 @@
 #     See the License for the specific language governing permissions and
 #     limitations under the License.
 
-# This script will build all of the images in the repo and run all of the tests.
+# This script run all of the integration tests in the repo.
 #   $1, the Docker repository to use to build the images.
 
 # Exit on error or undefined variable
 set -eu
 
 readonly workspace=$(dirname $0)/..
+source ${workspace}/tools/common.inc
 readonly tools=${workspace}/tools
 
-if [ -z "{1:-}" ]; then
-  echo "Need to specify the repo."
-fi
-
-# Determining the project from the ambient settings.
-if [ -z "${1:-}" ]; then
-    readonly project_id=$(gcloud config list core/project --format="csv[no-heading](core)" | cut -f 2 -d '=')
-    readonly repo=gcr.io/${project_id}
-    echo "Warning: Using repo ${repo} from ambient project."
-else
-    readonly repo=$1
-fi
+readonly repo=$(get_docker_namespace "${1:-}")
 
 # Run the integration tests.
 export readonly BUILDER_OVERRIDE=${repo}/aspnetcorebuild:latest
 
-for ver in {1.0,1.1,2.0}; do
-    ${tools}/test.sh ${workspace}/integration_tests/published/test-${ver}
+for ver in $(find ${workspace}/integration_tests/published -type d -maxdepth 1 -name 'test-*'); do
+    echo "Testing ${ver}"
+    ${tools}/test.sh ${ver}
 done

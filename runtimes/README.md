@@ -1,22 +1,26 @@
 # .NET Core runtime images
-This directory contains the major versions of .NET Core supported by this repo. Each directory has the following structure:
-* The `cloudbuild.yaml` file contains the instructions to build and test all of the images for the particular .NET Core major version. This `cloudbuild.yaml` needs two substitutions to succeed, `_DOCKER_NAMESPACE` which is the name of the Docker repository where to store the image, and `_TAG` which is the tag to append to the image name to make it unique, typically this `_TAG` will be date based.
-* The `versions` directory, which contains a directory for each supported minor version. Each directory contains the Dockerfile to build the image for the minor version.
-* The `structural_tests` directory, which again contains a directory for each supported minor version. Each directory contains a file called `aspnet.yaml` which defines what structural tests to run as part of the build for that minor version. These tests typically check that the right dotnet binary is included in the image and the licenses for all packages used in building the image.
-* The `functional_tests` directory, which contains the functional tests (unit tests) for each of the minor versions of the runtime. These tests are implemented as a simple console app that prints "Hello World!" to stdout. The build script will check that the app suceeded to run (had an exit code of 0).
+This directory contains the build definition for all of the supported .NET Core runtimes. The main structure is:
+* The `cloudbuild.yaml` file contains the instructions to build and test all of the runtime images. This `cloudbuild.yaml` needs two substitutions to succeed, `_DOCKER_NAMESPACE` which is the name of the Docker repository where to store the image, and `_TAG` which is the tag to append to the image name to make it unique, typically this `_TAG` will be date based.
+* The `versions` directory contains the definition for each .NET Core version supported. In each version you will find:
+  + The `image` directory, which contains the `Dockerfile` that defines the runtime image.
+  + The `structural_tests` directory, which contains the file called `aspnet.yaml`, this file defines what structural tests to run as part of the build for that version. These tests typically check that the right dotnet binary is included in the image and the licenses for all packages used in building the image.
+  + The `functional_tests` directory, which contains the functional tests (unit tests) for the runtime. These tests are implemented as a simple console app that prints "Hello World <version>!" to stdout. The build script will check that the app succeeded to run (had an exit code of 0) and that is has the expected output.
+* The `dockerfile_generator` directory, which contains the a `Dockerfile` generator to build test app images during the build process to test the runtimes.
 
 ## Updating tests
-To update the tests, edit the source code in the `functional_tests/apps` directory and then run the [`udpate_runtime_functional_tests.sh`](../tools/update_runtime_functional_tests.sh) script on the corresponding `aspnetcore-<version>` directory. The script will take care of building the app and publishing it to the `functional_tests/published` directory for you.
+To update the tests, edit the source code in the `functional_tests/app` directory and then run the [`udpate_runtimes_tests.sh`](../tools/update_runtimes_tests.sh). The script will take care of building all of the apps and publishing them to the `functional_tests/published` directory for each supported runtime.
 
 To update the test you can use a command line like the following from the root of the repo:
 ```bash
-./tools/update_runtime_functional_tests.sh ./runtimes/aspnetcore-1.0
+./tools/update_runtimes_tests.sh
 ```
 
-## Adding a new major version
-To add a new major version create a new directory following the same naming convention, `aspnetcore-<version>`. Replicate the same structure as the existing major versions, and create the `cloudbuild.yaml` file that defines how to build and push the resulting images.
+## Updating the runtimes.
+From time to time Microsoft will release new versions of the runtimes. To update the existing images just point the Dockerfile to the latest bits. We use a private GCP bucket to ensure that the bits remain stable.
 
-It is highly recommended that the parallel build feature of the cloud builder is used, so assign ids to each build step and use the `waitFor:` key to ensure the dependencies are met correctly.
+You might also need to update the `functional_tests` to be built with the latest .NET Core SDK that corresponds to the new .NET Core runtime being wrapped. This will ensure that the latest .NET Core SDK is correctly supported.
 
-## Adding a new minor version
-Adding a new minor version will consist then on adding a new directory under the `versions` directory which will contain the `Dockerfile` to build that minor version, as well as adding the structural testing for that minor version. You should also add an app under the `functional_tests` directory that specifically targets the new minor version runtime, this can be accomplished by adding the `RuntimeFrameworkVersion` property with the minor version of the runtime to the `.csproj` for the app.
+## Adding a new version of the runtime.
+As new major versions of the runtimes are released we will need to add new build steps to the [`cloudbuid.yaml`](./cloudbuild.yaml) to build it.
+
+Also following Microsoft's support policy we will be removing old versions of .NET Core that are no longer supported.

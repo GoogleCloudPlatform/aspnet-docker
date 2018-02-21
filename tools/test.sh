@@ -22,6 +22,7 @@
 set -eu
 
 readonly workspace=$(dirname $0)/..
+source ${workspace}/tools/common.inc
 
 if [ -z "${1:-}" ]; then
     echo "Must specify the root of the app."
@@ -30,7 +31,7 @@ fi
 
 # If no project is given get the ambient project.
 if [ -z "${2:-}" ]; then
-    readonly project_id=$(gcloud config list core/project --format="csv[no-heading](core)" | cut -f 2 -d '=')
+    readonly project_id=$(get_current_project)
     echo "Warning: Using ambient project ${project_id}"
 else
     readonly project_id=$2
