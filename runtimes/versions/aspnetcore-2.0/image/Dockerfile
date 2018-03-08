@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM ubuntu:16.04
+FROM gcr.io/gcp-runtimes/ubuntu_16_0_4
 
 # Install .NET Core dependencies
 RUN apt-get update \
