@@ -20,7 +20,7 @@ RUN apt-get update \
         libc6 \
         libcurl3 \
         libgcc1 \
-        libicu55 \
+        libicu52 \
         liblttng-ust0 \
         libssl1.0.0 \
         libstdc++6 \
