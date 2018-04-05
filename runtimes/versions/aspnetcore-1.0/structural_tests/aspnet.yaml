@@ -7,7 +7,6 @@ commandTests:
   - name: 'dotnet version'
     command: ['dotnet', '--version']
     expectedOutput: ['.*1\.1\.8.*']
-    exitCode: 129
 
 fileExistenceTests:
   - name: 'dotnet directory'
