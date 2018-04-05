@@ -29,7 +29,7 @@ readonly repo=$(get_docker_namespace "${1:-}")
 # Run the integration tests.
 export readonly BUILDER_OVERRIDE=${repo}/aspnetcorebuild:latest
 
-for ver in $(find ${workspace}/integration_tests/published -type d -maxdepth 1 -name 'test-*'); do
+for ver in $(find -type d -maxdepth 1 -name 'test-*' ${workspace}/integration_tests/published); do
     echo "Testing ${ver}"
     ${tools}/test.sh ${ver}
 done
