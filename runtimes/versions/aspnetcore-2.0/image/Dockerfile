@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM gcr.io/gcp-runtimes/debian8
+FROM gcr.io/google_appengine/debian8
 
 # Install .NET Core dependencies
 RUN apt-get update \
