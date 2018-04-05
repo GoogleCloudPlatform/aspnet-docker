@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM gcr.io/gcp-runtimes/ubuntu_16_0_4
+FROM gcr.io/gcp-runtimes/debian8
 
 # Install .NET Core dependencies
 RUN apt-get update \
