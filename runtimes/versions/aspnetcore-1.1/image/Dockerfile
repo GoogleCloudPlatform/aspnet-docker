@@ -34,7 +34,7 @@ RUN apt-get update \
 
 # Install the package.
 RUN mkdir -p /usr/share/dotnet && \
-    curl -sL https://storage.googleapis.com/gcp-aspnetcore-packages/dotnet-dev-debian-x64.1.1.8.tar.gz | tar -xz -C /usr/share/dotnet/ && \
+    curl -sL https://storage.googleapis.com/gcp-aspnetcore-packages/dotnet-dev-debian-x64.1.1.8-1.1.7.tar.gz | tar -xz -C /usr/share/dotnet/ && \
     ln -s /usr/share/dotnet/dotnet /usr/bin/dotnet
 
 # Define the environment variables

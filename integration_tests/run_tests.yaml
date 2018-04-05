@@ -1,4 +1,4 @@
-# This build script will run the tests agains the provided version and
+# This build script will run the tests against the provided version and
 # project.
 steps:
 - name: gcr.io/gcp-runtimes/integration_test
