@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM gcr.io/google_appengine/debian8
+FROM gcr.io/gcp-runtimes/ubuntu_16_0_4
 
 # Install .NET Core dependencies
 RUN apt-get update \
@@ -20,7 +20,7 @@ RUN apt-get update \
         libc6 \
         libcurl3 \
         libgcc1 \
-        libicu52 \
+        libicu55 \
         liblttng-ust0 \
         libssl1.0.0 \
         libstdc++6 \
@@ -34,7 +34,7 @@ RUN apt-get update \
 
 # Install the package.
 RUN mkdir -p /usr/share/dotnet && \
-    curl -sL https://storage.googleapis.com/gcp-aspnetcore-packages/dotnet-dev-debian-x64.1.1.9-1.0.11.tar.gz | tar -xz -C /usr/share/dotnet/ && \
+    curl -sL https://storage.googleapis.com/gcp-aspnetcore-packages/dotnet-dev-ubuntu.16.04-x64.1.1.9-1.0.11.tar.gz | tar -xz -C /usr/share/dotnet/ && \
     ln -s /usr/share/dotnet/dotnet /usr/bin/dotnet
 
 # Define the environment variables
