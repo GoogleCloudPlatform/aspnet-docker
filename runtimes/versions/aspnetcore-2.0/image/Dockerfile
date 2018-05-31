@@ -14,7 +14,7 @@
 
 FROM gcr.io/gcp-runtimes/ubuntu_16_0_4
 
-# Install .NET Core dependencies
+# Install .NET Core dependencies and timezone data
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         libc6 \
@@ -30,6 +30,7 @@ RUN apt-get update \
         zlib1g \
         ca-certificates \
         curl \
+        tzdata \
     && apt-get clean
 
 # Install the package.
