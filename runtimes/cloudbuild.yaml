@@ -82,9 +82,35 @@ steps:
   entrypoint: 'bash'
   args: [ '-c', '[[ "$(dotnet /app/app.dll)" == "Hello World 2.0!" ]]' ]
   waitFor: [ 'test-app-build-2-0' ]
+  
+  # .NET Core 2.1.x
+- name: gcr.io/cloud-builders/docker
+  args: [ 'build', '-t', '${_DOCKER_NAMESPACE}/aspnetcore:2.1-${_TAG}',
+          '--no-cache', '--pull', './versions/aspnetcore-2.1/image' ]
+  id: 'aspnetcore-2-1-build'
+  waitFor: ['-']
+- name: gcr.io/gcp-runtimes/structure_test
+  args: ['-i', '${_DOCKER_NAMESPACE}/aspnetcore:2.1-${_TAG}',
+         '--config', '/workspace/versions/aspnetcore-2.1/structural_tests/aspnet.yaml', '-v']
+  id: 'aspnetcore-2-1-test'
+  waitFor: [ 'aspnetcore-2-1-build' ]
+- name: generator
+  args: [ './versions/aspnetcore-2.1/functional_tests/published', '${_DOCKER_NAMESPACE}/aspnetcore:2.1-${_TAG}' ]
+  id: 'generator-run-2-1'
+  waitFor: [ 'generator-build', 'aspnetcore-2-1-build' ]
+- name: gcr.io/cloud-builders/docker
+  args: [ 'build', '-t', 'test-app-2-1', './versions/aspnetcore-2.1/functional_tests/published' ]
+  id: 'test-app-build-2-1'
+  waitFor: [ 'generator-run-2-1' ]
+- name: test-app-2-1
+  id: 'test-app-run-2-1'
+  entrypoint: 'bash'
+  args: [ '-c', '[[ "$(dotnet /app/app.dll)" == "Hello World 2.1!" ]]' ]
+  waitFor: [ 'test-app-build-2-1' ]
 
 # Publish the images.
 images:
   - '${_DOCKER_NAMESPACE}/aspnetcore:1.0-${_TAG}'
   - '${_DOCKER_NAMESPACE}/aspnetcore:1.1-${_TAG}'
   - '${_DOCKER_NAMESPACE}/aspnetcore:2.0-${_TAG}'
+  - '${_DOCKER_NAMESPACE}/aspnetcore:2.1-${_TAG}'
