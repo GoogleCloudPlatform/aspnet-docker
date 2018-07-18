@@ -3,7 +3,7 @@ steps:
   args:
     - '--version-map'
     - '1.0.11=gcr.io/google-appengine/aspnetcore:1.0.12'
-    - '1.1.8=gcr.io/google-appengine/aspnetcore:1.1.8'
+    - '1.1.8=gcr.io/google-appengine/aspnetcore:1.1.9'
     - '2.0.7=gcr.io/google-appengine/aspnetcore:2.0.7'
     - '2.1.2=gcr.io/google-appengine/aspnetcore:2.1.2'
 - name: gcr.io/cloud-builders/docker:latest
