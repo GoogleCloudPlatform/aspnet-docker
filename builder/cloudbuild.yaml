@@ -30,7 +30,7 @@ steps:
     - '1.1.8=aspnetcore:1.1'
     - '1.0.11=aspnetcore:1.0'
     - '2.0.7=aspnetcore:2.0'
-    - '2.1.1=aspnetcore:2.1'
+    - '2.1.2=aspnetcore:2.1'
   dir: 'functional_tests/clean-1.0'
   id: 'builder-functional-test-1-0'
   waitFor: [ 'builder-build' ]
@@ -40,7 +40,7 @@ steps:
     - '1.1.8=aspnetcore:1.1'
     - '1.0.11=aspnetcore:1.0'
     - '2.0.7=aspnetcore:2.0'
-    - '2.1.1=aspnetcore:2.1'
+    - '2.1.2=aspnetcore:2.1'
   dir: 'functional_tests/cleanjs-1.0'
   id: 'builder-functional-test-js-1-0'
   waitFor: [ 'builder-build' ]
@@ -50,7 +50,7 @@ steps:
     - '1.1.8=aspnetcore:1.1'
     - '1.0.11=aspnetcore:1.0'
     - '2.0.7=aspnetcore:2.0'
-    - '2.1.1=aspnetcore:2.1'
+    - '2.1.2=aspnetcore:2.1'
   dir: 'functional_tests/clean-1.1'
   id: 'builder-functional-test-1-1'
   waitFor: [ 'builder-build' ]
@@ -60,7 +60,7 @@ steps:
     - '1.1.8=aspnetcore:1.1'
     - '1.0.11=aspnetcore:1.0'
     - '2.0.7=aspnetcore:2.0'
-    - '2.1.1=aspnetcore:2.1'
+    - '2.1.2=aspnetcore:2.1'
   dir: 'functional_tests/clean-2.0'
   id: 'builder-functional-test-2-0'
   waitFor: [ 'builder-build' ]
@@ -70,7 +70,7 @@ steps:
     - '1.1.8=aspnetcore:1.1'
     - '1.0.11=aspnetcore:1.0'
     - '2.0.7=aspnetcore:2.0'
-    - '2.1.1=aspnetcore:2.1'
+    - '2.1.2=aspnetcore:2.1'
   dir: 'functional_tests/clean-2.1'
   id: 'builder-functional-test-2-1'
   waitFor: [ 'builder-build' ]
