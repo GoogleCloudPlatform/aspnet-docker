@@ -35,7 +35,7 @@ RUN apt-get update \
 
 # Install the package.
 RUN mkdir -p /usr/share/dotnet && \
-    curl -sL https://storage.googleapis.com/gcp-aspnetcore-packages/dotnet-dev-ubuntu.16.04-x64.1.1.9-1.1.8.tar.gz | tar -xz -C /usr/share/dotnet/ && \
+    curl -sL https://storage.googleapis.com/gcp-aspnetcore-packages/dotnet-dev-ubuntu.16.04-x64.1.1.10.tar.gz | tar -xz -C /usr/share/dotnet/ && \
     ln -s /usr/share/dotnet/dotnet /usr/bin/dotnet
 
 # Define the environment variables
