@@ -27,7 +27,7 @@ steps:
 - name: '${_DOCKER_NAMESPACE}/aspnetcorebuild:${_TAG}'
   args:
     - '--version-map'
-    - '1.1.8=aspnetcore:1.1'
+    - '1.1.9=aspnetcore:1.1'
     - '1.0.12=aspnetcore:1.0'
     - '2.0.9=aspnetcore:2.0'
     - '2.1.2=aspnetcore:2.1'
@@ -37,7 +37,7 @@ steps:
 - name: '${_DOCKER_NAMESPACE}/aspnetcorebuild:${_TAG}'
   args:
     - '--version-map'
-    - '1.1.8=aspnetcore:1.1'
+    - '1.1.9=aspnetcore:1.1'
     - '1.0.12=aspnetcore:1.0'
     - '2.0.9=aspnetcore:2.0'
     - '2.1.2=aspnetcore:2.1'
@@ -47,7 +47,7 @@ steps:
 - name: '${_DOCKER_NAMESPACE}/aspnetcorebuild:${_TAG}'
   args:
     - '--version-map'
-    - '1.1.8=aspnetcore:1.1'
+    - '1.1.9=aspnetcore:1.1'
     - '1.0.12=aspnetcore:1.0'
     - '2.0.9=aspnetcore:2.0'
     - '2.1.2=aspnetcore:2.1'
@@ -57,7 +57,7 @@ steps:
 - name: '${_DOCKER_NAMESPACE}/aspnetcorebuild:${_TAG}'
   args:
     - '--version-map'
-    - '1.1.8=aspnetcore:1.1'
+    - '1.1.9=aspnetcore:1.1'
     - '1.0.12=aspnetcore:1.0'
     - '2.0.9=aspnetcore:2.0'
     - '2.1.2=aspnetcore:2.1'
@@ -67,7 +67,7 @@ steps:
 - name: '${_DOCKER_NAMESPACE}/aspnetcorebuild:${_TAG}'
   args:
     - '--version-map'
-    - '1.1.8=aspnetcore:1.1'
+    - '1.1.9=aspnetcore:1.1'
     - '1.0.12=aspnetcore:1.0'
     - '2.0.9=aspnetcore:2.0'
     - '2.1.2=aspnetcore:2.1'
