@@ -76,7 +76,7 @@ fi
 
 # Deploy and run the tests.
 gcloud app deploy ${app_yaml} --quiet --verbosity=info --version=${version_id} --no-promote
-gcloud container builds submit \
+gcloud builds submit \
     --config=${run_script} \
     --substitutions _VERSION_ID=${version_id} \
     --quiet \

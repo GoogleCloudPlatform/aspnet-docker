@@ -40,6 +40,6 @@ fi
 
 # Start the build.
 readonly build_dir=$(dirname $1) 
-gcloud container builds submit "${build_dir}" \
+gcloud builds submit "${build_dir}" \
     --config="$1" \
     --substitutions _DOCKER_NAMESPACE=${repo},_TAG=${TAG}
