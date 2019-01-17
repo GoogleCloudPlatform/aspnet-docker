@@ -30,7 +30,8 @@ steps:
     - '1.1.10=aspnetcore:1.1'
     - '1.0.13=aspnetcore:1.0'
     - '2.0.9=aspnetcore:2.0'
-    - '2.1.6=aspnetcore:2.1'
+    - '2.1.7=aspnetcore:2.1'
+    - '2.2.1=aspnetcore:2.2'
   dir: 'functional_tests/clean-1.0'
   id: 'builder-functional-test-1-0'
   waitFor: [ 'builder-build' ]
@@ -40,7 +41,8 @@ steps:
     - '1.1.10=aspnetcore:1.1'
     - '1.0.13=aspnetcore:1.0'
     - '2.0.9=aspnetcore:2.0'
-    - '2.1.6=aspnetcore:2.1'
+    - '2.1.7=aspnetcore:2.1'
+    - '2.2.1=aspnetcore:2.2'
   dir: 'functional_tests/cleanjs-1.0'
   id: 'builder-functional-test-js-1-0'
   waitFor: [ 'builder-build' ]
@@ -50,7 +52,8 @@ steps:
     - '1.1.10=aspnetcore:1.1'
     - '1.0.13=aspnetcore:1.0'
     - '2.0.9=aspnetcore:2.0'
-    - '2.1.6=aspnetcore:2.1'
+    - '2.1.7=aspnetcore:2.1'
+    - '2.2.1=aspnetcore:2.2'
   dir: 'functional_tests/clean-1.1'
   id: 'builder-functional-test-1-1'
   waitFor: [ 'builder-build' ]
@@ -60,7 +63,8 @@ steps:
     - '1.1.10=aspnetcore:1.1'
     - '1.0.13=aspnetcore:1.0'
     - '2.0.9=aspnetcore:2.0'
-    - '2.1.6=aspnetcore:2.1'
+    - '2.1.7=aspnetcore:2.1'
+    - '2.2.1=aspnetcore:2.2'
   dir: 'functional_tests/clean-2.0'
   id: 'builder-functional-test-2-0'
   waitFor: [ 'builder-build' ]
@@ -70,9 +74,21 @@ steps:
     - '1.1.10=aspnetcore:1.1'
     - '1.0.13=aspnetcore:1.0'
     - '2.0.9=aspnetcore:2.0'
-    - '2.1.6=aspnetcore:2.1'
+    - '2.1.7=aspnetcore:2.1'
+    - '2.2.1=aspnetcore:2.2'
   dir: 'functional_tests/clean-2.1'
   id: 'builder-functional-test-2-1'
+  waitFor: [ 'builder-build' ]
+- name: '${_DOCKER_NAMESPACE}/aspnetcorebuild:${_TAG}'
+  args:
+    - '--version-map'
+    - '1.1.10=aspnetcore:1.1'
+    - '1.0.13=aspnetcore:1.0'
+    - '2.0.9=aspnetcore:2.0'
+    - '2.1.7=aspnetcore:2.1'
+    - '2.2.1=aspnetcore:2.2'
+  dir: 'functional_tests/clean-2.2'
+  id: 'builder-functional-test-2-2'
   waitFor: [ 'builder-build' ]
 
 # Validate the results of the test.
@@ -91,6 +107,9 @@ steps:
 - name: 'test-validator'
   args: 'functional_tests/clean-2.1'
   waitFor: [ 'test-validator-build', 'builder-functional-test-2-1' ]
+- name: 'test-validator'
+  args: 'functional_tests/clean-2.2'
+  waitFor: [ 'test-validator-build', 'builder-functional-test-2-2' ]
 
 # Publish the image.
 images:
