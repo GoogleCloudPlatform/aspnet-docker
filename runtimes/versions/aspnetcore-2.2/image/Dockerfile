@@ -16,7 +16,7 @@ FROM gcr.io/gcp-runtimes/ubuntu_16_0_4
 
 # Install .NET Core dependencies and timezone data
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends\
+    && apt-get install -y --no-install-recommends \
         libc6 \
         libcurl3 \
         libgcc1 \
