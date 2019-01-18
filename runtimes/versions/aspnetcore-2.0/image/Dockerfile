@@ -31,7 +31,7 @@ RUN apt-get update \
         ca-certificates \
         curl \
         tzdata \
-    && apt-get upgrade -y
+    && apt-get upgrade -y \
     && apt-get clean
 
 # Install the package.
