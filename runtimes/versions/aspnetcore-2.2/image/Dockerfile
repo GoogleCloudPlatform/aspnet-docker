@@ -36,7 +36,7 @@ RUN apt-get update \
 
 # Install the package.
 RUN mkdir -p /usr/share/dotnet && \
-    curl -sL https://storage.googleapis.com/gcp-aspnetcore-packages/dotnet-sdk-2.2.102-linux-x64.tar.gz | tar -xz -C /usr/share/dotnet/ && \
+    curl -sL https://storage.googleapis.com/gcp-aspnetcore-packages/dotnet-sdk-2.2.104-linux-x64.tar.gz | tar -xz -C /usr/share/dotnet/ && \
     ln -s /usr/share/dotnet/dotnet /usr/bin/dotnet
 
 # Define the environment variables
