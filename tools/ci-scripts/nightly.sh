@@ -2,7 +2,7 @@
 
 source "$KOKORO_GFILE_DIR/common.sh"
 
-cd aspnetcore-docker
+cd github/aspnetcore-docker
 
 # Build and tag the runtimes.
 tools/build_runtimes.sh ${DOCKER_NAMESPACE}
