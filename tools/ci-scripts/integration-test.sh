@@ -7,7 +7,6 @@
 set -ex
 
 source $KOKORO_GFILE_DIR/common.sh
-cd $KOKORO_GFILE_DIR/integration_tests
 
 export GOOGLE_CLOUD_PROJECT=gcp-runtimes
 
@@ -44,24 +43,24 @@ gcloud config set app/use_runtime_builders True
 # Test the .NET Core 1.0 image.
 app_dir=${INTEGRATION_TEST_APPS}/test-1.0
 gcloud config set app/runtime_builders_root file://${app_dir}
-testsuite/driver.py -d ${app_dir} ${flags} -y ${app_dir}/${APP_YAML_NAME}
+$KOKORO_GFILE_DIR/integration_tests/testsuite/driver.py -d ${app_dir} ${flags} -y ${app_dir}/${APP_YAML_NAME}
 
 # Test the .NET Core 1.1 image.
 app_dir=${INTEGRATION_TEST_APPS}/test-1.1
 gcloud config set app/runtime_builders_root file://${app_dir}
-testsuite/driver.py -d ${app_dir} ${flags} -y ${app_dir}/${APP_YAML_NAME}
+$KOKORO_GFILE_DIR/integration_tests/testsuite/driver.py -d ${app_dir} ${flags} -y ${app_dir}/${APP_YAML_NAME}
 
 # Test the .NET Core 2.0 image.
 app_dir=${INTEGRATION_TEST_APPS}/test-2.0
 gcloud config set app/runtime_builders_root file://${app_dir}
-testsuite/driver.py -d ${app_dir} ${flags} -y ${app_dir}/${APP_YAML_NAME}
+$KOKORO_GFILE_DIR/integration_tests/testsuite/driver.py -d ${app_dir} ${flags} -y ${app_dir}/${APP_YAML_NAME}
 
 # Test the .NET Core 2.1 image.
 app_dir=${INTEGRATION_TEST_APPS}/test-2.1
 gcloud config set app/runtime_builders_root file://${app_dir}
-testsuite/driver.py -d ${app_dir} ${flags} -y ${app_dir}/${APP_YAML_NAME}
+$KOKORO_GFILE_DIR/integration_tests/testsuite/driver.py -d ${app_dir} ${flags} -y ${app_dir}/${APP_YAML_NAME}
 
 # Test the .NET Core 2.2 image.
 app_dir=${INTEGRATION_TEST_APPS}/test-2.2
 gcloud config set app/runtime_builders_root file://${app_dir}
-testsuite/driver.py -d ${app_dir} ${flags} -y ${app_dir}/${APP_YAML_NAME}
+$KOKORO_GFILE_DIR/integration_tests/testsuite/driver.py -d ${app_dir} ${flags} -y ${app_dir}/${APP_YAML_NAME}
