@@ -21,3 +21,5 @@ python deploy_check.py -d ${INTEGRATION_TEST_APPS}/test-2.0 -l ${LANGUAGE} --ski
 # Test and deploy the test-2.1 app.
 python deploy_check.py -d ${INTEGRATION_TEST_APPS}/test-2.1 -l ${LANGUAGE} --skip-xrt
 
+# Test and deploy the test-2.2 app.
+python deploy_check.py -d ${INTEGRATION_TEST_APPS}/test-2.2 -l ${LANGUAGE} --skip-xrt
