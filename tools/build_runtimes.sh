@@ -43,8 +43,8 @@ gcloud container images add-tag ${repo}/aspnetcore:2.1-${TAG} ${repo}/aspnetcore
 gcloud container images add-tag ${repo}/aspnetcore:2.2-${TAG} ${repo}/aspnetcore:2.2 --quiet
 
 # Tag minor versions.
-gcloud container images add-tag ${repo}/aspnetcore:1.0-${TAG} ${repo}/aspnetcore:1.0.15 --quiet
-gcloud container images add-tag ${repo}/aspnetcore:1.1-${TAG} ${repo}/aspnetcore:1.1.12 --quiet
+gcloud container images add-tag ${repo}/aspnetcore:1.0-${TAG} ${repo}/aspnetcore:1.0.16 --quiet
+gcloud container images add-tag ${repo}/aspnetcore:1.1-${TAG} ${repo}/aspnetcore:1.1.13 --quiet
 gcloud container images add-tag ${repo}/aspnetcore:2.0-${TAG} ${repo}/aspnetcore:2.0.9 --quiet
-gcloud container images add-tag ${repo}/aspnetcore:2.1-${TAG} ${repo}/aspnetcore:2.1.9 --quiet
-gcloud container images add-tag ${repo}/aspnetcore:2.2-${TAG} ${repo}/aspnetcore:2.2.3 --quiet
+gcloud container images add-tag ${repo}/aspnetcore:2.1-${TAG} ${repo}/aspnetcore:2.1.11 --quiet
+gcloud container images add-tag ${repo}/aspnetcore:2.2-${TAG} ${repo}/aspnetcore:2.2.5 --quiet

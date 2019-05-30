@@ -2,7 +2,7 @@ steps:
 - name: '${STAGING_BUILDER_IMAGE}'
   args:
     - '--version-map'
-    - '1.0.15=gcr.io/aspnetcore-staging/aspnetcore:1.0.15'
+    - '1.0.16=gcr.io/aspnetcore-staging/aspnetcore:1.0.16'
     - '1.1.8=gcr.io/aspnetcore-staging/aspnetcore:1.1.8'
     - '2.0.7=gcr.io/aspnetcore-staging/aspnetcore:2.0.7'
 - name: gcr.io/cloud-builders/docker:latest
