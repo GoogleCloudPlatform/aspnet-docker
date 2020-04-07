@@ -6,7 +6,7 @@ commandTests:
     expectedOutput: ['/usr/bin/dotnet\n']
   - name: 'dotnet version'
     command: ['dotnet', '--info']
-    expectedOutput: ['.*2\.2\.110.*']
+    expectedOutput: ['.*3\.0\.103.*']
 
 fileExistenceTests:
   - name: 'dotnet directory'
