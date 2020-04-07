@@ -1,7 +1,0 @@
-runtime: aspnetcore
-env: flex
-
-# Sets the image to 'nextcanary' so we can test the image with the
-# canary build App Engine Flex.
-beta_settings:
-  image: nextcanary

@@ -32,6 +32,8 @@ steps:
     - '2.0.9=aspnetcore:2.0'
     - '2.1.16=aspnetcore:2.1'
     - '2.2.8=aspnetcore:2.2'
+    - '3.0.3=aspnetcore:3.0'
+    - '3.1.2=aspnetcore:3.1'
   dir: 'functional_tests/clean-1.0'
   id: 'builder-functional-test-1-0'
   waitFor: [ 'builder-build' ]
@@ -43,6 +45,8 @@ steps:
     - '2.0.9=aspnetcore:2.0'
     - '2.1.16=aspnetcore:2.1'
     - '2.2.8=aspnetcore:2.2'
+    - '3.0.3=aspnetcore:3.0'
+    - '3.1.2=aspnetcore:3.1'
   dir: 'functional_tests/cleanjs-1.0'
   id: 'builder-functional-test-js-1-0'
   waitFor: [ 'builder-build' ]
@@ -54,6 +58,8 @@ steps:
     - '2.0.9=aspnetcore:2.0'
     - '2.1.16=aspnetcore:2.1'
     - '2.2.8=aspnetcore:2.2'
+    - '3.0.3=aspnetcore:3.0'
+    - '3.1.2=aspnetcore:3.1'
   dir: 'functional_tests/clean-1.1'
   id: 'builder-functional-test-1-1'
   waitFor: [ 'builder-build' ]
@@ -65,6 +71,8 @@ steps:
     - '2.0.9=aspnetcore:2.0'
     - '2.1.16=aspnetcore:2.1'
     - '2.2.8=aspnetcore:2.2'
+    - '3.0.3=aspnetcore:3.0'
+    - '3.1.2=aspnetcore:3.1'
   dir: 'functional_tests/clean-2.0'
   id: 'builder-functional-test-2-0'
   waitFor: [ 'builder-build' ]
@@ -76,6 +84,8 @@ steps:
     - '2.0.9=aspnetcore:2.0'
     - '2.1.16=aspnetcore:2.1'
     - '2.2.8=aspnetcore:2.2'
+    - '3.0.3=aspnetcore:3.0'
+    - '3.1.2=aspnetcore:3.1'
   dir: 'functional_tests/clean-2.1'
   id: 'builder-functional-test-2-1'
   waitFor: [ 'builder-build' ]
@@ -87,6 +97,8 @@ steps:
     - '2.0.9=aspnetcore:2.0'
     - '2.1.16=aspnetcore:2.1'
     - '2.2.8=aspnetcore:2.2'
+    - '3.0.3=aspnetcore:3.0'
+    - '3.1.2=aspnetcore:3.1'
   dir: 'functional_tests/clean-2.2'
   id: 'builder-functional-test-2-2'
   waitFor: [ 'builder-build' ]
@@ -110,6 +122,12 @@ steps:
 - name: 'test-validator'
   args: 'functional_tests/clean-2.2'
   waitFor: [ 'test-validator-build', 'builder-functional-test-2-2' ]
+- name: 'test-validator'
+  args: 'functional_tests/clean-3.0'
+  waitFor: [ 'test-validator-build', 'builder-functional-test-3-0' ]
+- name: 'test-validator'
+  args: 'functional_tests/clean-3.1'
+  waitFor: [ 'test-validator-build', 'builder-functional-test-3-1' ]
 
 # Publish the image.
 images:

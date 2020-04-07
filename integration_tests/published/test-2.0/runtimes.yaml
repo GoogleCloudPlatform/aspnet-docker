@@ -1,8 +1,0 @@
-# This file contains the test definition necessary to run the app
-# using the test driver.
-schema_version: 1
-
-runtimes:
-  aspnetcore:
-    target:
-      file: test.yaml
