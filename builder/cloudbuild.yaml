@@ -102,6 +102,33 @@ steps:
   dir: 'functional_tests/clean-2.2'
   id: 'builder-functional-test-2-2'
   waitFor: [ 'builder-build' ]
+# Test the builder functionality.
+- name: '${_DOCKER_NAMESPACE}/aspnetcorebuild:${_TAG}'
+  args:
+    - '--version-map'
+    - '1.1.13=aspnetcore:1.1'
+    - '1.0.16=aspnetcore:1.0'
+    - '2.0.9=aspnetcore:2.0'
+    - '2.1.16=aspnetcore:2.1'
+    - '2.2.8=aspnetcore:2.2'
+    - '3.0.3=aspnetcore:3.0'
+    - '3.1.2=aspnetcore:3.1'
+  dir: 'functional_tests/clean-3.0'
+  id: 'builder-functional-test-3-0'
+  waitFor: [ 'builder-build' ]
+- name: '${_DOCKER_NAMESPACE}/aspnetcorebuild:${_TAG}'
+  args:
+    - '--version-map'
+    - '1.1.13=aspnetcore:1.1'
+    - '1.0.16=aspnetcore:1.0'
+    - '2.0.9=aspnetcore:2.0'
+    - '2.1.16=aspnetcore:2.1'
+    - '2.2.8=aspnetcore:2.2'
+    - '3.0.3=aspnetcore:3.0'
+    - '3.1.2=aspnetcore:3.1'
+  dir: 'functional_tests/clean-3.1'
+  id: 'builder-functional-test-3-1'
+  waitFor: [ 'builder-build' ]
 
 # Validate the results of the test.
 - name: 'test-validator'
@@ -122,12 +149,6 @@ steps:
 - name: 'test-validator'
   args: 'functional_tests/clean-2.2'
   waitFor: [ 'test-validator-build', 'builder-functional-test-2-2' ]
-- name: 'test-validator'
-  args: 'functional_tests/clean-3.0'
-  waitFor: [ 'test-validator-build', 'builder-functional-test-3-0' ]
-- name: 'test-validator'
-  args: 'functional_tests/clean-3.1'
-  waitFor: [ 'test-validator-build', 'builder-functional-test-3-1' ]
 
 # Publish the image.
 images:
