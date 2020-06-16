@@ -8,6 +8,6 @@ steps:
     - '2.1.19=gcr.io/google-appengine/aspnetcore:2.1.19'
     - '2.2.8=gcr.io/google-appengine/aspnetcore:2.2.8'
     - '3.0.3=gcr.io/google-appengine/aspnetcore:3.0.3'
-    - '3.1.2=gcr.io/google-appengine/aspnetcore:3.1.2'
+    - '3.1.5=gcr.io/google-appengine/aspnetcore:3.1.5'
 - name: 'gcr.io/kaniko-project/executor:v0.4.0'
   args: ['--destination=$_OUTPUT_IMAGE']
