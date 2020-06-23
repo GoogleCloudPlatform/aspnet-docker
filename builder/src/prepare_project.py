@@ -96,7 +96,7 @@ def get_runtime_minor_version(deps_path):
             libraries = content['libraries']
             for key in libraries:
                 if key.lower().startswith(NETCORE_APP_PRE31_PREFIX):
-                    version = key[len(NETCORE_APP__PRE31_PREFIX):]
+                    version = key[len(NETCORE_APP_PRE31_PREFIX):]
                     return version.split('-')[0]
                 elif key.lower().startswith(NETCORE_APP_POST31_PREFIX):
                     version = key[len(NETCORE_APP_POST31_PREFIX):].rstrip('.0')
