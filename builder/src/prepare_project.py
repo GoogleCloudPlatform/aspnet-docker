@@ -43,7 +43,8 @@ DOCKERFILE_CONTENTS = textwrap.dedent(
     WORKDIR /app
     ENTRYPOINT [ "dotnet", "{dll_name}.dll" ]
     """)
-NETCORE_APP_PREFIX = 'microsoft.netcore.app/'
+NETCORE_APP_PRE31_PREFIX = 'microsoft.netcore.app/'
+NETCORE_APP_POST31_PREFIX = 'microsoft.aspnetcore.metadata/'
 
 
 def get_project_assembly_name(deps_path):
@@ -94,8 +95,11 @@ def get_runtime_minor_version(deps_path):
         try:
             libraries = content['libraries']
             for key in libraries:
-                if key.lower().startswith(NETCORE_APP_PREFIX):
-                    version = key[len(NETCORE_APP_PREFIX):]
+                if key.lower().startswith(NETCORE_APP_PRE31_PREFIX):
+                    version = key[len(NETCORE_APP__PRE31_PREFIX):]
+                    return version.split('-')[0]
+                elif key.lower().startswith(NETCORE_APP_POST31_PREFIX):
+                    version = key[len(NETCORE_APP_POST31_PREFIX):].rstrip('.0')
                     return version.split('-')[0]
         except KeyError:
             return None
