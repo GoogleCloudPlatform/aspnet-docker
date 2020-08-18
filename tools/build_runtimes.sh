@@ -48,7 +48,7 @@ gcloud container images add-tag ${repo}/aspnetcore:3.1-${TAG} ${repo}/aspnetcore
 gcloud container images add-tag ${repo}/aspnetcore:1.0-${TAG} ${repo}/aspnetcore:1.0.16 --quiet
 gcloud container images add-tag ${repo}/aspnetcore:1.1-${TAG} ${repo}/aspnetcore:1.1.13 --quiet
 gcloud container images add-tag ${repo}/aspnetcore:2.0-${TAG} ${repo}/aspnetcore:2.0.9 --quiet
-gcloud container images add-tag ${repo}/aspnetcore:2.1-${TAG} ${repo}/aspnetcore:2.1.19 --quiet
+gcloud container images add-tag ${repo}/aspnetcore:2.1-${TAG} ${repo}/aspnetcore:2.1.20 --quiet
 gcloud container images add-tag ${repo}/aspnetcore:2.2-${TAG} ${repo}/aspnetcore:2.2.6 --quiet
 gcloud container images add-tag ${repo}/aspnetcore:3.0-${TAG} ${repo}/aspnetcore:3.0.3 --quiet
-gcloud container images add-tag ${repo}/aspnetcore:3.1-${TAG} ${repo}/aspnetcore:3.1.5 --quiet
+gcloud container images add-tag ${repo}/aspnetcore:3.1-${TAG} ${repo}/aspnetcore:3.1.7 --quiet
