@@ -10,7 +10,7 @@ source $KOKORO_GFILE_DIR/common.sh
 
 export GOOGLE_CLOUD_PROJECT=gcp-runtimes
 
-sudo /usr/local/bin/pip install --upgrade -r requirements.txt
+sudo -E /usr/local/bin/pip install --upgrade -r requirements.txt
 
 flags=""
 
