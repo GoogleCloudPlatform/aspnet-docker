@@ -4,7 +4,7 @@ set -ex
 
 source $KOKORO_GFILE_DIR/common.sh
 
-sudo /usr/local/bin/pip install --upgrade -r $KOKORO_GFILE_DIR/integration_tests/requirements.txt
+sudo -E /usr/local/bin/pip install --upgrade -r $KOKORO_GFILE_DIR/integration_tests/requirements.txt
 
 export DEPLOY_LATENCY_PROJECT='cloud-deploy-latency'
 
